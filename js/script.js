@@ -42,7 +42,7 @@
 	
 	//Add One Page nav
 	if($('.scroll-nav').length) {
-		$('.scroll-nav ul.navigation').onePageNav();
+		$('.scroll-nav ul.navigation').onePageNav({changeHash:true});
 	}
 
 	

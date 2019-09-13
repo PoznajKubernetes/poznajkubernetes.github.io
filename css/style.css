@@ -149,6 +149,17 @@ ul,li{
 }
 .module-list li{
 	list-style: square;
+	list-style-position: inside;
+	text-align: left;
+}
+.module-list-header li{
+	/*list-style: url('../images/icons/icon-15-small.png');
+	list-style-position: inside;*/
+	background: url(../images/icons/icon-15-small.png) no-repeat 0px 0px transparent;
+    list-style-type: none;
+    margin: 0;
+    padding: 0px 0px 1px 35px;
+    vertical-align: middle;
 }
 
 .theme-btn{
@@ -1240,7 +1251,7 @@ img{
 .service-style-one .inner-box{
 	position:relative;
 	display:block;
-	padding:45px 32px 60px;
+	padding:15px 32px 0px;
 	border-right:1px solid #deeefc;
 	background:url(../images/background/bg-shape-one.png) left top no-repeat;
 }
