@@ -147,6 +147,9 @@ ul,li{
 	padding:0px;
 	margin:0px;	
 }
+.module-list li{
+	list-style: square;
+}
 
 .theme-btn{
 	display:inline-block;
