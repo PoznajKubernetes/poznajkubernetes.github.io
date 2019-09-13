@@ -152,6 +152,21 @@ ul,li{
 	list-style-position: inside;
 	text-align: left;
 }
+.accordion{
+	padding-left: 50px;padding-top: 5px;
+}
+.accordion .card{
+	border: 1px solid #deeefc;
+    padding: 10px 10px 10px 10px;
+}
+.card h3{
+	font-weight: 300;
+    position: relative;
+    font-size: 20px;
+    color: #3b566e;
+    font-weight: 300;
+    line-height: 1.4em;
+}
 .module-list-header li{
 	/*list-style: url('../images/icons/icon-15-small.png');
 	list-style-position: inside;*/
