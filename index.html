@@ -60,7 +60,7 @@ window.addEventListener("load", function(){
  "message": "Na tej stronie używamy ciasteczek. Żeby było Ci łatwiej.",
  "dismiss": "Rozumiem!",
  "link": "Dowiedz się więcej",
- "href": "#policy"
+ "href": "policy.html"
  }
  })});
  </script>
@@ -101,7 +101,7 @@ window.addEventListener("load", function(){
                                 <ul class="navigation clearfix">
                                     <li class="current"><a href="#banner">Start</a></li>
                                     <li><a href="#who">Dla kogo?</a></li>
-                                    <li><a href="#agenda">Agenda</a></li>
+                                    <li><a id="agenda-menu" href="#agenda">Agenda</a></li>
                                     <li><a href="#authors">Autorzy</a></li>
                                     <li><a href="#opinions">Opinie</a></li>
                                     <li><a href="https://ebook.poznajkubernetes.pl">Ebook</a></li>
@@ -132,7 +132,7 @@ window.addEventListener("load", function(){
                         <h3>Najszybszy sposób, żeby zostać ekspertem w deployment aplikacji</h3>
                         <p>Materiały skierowane do programistów i DevOps, którzy na codzień zajmują się wdrażaniem swojego oprogramowania.</p>
                         <h3>Przedsprzedaż trwa do 18 sierpnia do 21:00</h3>
-                        <a href="#agenda" class="theme-btn btn-style-two">Agenda <span class="icon ti-arrow-circle-right"></span></a>
+                        <a href="#agenda" class="theme-btn btn-style-two agenda-second-button">Agenda <span class="icon ti-arrow-circle-right"></span></a>
                         <a href="https://dolacz.poznajkubernetes.pl" class="theme-btn btn-style-one">Kup i dołącz</a>
                     </div>
                 </div>
@@ -683,6 +683,13 @@ window.addEventListener("load", function(){
 
 
 <script src="js/jquery.js"></script> 
+<script>
+    $(document).ready( function() {
+     $('.agenda-second-button').on('click', function(){
+        $('#agenda-menu').click(); return false;
+     });
+    });
+</script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/pagenav.js"></script>
 <script src="js/jquery.scrollTo.js"></script>
