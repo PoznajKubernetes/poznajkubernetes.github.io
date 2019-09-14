@@ -1628,7 +1628,7 @@ img{
 .testimonials-section{
 	position:relative;
 	background:#ffffff;
-	padding:130px 0px 170px;
+	padding:0px 0px 100px;
 	border-bottom:1px solid rgba(31,140,235,0.30);
 	overflow:hidden;
 }
@@ -3779,7 +3779,7 @@ img{
 .blog-section{
 	position:relative;
 	background:#ffffff;
-	padding:130px 0px;
+	padding:130px 0px 0px 0px;
 }
 
 .news-style-one{
