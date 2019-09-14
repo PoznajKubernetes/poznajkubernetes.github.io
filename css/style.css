@@ -273,6 +273,13 @@ ul,li{
 	background:#3b566e;
 }
 
+.btn-style-one .icon{
+	position:relative;
+	font-size:14px;
+	vertical-align:middle;
+	padding-left:10px;	
+}
+
 .btn-style-two{
 	position:relative;
 	padding:10px 32px;
