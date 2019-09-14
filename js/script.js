@@ -436,7 +436,7 @@
       {
         question: "Czy jak mi się nie spodoba to dostanę zwrot pieniędzy?",
         answer:
-          "<p>Jeżeli zrobisz to w ciągu 31 po opublikowaniu pierwszego modułu to wystarczy napisać do nas i bez pytań oddajemy Ci pieniądze plus wystawiamy korektę faktury.</p>"
+          "<p>Jeżeli zrobisz to w ciągu 31 dni po opublikowaniu pierwszego modułu to wystarczy napisać do nas i bez pytań oddajemy Ci pieniądze plus wystawiamy korektę faktury.</p>"
       },
       {
         question: "Co potrzebuje do wykonywania ćwiczeń?",
