@@ -397,64 +397,64 @@
         question:
           "Co muszę wiedzieć przed rozpoczęciem kursu? Czy muszę znać docker?",
         answer:
-          "Nie potrzebujesz znać żadnego konkretnego języka programowania, ani skryptowego. Wystarczy podstawowa znajomość konsoli i edytorów tekstowych. " +
-          "Resztę pokażemy.<br/>Co do docker, to też nie musisz go znać. Pokażemy kilka dobrych praktyk i będziesz miał opanowanego docker na poziomie wystarczającym w 90% przypadków."
+          "<p>Nie potrzebujesz znać żadnego konkretnego języka programowania, ani skryptowego. Wystarczy podstawowa znajomość konsoli i edytorów tekstowych. " +
+          "Resztę pokażemy.<br/>Co do docker, to też nie musisz go znać. Pokażemy kilka dobrych praktyk i będziesz miał opanowanego docker na poziomie wystarczającym w 90% przypadków.</p>"
       },
       {
         question: "Od kiedy będzie dostępny kurs?",
         answer:
-          "Pierwszy moduł najpóźniej zostanie opublikowany w poniedziałek 4 listopada."
+          "<p>Pierwszy moduł najpóźniej zostanie opublikowany w poniedziałek 4 listopada.</p>"
       },
       {
         question: "Czy dostanę cały kurs od razu?",
         answer:
-          "Nie. Dodajemy nowe materiały każdego tygodnia, aby Cię nie przytłoczyć i aby cała grupa przechodziła materiał w tym samym momencie."
+          "<p>Nie. Dodajemy nowe materiały każdego tygodnia, aby Cię nie przytłoczyć i aby cała grupa przechodziła materiał w tym samym momencie.</p>"
 	  },
 	  {
         question: "Czy dostanę fakturę VAT?",
         answer:
-          "Tak, chwilę po zaksięgowaniu. VAT obowiązujący w tym wypadku to 23%." +
-          "Uwaga: Słowo “chwila” jest nieprecyzyjne, przepraszamy. Ciężko jest jednak określić czas integracji 4 czy 5 systemów po drodze."
+          "<p>Tak, chwilę po zaksięgowaniu. VAT obowiązujący w tym wypadku to 23%." +
+          "Uwaga: Słowo “chwila” jest nieprecyzyjne, przepraszamy. Ciężko jest jednak określić czas integracji 4 czy 5 systemów po drodze.</p>"
       },
       {
         question: "Jak długo będę miał dostęp do kursu?",
         answer:
-          "Otrzymasz dożywotni dostęp do tej edycji kursu wraz z aktualizacjami."
+          "<p>Otrzymasz dożywotni dostęp do tej edycji kursu wraz z aktualizacjami.</p>"
       },
       {
         question: "W jakiej formie jest ten kurs?",
         answer:
-          "Kurs jest głównie w formie wideo. Nagrania zamieszczone są na platformie. Po podaniu loginu i hasła masz dostęp do swojego konta."
+          "<p>Kurs jest głównie w formie wideo. Nagrania zamieszczone są na platformie. Po podaniu loginu i hasła masz dostęp do swojego konta.</p>"
       },
       {
         question: "Jaki sprzęt będzie wymagany do kursu?",
         answer:
-          "Jakikolwiek który ma min 8GB ram, Windows 10 z możliwością Hyper-V lub macOS lub Linux + dostęp do internetu." +
-          "<br/>8GB uważamy za totalne minimum jeżeli chcemy pracować kursem u siebie lokalnie. Jeżeli korzystamy z chmury ram ten nie będzie aż tak kluczowy."
+          "<p>Jakikolwiek który ma min 8GB ram, Windows 10 z możliwością Hyper-V lub macOS lub Linux + dostęp do internetu.</p>" +
+          "<p>8GB uważamy to za totalne minimum jeżeli chcemy pracować kursem u siebie lokalnie. Jeżeli korzystamy z chmury ram ten nie będzie aż tak kluczowy.</p>"
       },
       {
         question: "Czy jak mi się nie spodoba to dostanę zwrot pieniędzy?",
         answer:
-          "Jeżeli zrobisz to w ciągu 31 po opublikowaniu pierwszego modułu to wystarczy napisać do nas i bez pytań oddajemy Ci pieniądze plus wystawiamy korektę faktury."
+          "<p>Jeżeli zrobisz to w ciągu 31 po opublikowaniu pierwszego modułu to wystarczy napisać do nas i bez pytań oddajemy Ci pieniądze plus wystawiamy korektę faktury.</p>"
       },
       {
         question: "Co potrzebuje do wykonywania ćwiczeń?",
         answer:
-          "Każdy moduł będzie miał zadania do wykonania samemu - lokalnie u siebie na komputerze (Docker CE lub minikube) lub jeśli chcesz u wybranego dostawcy chmury publicznej(*)" +
-          "<br/>(*chmura nie jest dostarczona wraz z kursem)"
+          "<p>Każdy moduł będzie miał zadania do wykonania samemu - lokalnie u siebie na komputerze (Docker CE lub minikube) lub jeśli chcesz u wybranego dostawcy chmury publicznej(*)</p>" +
+          "<p>(*chmura nie jest dostarczona wraz z kursem)</p>"
       },
       {
         question:
           "Czy jeżeli kurs nie zostanie opublikowany dostanę zwrot pieniędzy?",
-        answer: "Tak, a także fakturę z korektą."
+        answer: "<p>Tak, a także fakturę z korektą.</p>"
       },
       {
         question: "Czy mogę kupić na fakturę pro-forma?",
-        answer: "Napisz do nas na <a href=\"kontakt@poznajkubernets.pl\">kontakt@poznajkubernets.pl</a> - spróbujemy coś wymyślić."
+        answer: "<p>Napisz do nas na <a href=\"kontakt@poznajkubernets.pl\">kontakt@poznajkubernets.pl</a> - spróbujemy coś wymyślić.</p>"
       },
       {
         question: "Chyba zwariowaliście z pracą za 20k+ z Kubernetes?!!??!!",
-        answer: "Uwierz też się zdziwiliśmy, ale wejdź na <a href=\"https://justjoin.it/all/devops/all/20k\">https://justjoin.it/all/devops/all/20k</a> i sprawdź sam!"
+        answer: "<p>Uwierz też się zdziwiliśmy, ale wejdź na <a href=\"https://justjoin.it/all/devops/all/20k\">https://justjoin.it/all/devops/all/20k</a> i sprawdź sam!</p>"
       },
       {
         question: "",
