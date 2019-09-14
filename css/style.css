@@ -180,6 +180,8 @@ ul,li{
 	list-style: square;
 	list-style-position: inside;
 	text-align: left;
+	font-weight: 300;
+	font-size: 16px;
 }
 .accordion{
 	padding-left: 50px;
