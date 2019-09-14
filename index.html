@@ -6,6 +6,7 @@
 <!-- Stylesheets -->
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+
 <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 <link rel="icon" href="images/favicon.png" type="image/x-icon">
 <!-- Responsive -->
@@ -40,30 +41,6 @@
         src="https://www.facebook.com/tr?id=313040722397945&ev=PageView&noscript=1"
        /></noscript>
        <!-- End Facebook Pixel Code -->
-       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-<script>
-window.addEventListener("load", function(){
- window.cookieconsent.initialise({
- "palette": {
- "popup": {
- "background": "#000000",
- "text": "#ffffff"
- },
- "button": {
- "background": "#f5d948"
- }
- },
- "theme": "classic",
- "position": "bottom",
- "content": {
- "message": "Na tej stronie używamy ciasteczek. Żeby było Ci łatwiej.",
- "dismiss": "Rozumiem!",
- "link": "Dowiedz się więcej",
- "href": "policy.html"
- }
- })});
- </script>
 </head>
 
 <body>
@@ -71,7 +48,7 @@ window.addEventListener("load", function(){
 <div class="page-wrapper">
  	
     <!-- Preloader -->
-    <div class="preloader"></div>
+    
  	
     <!-- Main Header-->
     <header class="main-header">
@@ -671,24 +648,20 @@ window.addEventListener("load", function(){
             </div>
         </div>
     </section>
-    
-    
-    
+    <footer class="footer-sticky">
+            <div class="container">
+              <span class="">Przedsprzedaż kończy się <span id="countdown" class="text-nowrap">18 września o 21:00</span> <a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-dolacz">Dołącz teraz!</a></span>
+            </div>
+    </footer>
     
 </div>
 <!--End pagewrapper-->
 
 <!--Scroll to top-->
 <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-double-up"></span></div>
-
-
 <script src="js/jquery.js"></script> 
 <script>
-    $(document).ready( function() {
-     $('.agenda-second-button').on('click', function(){
-        $('#agenda-menu').click(); return false;
-     });
-    });
+    
 </script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/pagenav.js"></script>
@@ -698,6 +671,33 @@ window.addEventListener("load", function(){
 <script src="js/wow.js"></script>
 <script src="js/validate.js"></script>
 <script src="js/script.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+ window.cookieconsent.initialise({
+ "palette": {
+ "popup": {
+ "background": "#FFFFFF",
+ "text": "#000000",
+ "border-bottom-color":"#F0F0F0",
+ "border-bottom-style": "dashed"
+ },
+ "button": {
+ "background": "#1f8ceb"
+ }
+ },
+ "theme": "classic",
+ "position": "top-left",
+ "content": {
+ "message": "Na tej stronie używamy ciasteczek. Żeby było Ci łatwiej.",
+ "dismiss": "Rozumiem!",
+ "link": "Dowiedz się więcej",
+ "href": "policy.html"
+ }
+ })});
+ </script>
 
 
 </body>
