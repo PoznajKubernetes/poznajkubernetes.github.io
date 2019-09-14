@@ -5072,3 +5072,7 @@ img{
 	font-size: 16px;
 	font-weight: 300;
 }
+
+.sec-title h2 {
+	padding-top: 20px;
+}
