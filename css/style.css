@@ -1205,6 +1205,15 @@ img{
 	margin-bottom:30px;	
 }
 
+.agenda-modules-title {
+	
+	position:relative;
+	font-size:30px;
+	color:#3b566e;
+	font-weight:300;
+	line-height:1.4em;
+}
+
 .sec-title h2{
 	position:relative;
 	font-size:30px;
