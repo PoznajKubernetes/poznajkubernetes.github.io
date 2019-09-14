@@ -384,6 +384,9 @@
           "za " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
         document.getElementById("countdown2").innerHTML =
           "<strong>" + days + "d " + hours + "h " + minutes + "m " + seconds + "s</strong>";
+	      
+        document.getElementById("countdown3").innerHTML =
+          "<strong>" + days + "d " + hours + "h " + minutes + "m " + seconds + "s</strong>";
       }
     }
     var timing = setInterval(
