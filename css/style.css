@@ -217,6 +217,15 @@ ul,li{
 	text-align: left;
 }
 
+.benefits-list-header li {
+	background: url(../images/icons/icon-14-small.png) no-repeat 5px 0px transparent;
+    list-style-type: none;
+    margin: 0;
+    padding: 0px 0px 1px 35px;
+	vertical-align: middle;
+	text-align: left;
+}
+
 .theme-btn{
 	display:inline-block;
 	transition:all 0.3s ease;
