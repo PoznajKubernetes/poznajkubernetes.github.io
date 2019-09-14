@@ -383,7 +383,7 @@
         document.getElementById("countdown").innerHTML =
           "za " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
         document.getElementById("countdown2").innerHTML =
-          "jeszcze <strong>" + days + "d " + hours + "h " + minutes + "m " + seconds + "s</strong>";
+          "<strong>" + days + "d " + hours + "h " + minutes + "m " + seconds + "s</strong>";
       }
     }
     var timing = setInterval(
