@@ -359,7 +359,7 @@
       $("#agenda-menu").click();
       return false;
     });
-	var yourDateToGo = new Date('2019-09-18T21:00:00+02:00');//new Date(); //here you're making new Date object
+    var yourDateToGo = new Date("2019-09-18T21:00:00+02:00"); //new Date(); //here you're making new Date object
     //yourDateToGo.setDate(yourDateToGo.getDate() + 1); //your're setting date in this object 1 day more from now
     //you can change number of days to go by putting any number in place of 1
     var timing = setInterval(
@@ -376,18 +376,107 @@
         var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)); //conversion miliseconds on minutes
         if (minutes < 10) minutes = "0" + minutes;
         var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000); //conversion miliseconds on seconds
-		if (seconds < 10) seconds = "0" + seconds;
-		//console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s");
+        if (seconds < 10) seconds = "0" + seconds;
+        //console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s");
         document.getElementById("countdown").innerHTML =
           "za " + days + "d " + hours + "h " + minutes + "m " + seconds + "s"; // putting number of days, hours, minutes and seconds in div,
         //which id is countdown
         if (timeLeft <= 0) {
           clearInterval(timing);
-		  document.getElementById("countdown").innerHTML = "koniec"; //if there's no time left, programm in this 2 lines is clearing interval (nothing is counting now)
+          document.getElementById("countdown").innerHTML = "koniec"; //if there's no time left, programm in this 2 lines is clearing interval (nothing is counting now)
           //and you see "It's over" instead of time left
         }
       },
       1000
     );
   });
+  $(document).ready(function() {
+    var template = $("#faq-template").html();
+    var faq = [
+      {
+        question:
+          "Co muszę wiedzieć przed rozpoczęciem kursu? Czy muszę znać docker?",
+        answer:
+          "Nie potrzebujesz znać żadnego konkretnego języka programowania, ani skryptowego. Wystarczy podstawowa znajomość konsoli i edytorów tekstowych. " +
+          "Resztę pokażemy.<br/>Co do docker, to też nie musisz go znać. Pokażemy kilka dobrych praktyk i będziesz miał opanowanego docker na poziomie wystarczającym w 90% przypadków."
+      },
+      {
+        question: "Od kiedy będzie dostępny kurs?",
+        answer:
+          "Pierwszy moduł najpóźniej zostanie opublikowany w poniedziałek 4 listopada."
+      },
+      {
+        question: "Czy dostanę cały kurs od razu?",
+        answer:
+          "Nie. Dodajemy nowe materiały każdego tygodnia, aby Cię nie przytłoczyć i aby cała grupa przechodziła materiał w tym samym momencie."
+	  },
+	  {
+        question: "Czy dostanę fakturę VAT?",
+        answer:
+          "Tak, chwilę po zaksięgowaniu. VAT obowiązujący w tym wypadku to 23%." +
+          "Uwaga: Słowo “chwila” jest nieprecyzyjne, przepraszamy. Ciężko jest jednak określić czas integracji 4 czy 5 systemów po drodze."
+      },
+      {
+        question: "Jak długo będę miał dostęp do kursu?",
+        answer:
+          "Otrzymasz dożywotni dostęp do tej edycji kursu wraz z aktualizacjami."
+      },
+      {
+        question: "W jakiej formie jest ten kurs?",
+        answer:
+          "Kurs jest głównie w formie wideo. Nagrania zamieszczone są na platformie. Po podaniu loginu i hasła masz dostęp do swojego konta."
+      },
+      {
+        question: "Jaki sprzęt będzie wymagany do kursu?",
+        answer:
+          "Jakikolwiek który ma min 8GB ram, Windows 10 z możliwością Hyper-V lub macOS lub Linux + dostęp do internetu." +
+          "<br/>8GB uważamy za totalne minimum jeżeli chcemy pracować kursem u siebie lokalnie. Jeżeli korzystamy z chmury ram ten nie będzie aż tak kluczowy."
+      },
+      {
+        question: "Czy jak mi się nie spodoba to dostanę zwrot pieniędzy?",
+        answer:
+          "Jeżeli zrobisz to w ciągu 31 po opublikowaniu pierwszego modułu to wystarczy napisać do nas i bez pytań oddajemy Ci pieniądze plus wystawiamy korektę faktury."
+      },
+      {
+        question: "Co potrzebuje do wykonywania ćwiczeń?",
+        answer:
+          "Każdy moduł będzie miał zadania do wykonania samemu - lokalnie u siebie na komputerze (Docker CE lub minikube) lub jeśli chcesz u wybranego dostawcy chmury publicznej(*)" +
+          "<br/>(*chmura nie jest dostarczona wraz z kursem)"
+      },
+      {
+        question:
+          "Czy jeżeli kurs nie zostanie opublikowany dostanę zwrot pieniędzy?",
+        answer: "Tak, a także fakturę z korektą."
+      },
+      {
+        question: "Czy mogę kupić na fakturę pro-forma?",
+        answer: "Napisz do nas na <a href=\"kontakt@poznajkubernets.pl\">kontakt@poznajkubernets.pl</a> - spróbujemy coś wymyślić."
+      },
+      {
+        question: "Chyba zwariowaliście z pracą za 20k+ z Kubernetes?!!??!!",
+        answer: "Uwierz też się zdziwiliśmy, ale wejdź na <a href=\"https://justjoin.it/all/devops/all/20k\">https://justjoin.it/all/devops/all/20k</a> i sprawdź sam!"
+      },
+      {
+        question: "",
+        answer: ""
+      },
+      {
+        question: "",
+        answer: ""
+      }
+    ];
+    faq.forEach(function(item, index) {
+      if (item.question == "") return;
+      var content = template
+        .replaceAll("XXX", index)
+        .replaceAll("QUESTION", item.question)
+        .replaceAll("ANSWER", item.answer);
+      $("#accordionFAQ").append(content);
+    });
+  });
 })(window.jQuery);
+
+String.prototype.replaceAll = function(search, replacement) {
+  var target = this;
+  return target.split(search).join(replacement);
+};

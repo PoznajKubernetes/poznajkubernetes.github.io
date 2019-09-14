@@ -81,6 +81,7 @@
                                     <li class="current"><a href="#banner">Start</a></li>
                                     <li><a href="#who">Dla kogo?</a></li>
                                     <li><a id="agenda-menu" href="#agenda">Agenda</a></li>
+                                    <li><a href="#faq">FAQ</a></li>
                                     <li><a href="#authors">Autorzy</a></li>
                                     <li><a href="#opinions">Opinie</a></li>
                                     <li><a href="https://ebook.poznajkubernetes.pl">Ebook</a></li>
@@ -487,6 +488,99 @@
             </div>
     </section>
 
+    <section class="products-section" id="faq">
+            <div class="auto-container">
+                <!--Heading-->
+                <div class="sec-title">
+                    <div class="icon"><figure class="image"><img src="images/icons/icon-9.png" alt=""></figure></div>
+                    <h2>FAQ</h2>
+                    <div class="desc-text">
+                    </div>
+                </div>
+                <!--Services-->
+                <div class="row clearfix">
+                    <div class="clearfix">
+                        <script id="faq-template" type="text/x-custom-template">
+                            <div class="card">
+                                <div class="card-header" id="headingFAQ_XXX">
+                                  <h3 class="mb-0">
+                                    <span class="question">QUESTION</span>
+                                    <button class="btn" type="button" data-toggle="collapse" aria-expanded="true"
+                                        data-target="#collapseFAQ_XXX" aria-controls="collapseFAQ_XXX">
+                                        Rozwiń
+                                    </button>
+                                  </h3>
+                                </div>
+                                <div id="collapseFAQ_XXX" aria-labelledby="headingFAQ_XXX" class="collapse" data-parent="#accordionFAQ">
+                                  <div class="card-body">
+                                    <div class="text answer">
+                                        ANSWER
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </script>
+                        <div class="accordion" id="accordionFAQ">
+                          <!--div class="card">
+                            <div class="card-header" id="headingFAQ1">
+                              <h3 class="mb-0">
+                                Co muszę wiedzieć przed rozpoczęciem kursu? Czy muszę znać docker?
+                                <button class="btn" type="button" data-toggle="collapse" aria-expanded="true"
+                                    data-target="#collapseFAQ1" aria-controls="collapseFAQ1">
+                                    Rozwiń
+                                </button>
+                              </h3>
+                            </div>
+                            <div id="collapseFAQ1" aria-labelledby="headingFAQ1" class="collapse" data-parent="#accordionFAQ">
+                              <div class="card-body">
+                                <div class="text">
+                                    Nie potrzebujesz znać żadnego konkretnego języka programowania, ani skryptowego. Wystarczy podstawowa znajomość konsoli i edytorów tekstowych. Resztę pokażemy.
+                                    Co do docker, to też nie musisz go znać. Pokażemy kilka dobrych praktyk i będziesz miał opanowanego docker na poziomie wystarczającym w 90% przypadków.
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <div class="card-header" id="headingFAQ2">
+                              <h3 class="mb-0">
+                                Od kiedy będzie dostępny kurs?
+                                <button class="btn" type="button" data-toggle="collapse" aria-expanded="true"
+                                    data-target="#collapseFAQ2" aria-controls="collapseFAQ2">
+                                    Rozwiń
+                                </button>
+                              </h3>
+                            </div>
+                            <div id="collapseFAQ2" aria-labelledby="headingFAQ2" class="collapse" data-parent="#accordionFAQ">
+                              <div class="card-body">
+                                <div class="text">
+                                    Pierwszy moduł najpóźniej zostanie opublikowany w poniedziałek 4 listopada.
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <div class="card-header" id="headingFAQ3">
+                              <h3 class="mb-0">
+                                Czy dostanę cały kurs od razu?
+                                <button class="btn" type="button" data-toggle="collapse" aria-expanded="true"
+                                    data-target="#collapseFAQ3" aria-controls="collapseFAQ3">
+                                    Rozwiń
+                                </button>
+                              </h3>
+                            </div>
+                            <div id="collapseFAQ3" aria-labelledby="headingFAQ3" class="collapse" data-parent="#accordionFAQ">
+                              <div class="card-body">
+                                <div class="text">
+                                    Nie. Dodajemy nowe materiały każdego tygodnia, aby Cię nie przytłoczyć i aby cała grupa przechodziła materiał w tym samym momencie.
+                                </div>
+                              </div>
+                            </div>
+                          </div-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
     <!--Blog Section-->
     <section class="blog-section" id="authors" >
     	<div class="auto-container">
@@ -693,9 +787,9 @@ window.addEventListener("load", function(){
  "theme": "classic",
  "position": "top-left",
  "content": {
- "message": "Na tej stronie używamy ciasteczek. Żeby było Ci łatwiej.",
+ "message": "Na tej stronie używamy ciasteczek.",
  "dismiss": "Rozumiem!",
- "link": "Dowiedz się więcej",
+ "link": "(więcej)",
  "href": "policy.html"
  }
  })});
