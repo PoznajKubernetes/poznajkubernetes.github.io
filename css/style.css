@@ -1191,7 +1191,7 @@ img{
 
 .sec-title{
 	position:relative;
-	margin-bottom:60px;	
+	/*margin-bottom:60px;*/	
 }
 
 .sec-title.centered{
@@ -1202,7 +1202,7 @@ img{
 	position:relative;
 	line-height:1em;
 	font-size:60px;
-	margin-bottom:30px;	
+	/*margin-bottom:30px;*/	
 }
 
 .agenda-modules-title {
