@@ -182,7 +182,15 @@ ul,li{
 	text-align: left;
 }
 .accordion{
-	padding-left: 50px;padding-top: 5px;
+	padding-left: 50px;
+	padding-top: 5px;
+	padding-right: 50px;
+}
+@media (max-width: 768px){
+	.accordion{
+		padding-left: 5px;
+		padding-right: 5px;
+	}
 }
 .accordion .card{
 	border: 1px solid #deeefc;
