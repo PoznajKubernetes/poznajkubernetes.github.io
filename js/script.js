@@ -384,7 +384,7 @@
           "za " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
         document.getElementById("countdown2").innerHTML =
           "<strong>" + days + "d " + hours + "h " + minutes + "m " + seconds + "s</strong>";
-	      
+
         document.getElementById("countdown3").innerHTML =
           "<strong>" + days + "d " + hours + "h " + minutes + "m " + seconds + "s</strong>";
       }
@@ -397,6 +397,12 @@
   $(document).ready(function() {
     var template = $("#faq-template").html();
     var faq = [
+      {
+        question:
+          "Mam pytanie, jak się z Wami skontaktować?",
+        answer:
+          "Napisz do nas na <a href=\"mailto:kontakt@poznajkubernetes.pl\">kontakt@poznajkubernetes.pl</a>"
+      },
       {
         question:
           "Co muszę wiedzieć przed rozpoczęciem kursu? Czy muszę znać docker?",
