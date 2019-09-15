@@ -188,6 +188,15 @@ ul,li{
 	padding-top: 5px;
 	padding-right: 50px;
 }
+.accordion .card-header:after {
+    font-family: 'FontAwesome';
+    content: "\f068";
+    float: right;
+}
+.accordion .card-header.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\f067"; 
+}
 @media (max-width: 768px){
 	.accordion{
 		padding-left: 5px;
@@ -198,7 +207,7 @@ ul,li{
 	border: 1px solid #deeefc;
     padding: 10px 10px 10px 10px;
 }
-.card h3{
+.card a{
 	font-weight: 300;
     position: relative;
     font-size: 20px;
@@ -996,12 +1005,12 @@ img{
 	padding:140px 0px 0px;
 	background-position:left top;
 	background-repeat:no-repeat;
-	background-size:cover;	
+	background-size:cover;
 }
 
 .banner-one .text-column,
 .banner-one .image-column{
-	margin-bottom:30px;	
+	margin-bottom:30px;
 }
 
 .banner-one .text-column .inner{
