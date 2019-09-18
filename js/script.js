@@ -359,7 +359,7 @@
       $("#agenda-menu").click();
       return false;
     });
-    var yourDateToGo = new Date("2019-09-18T21:00:00+02:00"); //new Date(); //here you're making new Date object
+    var yourDateToGo = new Date("2019-09-18T20:00:00+02:00"); //new Date(); //here you're making new Date object
     //yourDateToGo.setDate(yourDateToGo.getDate() + 1); //your're setting date in this object 1 day more from now
     //you can change number of days to go by putting any number in place of 1
     var timer = function() {
@@ -378,16 +378,20 @@
       //which id is countdown
       if (timeLeft <= 0) {
         clearInterval(timing);
-      } else {
-        //console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s");
-        document.getElementById("countdown").innerHTML =
+        days = "00";
+        hours = "00";
+        minutes = "00";
+        seconds = "00";
+      }
+
+      //console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s");
+      document.getElementById("countdown").innerHTML =
           "za " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
-        document.getElementById("countdown2").innerHTML =
+      document.getElementById("countdown2").innerHTML =
           "<strong>" + days + "d " + hours + "h " + minutes + "m " + seconds + "s</strong>";
 
-        document.getElementById("countdown3").innerHTML =
+      document.getElementById("countdown3").innerHTML =
           "<strong>" + days + "d " + hours + "h " + minutes + "m " + seconds + "s</strong>";
-      }
     }
     var timing = setInterval(
       timer,1000
