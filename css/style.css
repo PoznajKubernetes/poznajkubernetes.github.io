@@ -5148,11 +5148,15 @@ img{
 }
 
 .list-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .list-group li {
+  -ms-flex-negative: 0;
   flex-shrink: 0;
   width: 100%;
   margin-bottom: 8px;
