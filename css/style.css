@@ -496,11 +496,12 @@ ul,li{
 }
 
 .btn-style-dolacz{
-	position:relative;
+  position:relative;
+  margin-left: 10px;
 	padding:12px 45px;
 	line-height:26px;
 	/*background:#1fd1eb;*/
-	background: #f5d948;
+	background: #f0f00a;
 	font-size:16px;
 	font-weight:400;
 	color:black;
@@ -1231,9 +1232,9 @@ img{
 }
 
 .agenda-modules-title {
-
 	position:relative;
-	font-size:30px;
+  margin-bottom: 15px;
+  font-size:30px;
 	color:#3b3b3b;
 	font-weight:300;
 	line-height:1.4em;
@@ -5167,4 +5168,50 @@ img{
     width: 50%;
     padding-right: 5px;
   }
+}
+
+.panel-group .panel-heading {
+  padding: 0;
+}
+
+.panel-group .panel-heading a,
+.panel-group .panel-heading .static-hd {
+  display: block;
+  padding: 10px 15px;
+}
+
+.panel-group .panel-heading .glyphicon-plus {
+  display: none;
+}
+
+.panel-group .panel-heading a.collapsed .glyphicon-minus {
+  display: none;
+}
+
+.panel-group .panel-heading a.collapsed .glyphicon-plus {
+  display: inline-block;
+}
+
+.module-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.module-list li {
+  position: relative;
+  margin: 0 0 5px 0;
+  padding: 0 0 0 20px;
+  list-style-type: none;
+}
+
+.module-list li:before {
+  content: '';
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #f0f00a;
+  border-radius: 50%;
 }

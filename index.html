@@ -1,610 +1,635 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>Kurs Poznaj Kubernetes - Przedsprzedaż</title>
-<meta property="og:title" content="Kurs Poznaj Kubernetes" />
-<meta property="og:type" content="website" />
-<meta name="description" content="Najlepszy sposób, byś zyskał solidne podstawy w wytwarzaniu i dostarczaniu aplikacji w oparciu o kontenery i Kubernetes. Ta wiedza pozwoli Ci zaskoczyć niejednego „eksperta”. Już po 6 modułach będziesz potrafił użyć Kuberentes dla swojej aplikacji." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="og:image" content="https://poznajkubernetes.github.io/images/og-image.png?v5" />
-<link rel="canonical" href="https://poznajkubernetes.pl">
+  <meta charset="utf-8">
+  <title>Kurs Poznaj Kubernetes - Przedsprzedaż</title>
+  <meta property="og:title" content="Kurs Poznaj Kubernetes" />
+  <meta property="og:type" content="website" />
+  <meta name="description"
+    content="Najlepszy sposób, byś zyskał solidne podstawy w wytwarzaniu i dostarczaniu aplikacji w oparciu o kontenery i Kubernetes. Ta wiedza pozwoli Ci zaskoczyć niejednego „eksperta”. Już po 6 modułach będziesz potrafił użyć Kuberentes dla swojej aplikacji." />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="https://poznajkubernetes.github.io/images/og-image.png?v5" />
+  <link rel="canonical" href="https://poznajkubernetes.pl">
 
-<!-- Stylesheets -->
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/style.css?v=16" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/style.css?v=16" rel="stylesheet">
 
-<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-<link rel="icon" href="images/favicon.png" type="image/x-icon">
-<!-- Responsive -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<link href="css/responsive.css" rel="stylesheet">
-<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
-<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
+  <!-- Responsive -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link href="css/responsive.css" rel="stylesheet">
+  <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-W87FBQZ');</script>
-        <!-- End Google Tag Manager -->
-<!-- Facebook Pixel Code -->
-<script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '313040722397945');
-       fbq('init', '1200620883313556');
-        fbq('track', 'PageView');
-       </script>
-       <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=313040722397945&ev=PageView&noscript=1"
-       /></noscript>
-       <!-- End Facebook Pixel Code -->
-       <!-- MailerLite Universal -->
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-W87FBQZ');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Facebook Pixel Code -->
   <script>
-  (function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
-  var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
-  f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
-  var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
-  _.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
-  var ml_account = ml('accounts', '1685044', 'p7i8i7p7f9', 'load');
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '313040722397945');
+    fbq('init', '1200620883313556');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=313040722397945&ev=PageView&noscript=1" /></noscript>
+  <!-- End Facebook Pixel Code -->
+  <!-- MailerLite Universal -->
+  <script>
+    (function (m, a, i, l, e, r) {
+      m['MailerLiteObject'] = e; function f() {
+        var c = { a: arguments, q: [] }; var r = this.push(c); return "number" != typeof r ? r : f.bind(c.q);
+      }
+      f.q = f.q || []; m[e] = m[e] || f.bind(f.q); m[e].q = m[e].q || f.q; r = a.createElement(i);
+      var _ = a.getElementsByTagName(i)[0]; r.async = 1; r.src = l + '?v' + (~~(new Date().getTime() / 1000000));
+      _.parentNode.insertBefore(r, _);
+    })(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+    var ml_account = ml('accounts', '1685044', 'p7i8i7p7f9', 'load');
   </script>
   <!-- End MailerLite Universal -->
 </head>
 
 <body>
-
-<div class="page-wrapper">
+  <div class="page-wrapper">
     <!-- Main Header-->
     <header class="main-header">
-        <!-- Main Box -->
-    	<div class="main-box">
-        	<div class="auto-container">
-            	<div class="outer-container clearfix header-container">
-                    <!--Logo Box-->
-                    <div class="logo-box">
-                        <div class="logo"><img src="images/logo-light.svg"></div>
-                    </div>
-                    <!--Nav Outer-->
-                    <div class="nav-outer clearfix">
-                        <!-- Main Menu -->
-                        <nav class="main-menu">
-                            <div class="navbar-header">
-                                <!-- Toggle Button -->
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                            </div>
-                            <div class="navbar-collapse collapse scroll-nav clearfix">
-                                <ul class="navigation clearfix">
-                                    <li class="current"><a href="#banner">Start</a></li>
-                                    <li><a href="#benefits">Korzyści</a></li>
-                                    <li><a href="#who">Dla kogo?</a></li>
-                                    <li><a id="agenda-menu" href="#agenda">Agenda</a></li>
-                                    <li><a href="#faq">FAQ</a></li>
-                                    <li><a href="#authors">Autorzy</a></li>
-                                    <li><a href="#opinions">Opinie</a></li>
-                                    <li><a href="mailto:kontakt@poznajkubernetes.pl">Kontakt</a></li>
-                                    <li><a href="https://ebook.poznajkubernetes.pl">Ebook</a></li>
-                                 </ul>
-                            </div>
-                        </nav>
-                        <!-- Main Menu End-->
-                        <!--Other Links-->
-                        <div class="other-links">
-                            <!--a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">Kup Kurs</a-->
-                        </div>
-                    </div>
-                    <!--Nav Outer End-->
-            	</div>
+      <!-- Main Box -->
+      <div class="main-box">
+        <div class="auto-container">
+          <div class="outer-container clearfix header-container">
+            <!--Logo Box-->
+            <div class="logo-box">
+              <div class="logo"><img src="images/logo-light.svg" alt="Poznaj Kubernetes"></div>
             </div>
+            <!--Nav Outer-->
+            <div class="nav-outer clearfix">
+              <!-- Main Menu -->
+              <nav class="main-menu">
+                <div class="navbar-header">
+                  <!-- Toggle Button -->
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div class="navbar-collapse collapse scroll-nav clearfix">
+                  <ul class="navigation clearfix">
+                    <li class="current"><a href="#banner">Start</a></li>
+                    <li><a href="#benefits">Korzyści</a></li>
+                    <li><a href="#who">Dla kogo?</a></li>
+                    <li><a id="agenda-menu" href="#agenda">Agenda</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#authors">Autorzy</a></li>
+                    <li><a href="#opinions">Opinie</a></li>
+                    <li><a href="mailto:kontakt@poznajkubernetes.pl">Kontakt</a></li>
+                    <li><a href="https://ebook.poznajkubernetes.pl">Ebook</a></li>
+                  </ul>
+                </div>
+              </nav>
+              <!-- Main Menu End-->
+              <!--Other Links-->
+              <div class="other-links">
+                <!--a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">Kup Kurs</a-->
+              </div>
+            </div>
+            <!--Nav Outer End-->
+          </div>
         </div>
+      </div>
     </header>
     <!--End Main Header -->
     <!--Main Banner / Banner One-->
     <section class="main-banner banner-one" id="banner" style="background-image:url(images/background/banner-bg-1.png);">
-    	<div class="auto-container">
-          <div class="row clearfix">
-            	<!--Text Column-->
-                <div class="text-column col-md-6 col-sm-12 col-xs-12">
-                	<div class="inner">
-                    	  <h4 class="main-spacer">&nbsp;</h4>
-                        <h2 class="h2-big">Poznaj Kubernetes</h2>
-                        <p><strong>Najlepszy sposób, byś zyskał solidne podstawy</strong> w wytwarzaniu i dostarczaniu aplikacji w oparciu o <strong>kontenery i Kubernetes</strong>.
-                            Ta wiedza pozwoli Ci <strong>zaskoczyć niejednego „eksperta”</strong>.
-                            <strong>Już po 6 modułach</strong> będziesz potrafił użyć Kubernetes dla swojej aplikacji.</p>
+      <div class="auto-container">
+        <div class="row clearfix">
+          <!--Text Column-->
+          <div class="text-column col-md-6 col-sm-12 col-xs-12">
+            <div class="inner">
+              <h4 class="main-spacer">&nbsp;</h4>
+              <h2 class="h2-big">Poznaj Kubernetes</h2>
+              <p><strong>Najlepszy sposób, byś zyskał solidne podstawy</strong> w wytwarzaniu i dostarczaniu aplikacji w oparciu o
+                <strong>kontenery i Kubernetes</strong>.
+                Ta wiedza pozwoli Ci <strong>zaskoczyć niejednego „eksperta”</strong>.
+                <strong>Już po 6 modułach</strong> będziesz potrafił użyć Kubernetes dla swojej aplikacji.</p>
 
-                                <!--p>Cena PROMOCYJNA: <strong style="font-size: 30px">987 PLN brutto!</strong></p-->
-                                <!--div>Do końca PROMOCJI i przedsprzedaży pozostało</div-->
-                                <h2 class="h2-big"><span id="countdown2">Wracamy w&nbsp;listopadzie</span></h2>
-                        <!--a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">KUP KURS <span class="icon ti-arrow-circle-right"></span></a-->
-                        <a href="javascript:;" class="theme-btn btn-style-one" onclick="ml_account('webforms', '1514972', 'c7i8u7', 'show')">
-                          Dołącz do listy <span class="icon ti-arrow-circle-right"></span>
-                        </a>
-                        <a href="#agenda" class="agenda-second-button" style="padding-left: 20px; text-decoration: underline">Agenda</a>
-                    </div>
-                </div>
-
-                <!--Image Column-->
-                <div class="image-column col-md-6 col-sm-12 col-xs-12">
-                	<div class="inner">
-                    	<figure class="image"><img src="images/transport/ship.svg" alt=""></figure>
-                    </div>
-                </div>
+              <!--p>Cena PROMOCYJNA: <strong style="font-size: 30px">987 PLN brutto!</strong></p-->
+              <!--div>Do końca PROMOCJI i przedsprzedaży pozostało</div-->
+              <h2 class="h2-big"><span id="countdown2">Wracamy w&nbsp;listopadzie</span></h2>
+              <!--a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">KUP KURS <span class="icon ti-arrow-circle-right"></span></a-->
+              <a href="javascript:;" class="theme-btn btn-style-one" onclick="ml_account('webforms', '1514972', 'c7i8u7', 'show')">
+                Dołącz do listy <span class="icon ti-arrow-circle-right"></span>
+              </a>
+              <a href="#agenda" class="agenda-second-button" style="padding-left: 20px; text-decoration: underline">Agenda</a>
             </div>
+          </div>
+
+          <!--Image Column-->
+          <div class="image-column col-md-6 col-sm-12 col-xs-12">
+            <div class="inner">
+              <figure class="image"><img src="images/transport/ship.svg" alt=""></figure>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-  	<!--End Main Banner-->
+    <!--End Main Banner-->
     <!--Products Section-->
-         <section class="products-section" id="benefits">
-    	<div class="auto-container">
-        	<!--Heading-->
-        	<div class="sec-title">
-            	<div class="icon"><figure class="image"><img src="images/icons/icon-2.png" alt=""></figure></div>
-                <h2>Korzyści wzięcia udziału w kursie</h2>
-                <div class="clearfix desc-text">
-                        <ul class="list-group benefits-list-header">
-                            <li><strong>80% czasu </strong>spędzisz na ćwiczeniach</li>
-                                <li class="col-md-6">Zrozumiesz fundamenty Kubernetes</li>
-                                <li class="col-md-6">Postawisz Kubernetes w chmurze i lokalnie</li>
-                                <li class="col-md-6">Wykorzystasz <strong>Dockera</strong></li>
-                                <li class="col-md-6">Stworzysz Load Balancera</li>
-                                <li class="col-md-6">Skonfigurujesz Reverse Proxy (ingress)</li>
-                                <li class="col-md-6">Podepniesz zasoby przestrzeni dyskowej pod aplikację</li>
-                                <li class="col-md-6">Wykorzystasz zmienne środowiskowe manualnie i dynamicznie</li>
-                                <li class="col-md-6">Zdeployujesz aplikację automatycznie na X serwerów</li>
-                                <li class="col-md-6">Zeskalujesz aplikację w zależności od jej użycia</li>
-                                <li class="col-md-6">Wykonasz ZERO Downtime Deployment!</li>
-                                <li class="col-md-6">Przeanalizujesz dlaczego aplikacja nie działa</li>
-                                <li class="col-md-6">Dowiesz się dlaczego wykorzystujemy ster od statku na obrazkach</li>
-                                <li class="col-md-6">Naprawisz problemy deploymentu z poziomu linii poleceń</li>
-                                <li class="col-md-6">Komenda <code>git push</code> spowoduje, że na Twoje rozwiązanie automatycznie się z deployuje</li>
-                                <li class="col-md-6"><strong>I dużo, dużo więcej. Wszystko pod okiem prawdopodobnie jednych z najlepszych
-                                    instruktorów w Polsce.</strong></li>
-                        </ul>
-                    </div>
-            </div>
+    <section class="products-section" id="benefits">
+      <div class="auto-container">
+        <!--Heading-->
+        <div class="sec-title">
+          <div class="icon">
+            <figure class="image"><img src="images/icons/icon-2.png" alt=""></figure>
+          </div>
+          <h2>Korzyści wzięcia udziału w kursie</h2>
+          <div class="clearfix desc-text">
+            <ul class="list-group benefits-list-header">
+              <li><strong>80% czasu </strong>spędzisz na ćwiczeniach</li>
+              <li class="col-md-6">Zrozumiesz fundamenty Kubernetes</li>
+              <li class="col-md-6">Postawisz Kubernetes w chmurze i lokalnie</li>
+              <li class="col-md-6">Wykorzystasz <strong>Dockera</strong></li>
+              <li class="col-md-6">Stworzysz Load Balancera</li>
+              <li class="col-md-6">Skonfigurujesz Reverse Proxy (ingress)</li>
+              <li class="col-md-6">Podepniesz zasoby przestrzeni dyskowej pod aplikację</li>
+              <li class="col-md-6">Wykorzystasz zmienne środowiskowe manualnie i dynamicznie</li>
+              <li class="col-md-6">Zdeployujesz aplikację automatycznie na X serwerów</li>
+              <li class="col-md-6">Zeskalujesz aplikację w zależności od jej użycia</li>
+              <li class="col-md-6">Wykonasz ZERO Downtime Deployment!</li>
+              <li class="col-md-6">Przeanalizujesz dlaczego aplikacja nie działa</li>
+              <li class="col-md-6">Dowiesz się dlaczego wykorzystujemy ster od statku na obrazkach</li>
+              <li class="col-md-6">Naprawisz problemy deploymentu z poziomu linii poleceń</li>
+              <li class="col-md-6">Komenda <code>git push</code> spowoduje, że na Twoje rozwiązanie automatycznie się z deployuje</li>
+              <li class="col-md-6"><strong>I dużo, dużo więcej. Wszystko pod okiem prawdopodobnie jednych z najlepszych
+                  instruktorów w Polsce.</strong></li>
+            </ul>
+          </div>
         </div>
+      </div>
     </section>
     <section class="products-section" id="who">
-    	<div class="auto-container">
-        	<!--Heading-->
-        	<div class="sec-title">
-            	<div class="icon"><figure class="image"><img src="images/icons/icon-12.png" alt=""></figure></div>
-                <h2>Czy to jest kurs dla mnie?</h2>
-                <div class="desc-text">
-                    <p>Jeżeli pragniesz pracować z nowoczesną architekturą i masz ochotę poznać dobrze Kubernetes to jesteś we właściwym miejscu.</p>
-                </div>
-                <h2>Ale dlaczego właśnie Kubernetes?</h2>
-                <div class="desc-text">
-                    <p>Pewnie tak jak my cały czas słyszysz ludzi mówiących magiczne słowo: Kubernetes. Jak by to był Święty Graal informatyki.</p>
-                </div>
-                <div class="desc-text">
-                    <p>Ale zrozumienie go nie jest takie łatwe i niestety nie da się wdrożyć w nią w 5 minut. Żeby uzyskać dobre rezultaty potrzebne jest dobre wprowadzenie i solidne podstawy.
-                    Do tego sam Kubernetes jest tylko narzędziem, które służy do wdrażania rozwiązań rozproszonych, a to samo w sobie jest skomplikowane.</p>
-                </div>
-                <div class="desc-text">
-                    <p>Przejście tego początkowego etapu jest trudne. Sami wiemy to bardzo dobrze i dlatego chcemy Ci pomóc.</p>
-                </div>
-                <h2>Co muszę wiedzieć żeby przystąpić do kursu? Czy nauczycie mnie <b>docker</b>?</h2>
-                <div class="desc-text">
-                    <p>Do kursu potrzeba znajomości konsoli (najlepiej bash, ale cmd i PowerShell też dają radę),
-                      ogólnej wiedzy na temat budowania aplikacji backend (w dowolnym języku) oraz dobrych chęci.
-                            Resztę pokażemy i wyjaśnimy!</p>
-                    <p>A co z <b>docker</b>? Na samym początku przekażemy Ci wiedzę, która wystarcza w 90% przypadków.
-                      Jeżeli już ją znasz, to pominiesz ten kawałek.</p>
-                    <p>W trakcie kursu, gdy będziemy poznawać tajniki K8s, przy okazji dowiesz się więcej.
-                      Bo sam w sobie kontener to tylko taka paczka ZIP, reszta zależy właśnie od hostowania go.</p>
-                </div>
-                <h2>Ale do kogo konkretnie?</h2>
-                <div class="desc-text">
-                    <p>Dla każdego kto chce się nauczyć solidnie podstaw Kubernetes.
-                      Nie ważne czy jesteś architektem, Opsem, Devem czy DevOpsem.</p>
-                </div>
-            </div>
-            <!--Services-->
-            <!--div class="services-outer clearfix">
-            </div-->
+      <div class="auto-container">
+        <!--Heading-->
+        <div class="sec-title">
+          <div class="icon">
+            <figure class="image"><img src="images/icons/icon-12.png" alt=""></figure>
+          </div>
+          <h2>Czy to jest kurs dla mnie?</h2>
+          <div class="desc-text">
+            <p>Jeżeli pragniesz pracować z nowoczesną architekturą i masz ochotę poznać dobrze Kubernetes to jesteś we właściwym miejscu.
+            </p>
+          </div>
+          <h2>Ale dlaczego właśnie Kubernetes?</h2>
+          <div class="desc-text">
+            <p>Pewnie tak jak my cały czas słyszysz ludzi mówiących magiczne słowo: Kubernetes. Jak by to był Święty Graal informatyki.</p>
+          </div>
+          <div class="desc-text">
+            <p>Ale zrozumienie go nie jest takie łatwe i niestety nie da się wdrożyć w nią w 5 minut. Żeby uzyskać dobre rezultaty potrzebne
+              jest dobre wprowadzenie i solidne podstawy.
+              Do tego sam Kubernetes jest tylko narzędziem, które służy do wdrażania rozwiązań rozproszonych, a to samo w sobie jest
+              skomplikowane.</p>
+          </div>
+          <div class="desc-text">
+            <p>Przejście tego początkowego etapu jest trudne. Sami wiemy to bardzo dobrze i dlatego chcemy Ci pomóc.</p>
+          </div>
+          <h2>Co muszę wiedzieć żeby przystąpić do kursu? Czy nauczycie mnie <b>docker</b>?</h2>
+          <div class="desc-text">
+            <p>Do kursu potrzeba znajomości konsoli (najlepiej bash, ale cmd i PowerShell też dają radę),
+              ogólnej wiedzy na temat budowania aplikacji backend (w dowolnym języku) oraz dobrych chęci.
+              Resztę pokażemy i wyjaśnimy!</p>
+            <p>A co z <b>docker</b>? Na samym początku przekażemy Ci wiedzę, która wystarcza w 90% przypadków.
+              Jeżeli już ją znasz, to pominiesz ten kawałek.</p>
+            <p>W trakcie kursu, gdy będziemy poznawać tajniki K8s, przy okazji dowiesz się więcej.
+              Bo sam w sobie kontener to tylko taka paczka ZIP, reszta zależy właśnie od hostowania go.</p>
+          </div>
+          <h2>Ale do kogo konkretnie?</h2>
+          <div class="desc-text">
+            <p>Dla każdego kto chce się nauczyć solidnie podstaw Kubernetes.
+              Nie ważne czy jesteś architektem, Opsem, Devem czy DevOpsem.</p>
+          </div>
         </div>
+        <!--Services-->
+        <!--div class="services-outer clearfix">
+            </div-->
+      </div>
     </section>
 
     <section class="products-section" id="agenda">
-            <div class="auto-container">
-                <!--Heading-->
-                <div class="sec-title">
-                    <div class="icon"><figure class="image"><img src="images/icons/icon-28.png" alt=""></figure></div>
-                    <h2>Agenda, czyli co jest w środku</h2>
-                    <div class="clearfix desc-text">
-                        <ul class="list-group module-list-header">
-                            <li class="col-md-6">Slajdy z teorią do których zawsze będziesz miał dostęp</li>
-                            <li class="col-md-6">Przykłady, ćwiczenia oraz rozwiązania z wyjaśnieniem</li>
-                            <li class="col-md-6">12 modułów dotyczących zagadnień Kubernetes</li>
-                            <li class="col-md-6">3 moduły bonusowe na które masz wpływ</li>
-                            <li class="col-md-6">3 spotkania LIVE z czego jedno o <b>Windows Containers</b></li>
-                            <li class="col-md-6">Dodatkowo dostęp 24 na 7 do grupy eksperckiej</li>
-                        </ul>
-                    </div>
-                    <div class="clearfix desc-text">
-                        <p>Jeżeli nie jesteś pewien czy jest to kurs dla Ciebie sprawdź sekcję <a href="#who">dla kogo?</a></p>
-                    </div>
+      <div class="auto-container">
+        <!--Heading-->
+        <div class="sec-title">
+          <div class="icon">
+            <figure class="image"><img src="images/icons/icon-28.png" alt=""></figure>
+          </div>
+          <h2>Agenda, czyli co jest w środku</h2>
+          <div class="clearfix desc-text">
+            <ul class="list-group module-list-header">
+              <li class="col-md-6">Slajdy z teorią do których zawsze będziesz miał dostęp</li>
+              <li class="col-md-6">Przykłady, ćwiczenia oraz rozwiązania z wyjaśnieniem</li>
+              <li class="col-md-6">12 modułów dotyczących zagadnień Kubernetes</li>
+              <li class="col-md-6">3 moduły bonusowe na które masz wpływ</li>
+              <li class="col-md-6">3 spotkania LIVE z czego jedno o <b>Windows Containers</b></li>
+              <li class="col-md-6">Dodatkowo dostęp 24 na 7 do grupy eksperckiej</li>
+            </ul>
+          </div>
+          <div class="clearfix desc-text">
+            <p>Jeżeli nie jesteś pewien czy jest to kurs dla Ciebie sprawdź sekcję <a href="#who">dla kogo?</a></p>
+          </div>
+        </div>
+        <!--Services-->
+        <h2 class="agenda-modules-title">Moduły</h2>
+        <div class="clearfix">
+          <div class="clearfix">
+            <div class="panel-group" id="accordion-modules" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" id="accordion-modules-hd-1" role="tab">
+                  <h4 class="panel-title">
+                    <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordion-modules"
+                      href="#accordion-modules-ct-1" aria-expanded="false" aria-controls="accordion-modules-ct-1">
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                      Moduł 1 - Podstawowe pojęcia, Docker i praca z kursem
+                    </a>
+                  </h4>
                 </div>
-                <!--Services-->
-                <h2 class="agenda-modules-title">Moduły</h2>
-                <div class="clearfix">
-                    <div class="clearfix">
-                        <div class="accordion" id="accordionExample">
-                          <div class="card">
-                            <div class="card-header" id="heading1">
-                              <h3 class="mb-0">
-                                Moduł 1 - Podstawowe pojęcia, Docker i praca z kursem
-                                <button class="btn" type="button" data-toggle="collapse" aria-expanded="true"
-                                    data-target="#collapse1" aria-controls="collapse1">
-                                    Więcej
-                                </button>
-                              </h3>
-                            </div>
-                            <div id="collapse1" aria-labelledby="heading1" class="collapse" data-parent="#accordionExample">
-                              <div class="card-body">
-                                <div class="text">
-                                    <ul class="list-group row module-list">
-                                        <li class="col-md-6 col-xs-12">Wprowadzenie do mechaniki kursu</li>
-                                        <li class="col-md-6 col-xs-12">Przygotowanie komputera do kursu</li>
-                                        <li class="col-md-6 col-xs-12">Podstawy architektury systemów rozproszonych (opartych o K8s)</li>
-                                        <li class="col-md-6 col-xs-12">Docker i repozytoria obrazów – najlepsze praktyki pokrywające 90% pracy z docker</li>
-                                        <li class="col-md-6 col-xs-12">Podstawowe pojęcia w Kubernetes z lotu ptaka, czyli jak będzie wyglądało wprowadzenie poszczególnych elementów</li>
-                                        <li class="col-md-6 col-xs-12">Praca deklaratywna i imperatywna. W tym wytłumaczenie podejścia manifestu</li>
-                                    </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card">
-                            <div class="card-header" id="heading2">
-                              <h3 class="mb-0">
-                                Moduł 2 - POD - podstawowy obiekt
-                                <button class="btn" type="button" data-toggle="collapse" aria-expanded="true"
-                                    data-target="#collapse2" aria-controls="collapse2">
-                                    Więcej
-                                </button>
-                              </h3>
-                            </div>
-                            <div id="collapse2" aria-labelledby="heading2" class="collapse" data-parent="#accordionExample">
-                              <div class="card-body">
-                                <div class="text">
-                                    <ul class="list-group row module-list">
-                                        <li class="col-md-6 col-xs-12">Uruchamianie aplikacji</li>
-                                        <li class="col-md-6 col-xs-12">Health Checks – czy aplikacja już i czy jeszcze żyje?</li>
-                                        <li class="col-md-6 col-xs-12">Zarządzanie zasobami (cpu i ram)</li>
-                                        <li class="col-md-6 col-xs-12">Podstawy debugowania!</li>
-                                        <li class="col-md-6 col-xs-12">Jak dostać się do aplikacji? Konsola i różne inne sposóby dostępu.</li>
-                                        <li class="col-md-6 col-xs-12">Do każdego punktu przykłady i ćwiczenia do wykonania</li>
-                                    </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card">
-                            <div class="card-header" id="heading3">
-                              <h3 class="mb-0">
-                                Moduł 3 - Podstawy konfiguracji
-                                <button class="btn" type="button" data-toggle="collapse" aria-expanded="true"
-                                    data-target="#collapse3" aria-controls="collapse3">
-                                    Więcej
-                                </button>
-                              </h3>
-                            </div>
-                            <div id="collapse3" aria-labelledby="heading3" class="collapse" data-parent="#accordionExample">
-                              <div class="card-body">
-                                <div class="text">
-                                    <ul class="list-group row module-list">
-                                        <li class="col-md-6 col-xs-12">ConfigMap - jak dostarczyć konfigurację do aplikacji?</li>
-                                        <li class="col-md-6 col-xs-12">Tworzenie, usuwanie, zarządzanie oraz restrykcje</li>
-                                        <li class="col-md-6 col-xs-12">Secrets - jak dostarczać "wrażliwą" konfigurację np. connection string czy hasła</li>
-                                        <li class="col-md-6 col-xs-12">Dużo ćwiczeń praktycznych</li>
-                                    </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card">
-                            <div class="card-header" id="heading4">
-                              <h3 class="mb-0">
-                                Moduł 4 - Grupowanie i wybieranie
-                                <button class="btn" type="button" data-toggle="collapse" aria-expanded="true"
-                                    data-target="#collapse4" aria-controls="collapse4">
-                                    Więcej
-                                </button>
-                              </h3>
-                            </div>
-                            <div id="collapse4" aria-labelledby="heading4" class="collapse" data-parent="#accordionExample">
-                              <div class="card-body">
-                                <div class="text">
-                                    <ul class="list-group row module-list">
-                                        <li class="col-md-6 col-xs-12">Etykiety (label)</li>
-                                        <li class="col-md-6 col-xs-12">Adnotacje (annotations)</li>
-                                        <li class="col-md-6 col-xs-12">No i oczywiście kilka ćwiczeń, żeby dobrze zapamiętać jak to działa :)</li>
-                                    </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card">
-                            <div class="card-header" id="heading5">
-                              <h3 class="mb-0">
-                                Moduł 5 - Serwisy i Service Discovery
-                                <button class="btn" type="button" data-toggle="collapse" aria-expanded="true"
-                                    data-target="#collapse5" aria-controls="collapse5">
-                                    Więcej
-                                </button>
-                              </h3>
-                            </div>
-                            <div id="collapse5" aria-labelledby="heading5" class="collapse" data-parent="#accordionExample">
-                              <div class="card-body">
-                                <div class="text">
-                                    <ul class="list-group row module-list">
-                                        <li class="col-md-6 col-xs-12">Czym jest Service Discovery</li>
-                                        <li class="col-md-6 col-xs-12">Obiekt serwisu i jego odmiany</li>
-                                        <li class="col-md-6 col-xs-12">Działanie DNS w K8s i Service Discovery</li>
-                                        <li class="col-md-6 col-xs-12">Jak się mają Health Checks do Service Discovery</li>
-                                        <li class="col-md-6 col-xs-12">Serwisy i integrację z chmurą</li>
-                                        <li class="col-md-6 col-xs-12">Ręczne Service Discovery</li>
-                                        <li class="col-md-6 col-xs-12">Service Discovery i zmienne środowiskowe – takie coś istnieje!</li>
-                                        <li class="col-md-6 col-xs-12">ĆĆĆ czyli ćwiczenia, ćwiczenia i ćwiczenia</li>
-                                    </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card">
-                            <div class="card-header" id="heading6">
-                              <h3 class="mb-0">
-                                Moduł 6 - Deployment
-                                <button class="btn" type="button" data-toggle="collapse" aria-expanded="true"
-                                    data-target="#collapse6" aria-controls="collapse6">
-                                    Więcej
-                                </button>
-                              </h3>
-                            </div>
-                            <div id="collapse6" aria-labelledby="heading6" class="collapse" data-parent="#accordionExample">
-                              <div class="card-body">
-                                <div class="text">
-                                    <ul class="list-group row module-list">
-                                        <li class="col-md-6 col-xs-12">Tworzenie, zarządzanie i aktualizacje Deployment</li>
-                                        <li class="col-md-6 col-xs-12">Skalowanie aplikacji</li>
-                                        <li class="col-md-6 col-xs-12">Zmiana obrazu</li>
-                                        <li class="col-md-6 col-xs-12">Co jak i kiedy się zmieniło czyli historia</li>
-                                        <li class="col-md-6 col-xs-12">Podstawowe strategie wdrożeń: recreate i rolling update</li>
-                                        <li class="col-md-6 col-xs-12">Po co jest obiekt ReplicaSet i do czego służy</li>
-                                        <li class="col-md-6 col-xs-12">Dużo przykładów, ćwiczeń do wykonania</li>
-                                    </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card">
-                            <div class="card-header" id="heading7">
-                              <h3 class="mb-0">
-                                Moduł 7 - Ingress - zaawansowane udostępnianie aplikacji
-                                <button class="btn" type="button" data-toggle="collapse" aria-expanded="true"
-                                    data-target="#collapse7" aria-controls="collapse7">
-                                    Więcej
-                                </button>
-                              </h3>
-                            </div>
-                            <div id="collapse7" aria-labelledby="heading7" class="collapse" data-parent="#accordionExample">
-                              <div class="card-body">
-                                <div class="text">
-                                    <ul class="list-group row module-list">
-                                        <li class="col-md-6 col-xs-12">Wdrożenie Ingress Controller</li>
-                                        <li class="col-md-6 col-xs-12">Pierwsza reguła na Ingress</li>
-                                        <li class="col-md-6 col-xs-12">Przypisywanie ścieżek</li>
-                                        <li class="col-md-6 col-xs-12">Routing na bazie ścieżek</li>
-                                        <li class="col-md-6 col-xs-12">Testy na bazie cookies, header czy procentach ruchu</li>
-                                        <li class="col-md-6 col-xs-12">Zabezpieczenia ruchu (w tym Let’s Encrypt)</li>
-                                        <li class="col-md-6 col-xs-12">Oczywiście przeplatane dużą ilością "Ć"</li>
-                                    </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card">
-                            <div class="card-header" id="heading8">
-                              <h3 class="mb-0">
-                                Moduł 8 - Zadania wsadowe i cykliczne
-                                <button class="btn" type="button" data-toggle="collapse" aria-expanded="true"
-                                    data-target="#collapse8" aria-controls="collapse8">
-                                    Więcej
-                                </button>
-                              </h3>
-                            </div>
-                            <div id="collapse8" aria-labelledby="heading8" class="collapse" data-parent="#accordionExample">
-                              <div class="card-body">
-                                <div class="text">
-                                    <ul class="list-group row module-list">
-                                        <li class="col-md-6 col-xs-12">Zadania wsadowe czyli Job</li>
-                                        <li class="col-md-6 col-xs-12">Jak odpalać co jakiś czas zadanie z kontenerem, czyli CronJob</li>
-                                        <li class="col-md-6 col-xs-12">Ćwiczenia i przykłady!</li>
-                                    </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card">
-                            <div class="card-header" id="heading9">
-                              <h3 class="mb-0">
-                                Moduł 9 - DaemonSets
-                                <button class="btn" type="button" data-toggle="collapse" aria-expanded="true"
-                                    data-target="#collapse9" aria-controls="collapse9">
-                                    Więcej
-                                </button>
-                              </h3>
-                            </div>
-                            <div id="collapse9" aria-labelledby="heading9" class="collapse" data-parent="#accordionExample">
-                              <div class="card-body">
-                                <div class="text">
-                                    <ul class="list-group row module-list">
-                                        <li class="col-md-6 col-xs-12">Jak uruchomić pod na każdej maszynie w naszym klastrze? Czyli DemonSet w praktyce</li>
-                                        <li class="col-md-6 col-xs-12">Odpowiedzi na "po co?" i "dlaczego?" wraz z przykładami</li>
-                                        <li class="col-md-6 col-xs-12">Ćwiczenia? Oczywiście, że tak :)</li>
-                                    </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card">
-                            <div class="card-header" id="heading10">
-                              <h3 class="mb-0">
-                                Moduł 10 - Wolumeny
-                                <button class="btn" type="button" data-toggle="collapse" aria-expanded="true"
-                                    data-target="#collapse10" aria-controls="collapse10">
-                                    Więcej
-                                </button>
-                              </h3>
-                            </div>
-                            <div id="collapse10" aria-labelledby="heading10" class="collapse" data-parent="#accordionExample">
-                              <div class="card-body">
-                                <div class="text">
-                                    <ul class="list-group row module-list">
-                                        <li class="col-md-6 col-xs-12">Używanie wolumenów w Pod</li>
-                                        <li class="col-md-6 col-xs-12">Do czego można użyć wolumenów?</li>
-                                        <li class="col-md-6 col-xs-12">Komunikacja i synchronizacja</li>
-                                        <li class="col-md-6 col-xs-12">Przechowywanie danych i cache</li>
-                                        <li class="col-md-6 col-xs-12">Ćwiczenia i przykłady… tak musi być tego dużo!</li>
-                                    </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card">
-                                <div class="card-header" id="heading11">
-                                  <h3 class="mb-0">
-                                    Moduł 11 - Aplikacje stanowe i bazy danych
-                                    <button class="btn" type="button" data-toggle="collapse" aria-expanded="true"
-                                        data-target="#collapse11" aria-controls="collapse11">
-                                        Więcej
-                                    </button>
-                                  </h3>
-                                </div>
-                                <div id="collapse11" aria-labelledby="heading11" class="collapse" data-parent="#accordionExample">
-                                  <div class="card-body">
-                                    <div class="text">
-                                        <ul class="list-group row module-list">
-                                            <li class="col-md-6 col-xs-12">Czym jest StatefulSet.</li>
-                                            <li class="col-md-6 col-xs-12">Jak się zachowuje i z czego to wynika</li>
-                                            <li class="col-md-6 col-xs-12">Ćwiczenia i przykłady, bo praktyka jest ważna</li>
-                                        </ul>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="heading12">
-                                  <h3 class="mb-0">
-                                    Moduł 12 - Podsumowanie czyli jak wyglądają prawdziwe aplikacje na Kubernetes
-                                    <button class="btn" type="button" data-toggle="collapse" aria-expanded="true"
-                                        data-target="#collapse12" aria-controls="collapse12">
-                                        Więcej
-                                    </button>
-                                  </h3>
-                                </div>
-                                <div id="collapse12" aria-labelledby="heading12" class="collapse" data-parent="#accordionExample">
-                                  <div class="card-body">
-                                    <div class="text">
-                                        <ul class="list-group row module-list">
-                                            <li class="col-md-6 col-xs-12">Monolity</li>
-                                            <li class="col-md-6 col-xs-12">Mikro serwisy</li>
-                                            <li class="col-md-6 col-xs-12">Serverless</li>
-                                            <li class="col-md-6 col-xs-12">Co dalej?</li>
-                                        </ul>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-                                <div class="card">
-                                    <div class="card-header" id="heading13">
-                                      <h3 class="mb-0">
-                                        Bonus 1 - CI/CD
-                                        <button class="btn" type="button" data-toggle="collapse" aria-expanded="true"
-                                            data-target="#collapse13" aria-controls="collapse13">
-                                            Więcej
-                                        </button>
-                                      </h3>
-                                    </div>
-                                    <div id="collapse13" aria-labelledby="heading13" class="collapse" data-parent="#accordionExample">
-                                      <div class="card-body">
-                                        <div class="text">
-                                            <ul class="list-group row module-list">
-                                                <li class="col-md-6 col-xs-12">Azure DevOps</li>
-                                                <li class="col-md-6 col-xs-12">#1 narzędzie wybrane przez uczestników</li>
-                                                <li class="col-md-6 col-xs-12">#2 narzędzie wybrane przez uczestników</li>
-                                            </ul>
-                                        </div>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" id="heading14">
-                                      <h3 class="mb-0">
-                                        Bonus 2 - K8s w chmurach versus on-premises
-                                        <button class="btn" type="button" data-toggle="collapse" aria-expanded="true"
-                                            data-target="#collapse14" aria-controls="collapse14">
-                                            Więcej
-                                        </button>
-                                      </h3>
-                                    </div>
-                                    <div id="collapse14" aria-labelledby="heading14" class="collapse" data-parent="#accordionExample">
-                                      <div class="card-body">
-                                        <div class="text">
-                                            <ul class="list-group row module-list">
-                                                <li class="col-md-6 col-xs-12">Alfabetycznie: Azure, AWS, GCP, Digital Ocean</li>
-                                                <li class="col-md-6 col-xs-12">Podejścia do on-premises</li>
-                                                <li class="col-md-6 col-xs-12">Różnice i podobieństwa</li>
-                                            </ul>
-                                        </div>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" id="heading15">
-                                      <h3 class="mb-0">
-                                        Bonus 3 - Temat wybrany przez uczestników przedsprzedaży
-                                      </h3>
-                                    </div>
-                                </div>
-                        </div>
-                    </div>
+                <div id="accordion-modules-ct-1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-modules-hd-1">
+                  <div class="panel-body">
+                    <ul class="list-group row module-list">
+                      <li class="col-md-6 col-xs-12">Wprowadzenie do mechaniki kursu</li>
+                      <li class="col-md-6 col-xs-12">Przygotowanie komputera do kursu</li>
+                      <li class="col-md-6 col-xs-12">Podstawy architektury systemów rozproszonych (opartych o K8s)</li>
+                      <li class="col-md-6 col-xs-12">Docker i repozytoria obrazów – najlepsze praktyki pokrywające 90% pracy z docker</li>
+                      <li class="col-md-6 col-xs-12">Podstawowe pojęcia w Kubernetes z lotu ptaka, czyli jak będzie wyglądało wprowadzenie
+                        poszczególnych elementów</li>
+                      <li class="col-md-6 col-xs-12">Praca deklaratywna i imperatywna. W tym wytłumaczenie podejścia manifestu</li>
+                    </ul>
+                  </div>
                 </div>
-                    <div class="row clearfix" style="padding-top: 20px;">
-                    <div class="text-center">
-                        <!--a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">KUP KURS JUŻ TERAZ!</a-->
-                    </div>
-                    </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab">
+                  <h4 class="panel-title">
+                    <a class="panel-heading collapsed" id="accordion-modules-hd-2" role="button" data-toggle="collapse"
+                      data-parent="#accordion-modules" href="#accordion-modules-ct-2" aria-expanded="false"
+                      aria-controls="accordion-modules-ct-2">
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                      Moduł 2 - POD - podstawowy obiekt
+                    </a>
+                  </h4>
+                </div>
+                <div id="accordion-modules-ct-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-modules-hd-2">
+                  <div class="panel-body">
+                    <ul class="list-group row module-list">
+                      <li class="col-md-6 col-xs-12">Uruchamianie aplikacji</li>
+                      <li class="col-md-6 col-xs-12">Health Checks – czy aplikacja już i czy jeszcze żyje?</li>
+                      <li class="col-md-6 col-xs-12">Zarządzanie zasobami (cpu i ram)</li>
+                      <li class="col-md-6 col-xs-12">Podstawy debugowania!</li>
+                      <li class="col-md-6 col-xs-12">Jak dostać się do aplikacji? Konsola i różne inne sposóby dostępu.</li>
+                      <li class="col-md-6 col-xs-12">Do każdego punktu przykłady i ćwiczenia do wykonania</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab">
+                  <h4 class="panel-title">
+                    <a class="collapsed" id="accordion-modules-hd-3" role="button" data-toggle="collapse" data-parent="#accordion-modules"
+                      href="#accordion-modules-ct-3" aria-expanded="false" aria-controls="accordion-modules-ct-3">
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                      Moduł 3 - Podstawy konfiguracji
+                    </a>
+                  </h4>
+                </div>
+                <div id="accordion-modules-ct-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-modules-hd-3">
+                  <div class="panel-body">
+                    <ul class="list-group row module-list">
+                      <li class="col-md-6 col-xs-12">ConfigMap - jak dostarczyć konfigurację do aplikacji?</li>
+                      <li class="col-md-6 col-xs-12">Tworzenie, usuwanie, zarządzanie oraz restrykcje</li>
+                      <li class="col-md-6 col-xs-12">Secrets - jak dostarczać "wrażliwą" konfigurację np. connection string czy hasła</li>
+                      <li class="col-md-6 col-xs-12">Dużo ćwiczeń praktycznych</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab">
+                  <h4 class="panel-title">
+                    <a class="collapsed" id="accordion-modules-hd-4" role="button" data-toggle="collapse" data-parent="#accordion-modules"
+                      href="#accordion-modules-ct-4" aria-expanded="false" aria-controls="accordion-modules-ct-4">
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                      Moduł 4 - Grupowanie i wybieranie
+                    </a>
+                  </h4>
+                </div>
+                <div id="accordion-modules-ct-4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-modules-hd-4">
+                  <div class="panel-body">
+                    <ul class="list-group row module-list">
+                      <li class="col-md-6 col-xs-12">Etykiety (label)</li>
+                      <li class="col-md-6 col-xs-12">Adnotacje (annotations)</li>
+                      <li class="col-md-6 col-xs-12">No i oczywiście kilka ćwiczeń, żeby dobrze zapamiętać jak to działa :)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab">
+                  <h4 class="panel-title">
+                    <a class="collapsed" id="accordion-modules-hd-5" role="button" data-toggle="collapse" data-parent="#accordion-modules"
+                      href="#accordion-modules-ct-5" aria-expanded="false" aria-controls="accordion-modules-ct-5">
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                      Moduł 5 - Serwisy i Service Discovery
+                    </a>
+                  </h4>
+                </div>
+                <div id="accordion-modules-ct-5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-modules-hd-5">
+                  <div class="panel-body">
+                    <ul class="list-group row module-list">
+                      <li class="col-md-6 col-xs-12">Czym jest Service Discovery</li>
+                      <li class="col-md-6 col-xs-12">Obiekt serwisu i jego odmiany</li>
+                      <li class="col-md-6 col-xs-12">Działanie DNS w K8s i Service Discovery</li>
+                      <li class="col-md-6 col-xs-12">Jak się mają Health Checks do Service Discovery</li>
+                      <li class="col-md-6 col-xs-12">Serwisy i integrację z chmurą</li>
+                      <li class="col-md-6 col-xs-12">Ręczne Service Discovery</li>
+                      <li class="col-md-6 col-xs-12">Service Discovery i zmienne środowiskowe – takie coś istnieje!</li>
+                      <li class="col-md-6 col-xs-12">ĆĆĆ czyli ćwiczenia, ćwiczenia i ćwiczenia</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab">
+                  <h4 class="panel-title">
+                    <a class="collapsed" id="accordion-modules-hd-6" role="button" data-toggle="collapse" data-parent="#accordion-modules"
+                      href="#accordion-modules-ct-6" aria-expanded="false" aria-controls="accordion-modules-ct-6">
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                      Moduł 6 - Deployment
+                    </a>
+                  </h4>
+                </div>
+                <div id="accordion-modules-ct-6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-modules-hd-6">
+                  <div class="panel-body">
+                    <ul class="list-group row module-list">
+                      <li class="col-md-6 col-xs-12">Tworzenie, zarządzanie i aktualizacje Deployment</li>
+                      <li class="col-md-6 col-xs-12">Skalowanie aplikacji</li>
+                      <li class="col-md-6 col-xs-12">Zmiana obrazu</li>
+                      <li class="col-md-6 col-xs-12">Co jak i kiedy się zmieniło czyli historia</li>
+                      <li class="col-md-6 col-xs-12">Podstawowe strategie wdrożeń: recreate i rolling update</li>
+                      <li class="col-md-6 col-xs-12">Po co jest obiekt ReplicaSet i do czego służy</li>
+                      <li class="col-md-6 col-xs-12">Dużo przykładów, ćwiczeń do wykonania</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab">
+                  <h4 class="panel-title">
+                    <a class="collapsed" id="accordion-modules-hd-7" role="button" data-toggle="collapse" data-parent="#accordion-modules"
+                      href="#accordion-modules-ct-7" aria-expanded="false" aria-controls="accordion-modules-ct-7">
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                      Moduł 7 - Ingress - zaawansowane udostępnianie aplikacji
+                    </a>
+                  </h4>
+                </div>
+                <div id="accordion-modules-ct-7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-modules-hd-7">
+                  <div class="panel-body">
+                    <ul class="list-group row module-list">
+                      <li class="col-md-6 col-xs-12">Wdrożenie Ingress Controller</li>
+                      <li class="col-md-6 col-xs-12">Pierwsza reguła na Ingress</li>
+                      <li class="col-md-6 col-xs-12">Przypisywanie ścieżek</li>
+                      <li class="col-md-6 col-xs-12">Routing na bazie ścieżek</li>
+                      <li class="col-md-6 col-xs-12">Testy na bazie cookies, header czy procentach ruchu</li>
+                      <li class="col-md-6 col-xs-12">Zabezpieczenia ruchu (w tym Let’s Encrypt)</li>
+                      <li class="col-md-6 col-xs-12">Oczywiście przeplatane dużą ilością "Ć"</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab">
+                  <h4 class="panel-title">
+                    <a class="collapsed" id="accordion-modules-hd-8" role="button" data-toggle="collapse" data-parent="#accordion-modules"
+                      href="#accordion-modules-ct-8" aria-expanded="false" aria-controls="accordion-modules-ct-8">
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                      Moduł 8 - Zadania wsadowe i cykliczne
+                    </a>
+                  </h4>
+                </div>
+                <div id="accordion-modules-ct-8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-modules-hd-8">
+                  <div class="panel-body">
+                    <ul class="list-group row module-list">
+                      <li class="col-md-6 col-xs-12">Zadania wsadowe czyli Job</li>
+                      <li class="col-md-6 col-xs-12">Jak odpalać co jakiś czas zadanie z kontenerem, czyli CronJob</li>
+                      <li class="col-md-6 col-xs-12">Ćwiczenia i przykłady!</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab">
+                  <h4 class="panel-title">
+                    <a class="collapsed" id="accordion-modules-hd-9" role="button" data-toggle="collapse" data-parent="#accordion-modules"
+                      href="#accordion-modules-ct-9" aria-expanded="false" aria-controls="accordion-modules-ct-9">
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                      Moduł 9 - DaemonSets
+                    </a>
+                  </h4>
+                </div>
+                <div id="accordion-modules-ct-9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-modules-hd-9">
+                  <div class="panel-body">
+                    <ul class="list-group row module-list">
+                      <li class="col-md-6 col-xs-12">Jak uruchomić pod na każdej maszynie w naszym klastrze? Czyli DemonSet w praktyce</li>
+                      <li class="col-md-6 col-xs-12">Odpowiedzi na "po co?" i "dlaczego?" wraz z przykładami</li>
+                      <li class="col-md-6 col-xs-12">Ćwiczenia? Oczywiście, że tak :)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab">
+                  <h4 class="panel-title">
+                    <a class="collapsed" id="accordion-modules-hd-10" role="button" data-toggle="collapse" data-parent="#accordion-modules"
+                      href="#accordion-modules-ct-10" aria-expanded="false" aria-controls="accordion-modules-ct-10">
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                      Moduł 10 - Wolumeny
+                    </a>
+                  </h4>
+                </div>
+                <div id="accordion-modules-ct-10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-modules-hd-10">
+                  <div class="panel-body">
+                    <ul class="list-group row module-list">
+                      <li class="col-md-6 col-xs-12">Używanie wolumenów w Pod</li>
+                      <li class="col-md-6 col-xs-12">Do czego można użyć wolumenów?</li>
+                      <li class="col-md-6 col-xs-12">Komunikacja i synchronizacja</li>
+                      <li class="col-md-6 col-xs-12">Przechowywanie danych i cache</li>
+                      <li class="col-md-6 col-xs-12">Ćwiczenia i przykłady… tak musi być tego dużo!</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab">
+                  <h4 class="panel-title">
+                    <a class="collapsed" id="accordion-modules-hd-11" role="button" data-toggle="collapse" data-parent="#accordion-modules"
+                      href="#accordion-modules-ct-11" aria-expanded="false" aria-controls="accordion-modules-ct-11">
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                      Moduł 11 - Aplikacje stanowe i bazy danych
+                    </a>
+                  </h4>
+                </div>
+                <div id="accordion-modules-ct-11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-modules-hd-11">
+                  <div class="panel-body">
+                    <ul class="list-group row module-list">
+                      <li class="col-md-6 col-xs-12">Czym jest StatefulSet.</li>
+                      <li class="col-md-6 col-xs-12">Jak się zachowuje i z czego to wynika</li>
+                      <li class="col-md-6 col-xs-12">Ćwiczenia i przykłady, bo praktyka jest ważna</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab">
+                  <h4 class="panel-title">
+                    <a class="collapsed" id="accordion-modules-hd-12" role="button" data-toggle="collapse" data-parent="#accordion-modules"
+                      href="#accordion-modules-ct-12" aria-expanded="false" aria-controls="accordion-modules-ct-12">
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                      Moduł 12 - Podsumowanie czyli jak wyglądają prawdziwe aplikacje na Kubernetes
+                    </a>
+                  </h4>
+                </div>
+                <div id="accordion-modules-ct-12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-modules-hd-12">
+                  <div class="panel-body">
+                    <ul class="list-group row module-list">
+                      <li class="col-md-6 col-xs-12">Monolity</li>
+                      <li class="col-md-6 col-xs-12">Mikro serwisy</li>
+                      <li class="col-md-6 col-xs-12">Serverless</li>
+                      <li class="col-md-6 col-xs-12">Co dalej?</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab">
+                  <h4 class="panel-title">
+                    <a class="collapsed" id="accordion-modules-hd-13" role="button" data-toggle="collapse" data-parent="#accordion-modules"
+                      href="#accordion-modules-ct-13" aria-expanded="false" aria-controls="accordion-modules-ct-13">
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                      Bonus 1 - CI/CD
+                    </a>
+                  </h4>
+                </div>
+                <div id="accordion-modules-ct-13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-modules-hd-13">
+                  <div class="panel-body">
+                    <ul class="list-group row module-list">
+                      <li class="col-md-6 col-xs-12">Azure DevOps</li>
+                      <li class="col-md-6 col-xs-12">#1 narzędzie wybrane przez uczestników</li>
+                      <li class="col-md-6 col-xs-12">#2 narzędzie wybrane przez uczestników</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab">
+                  <h4 class="panel-title">
+                    <a class="collapsed" id="accordion-modules-hd-14" role="button" data-toggle="collapse" data-parent="#accordion-modules"
+                      href="#accordion-modules-ct-14" aria-expanded="false" aria-controls="accordion-modules-ct-14">
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                      Bonus 2 - K8s w chmurach versus on-premises
+                    </a>
+                  </h4>
+                </div>
+                <div id="accordion-modules-ct-14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-modules-hd-14">
+                  <div class="panel-body">
+                    <ul class="list-group row module-list">
+                      <li class="col-md-6 col-xs-12">Alfabetycznie: Azure, AWS, GCP, Digital Ocean</li>
+                      <li class="col-md-6 col-xs-12">Podejścia do on-premises</li>
+                      <li class="col-md-6 col-xs-12">Różnice i podobieństwa</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading collapsed" id="accordion-modules-hd-15">
+                  <h4 class="panel-title">
+                    <span class="static-hd">
+                      Bonus 3 - Temat wybrany przez uczestników przedsprzedaży
+                    </span>
+                  </h4>
+                </div>
+              </div>
             </div>
+
+
+
+
+
+          </div>
+        </div>
+        <div class="row clearfix" style="padding-top: 20px;">
+          <div class="text-center">
+            <!--a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">KUP KURS JUŻ TERAZ!</a-->
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="products-section" id="faq">
-            <div class="auto-container">
-                <!--Heading-->
-                <div class="sec-title">
-                    <div class="icon"><figure class="image"><img src="images/icons/icon-10.png" alt=""></figure></div>
-                    <h2>FAQ</h2>
-                    <div class="desc-text">
-                    </div>
-                </div>
-                <!--Services-->
-                <div class="clearfix">
-                    <div class="clearfix">
-                        <script id="faq-template" type="text/x-custom-template">
+      <div class="auto-container">
+        <!--Heading-->
+        <div class="sec-title">
+          <div class="icon">
+            <figure class="image"><img src="images/icons/icon-10.png" alt=""></figure>
+          </div>
+          <h2>FAQ</h2>
+          <div class="desc-text">
+          </div>
+        </div>
+        <!--Services-->
+        <div class="clearfix">
+          <div class="clearfix">
+            <script id="faq-template" type="text/x-custom-template">
                             <div class="card">
                                 <div class="card-header" id="headingFAQ_XXX">
                                   <h3 class="mb-0">
@@ -624,8 +649,8 @@
                                 </div>
                             </div>
                         </script>
-                        <div class="accordion" id="accordionFAQ">
-                          <!--div class="card">
+            <div class="accordion" id="accordionFAQ">
+              <!--div class="card">
                             <div class="card-header" id="headingFAQ1">
                               <h3 class="mb-0">
                                 Co muszę wiedzieć przed rozpoczęciem kursu? Czy muszę znać docker?
@@ -680,260 +705,270 @@
                               </div>
                             </div>
                           </div-->
-                        </div>
-                    </div>
-                </div>
             </div>
+          </div>
+        </div>
+      </div>
     </section>
     <!--Blog Section-->
-    <section class="products-section" id="authors" >
-    	<div class="auto-container">
-        	<!--Heading-->
-        	<div class="sec-title-two centered">
-                <h2>Kim są autorzy?</h2>
+    <section class="products-section" id="authors">
+      <div class="auto-container">
+        <!--Heading-->
+        <div class="sec-title-two centered">
+          <h2>Kim są autorzy?</h2>
+        </div>
+        <div class="row clearfix">
+          <!--News Block-->
+          <div class="news-style-one col-md-4 col-sm-6 col-xs-12">
+            <div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+              <figure class="image-box">
+                <img src="images/gutek.jpg" alt=""></figure>
+              <div class="lower-content">
+                <h3>Jakub Gutkowski</h3>
+                <div class="text">
+                  <p>Tata, mąż, blogger, programista, podcaster i pasjonat.Założyciel i jeden z organizatorów devWarsztatów
+                    <br />Z Kubernetes związany zawodowo i prywatnie. Uwielbia bawić się nowościami, poznawać nowe języki i biblioteki,
+                    chodzić na konferencje, poznawać nowych ludzi, pomagać innym.
+                    <br />Microsoft MVP w kategorii Developer Technologies
+                  </p>
+                </div>
+              </div>
             </div>
-            <div class="row clearfix">
-                <!--News Block-->
-                <div class="news-style-one col-md-4 col-sm-6 col-xs-12">
-                	<div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
-                    	<figure class="image-box">
-                            <img src="images/gutek.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <h3>Jakub Gutkowski</h3>
-                            <div class="text">
-                                    <p>Tata, mąż, blogger, programista, podcaster i pasjonat.Założyciel i jeden z organizatorów devWarsztatów
-                                        <br/>Z Kubernetes związany zawodowo i prywatnie. Uwielbia bawić się nowościami, poznawać nowe języki i biblioteki, chodzić na konferencje, poznawać nowych ludzi, pomagać innym.
-                                        <br/>Microsoft MVP w kategorii Developer Technologies
-                                    </p>
-                            </div>
-                        </div>
-                    </div>
+          </div>
+          <div class="news-style-one col-md-4 col-sm-6 col-xs-12">
+            <div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+              <figure class="image-box">
+                <img src="images/lukasz.jpg" alt=""></figure>
+              <div class="lower-content">
+                <h3>Łukasz Kałużny</h3>
+                <div class="text">
+                  <p>Inżynier,architekt, technology leader, konsultant, geek i ojciec dwójki maluchów
+                    <br />Pasjonat chmury publicznej oraz szeroko pojętej nowoczesnej architektury w IT oraz hipsterskich technologii, które
+                    dopiero się pojawiają
+                    <br />Z Kubernetes i kontenerami związany od dawna (pierwszy raz publicznie nakłaniał do nauki tego już w 2014 roku!)
+                    <br />Microsoft MVP w kategorii Microsoft Azure
+                  </p>
                 </div>
-                <div class="news-style-one col-md-4 col-sm-6 col-xs-12">
-                	<div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
-                    	<figure class="image-box">
-                            <img src="images/lukasz.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <h3>Łukasz Kałużny</h3>
-                            <div class="text">
-                                    <p>Inżynier,architekt, technology leader, konsultant, geek i ojciec dwójki maluchów
-                                        <br/>Pasjonat chmury publicznej oraz szeroko pojętej nowoczesnej architektury w IT oraz hipsterskich technologii, które dopiero się pojawiają
-                                        <br/>Z Kubernetes i kontenerami związany od dawna (pierwszy raz publicznie nakłaniał do nauki tego już w 2014 roku!)
-                                        <br/>Microsoft MVP w kategorii Microsoft Azure
-                                    </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="news-style-one col-md-4 col-sm-6 col-xs-12">
-                	<div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
-                    	<figure class="image-box">
-                            <img src="images/stapp.jpg" alt=""></figure>
-                        <div class="lower-content">
-                            <h3>Piotr Stapp</h3>
-                            <div class="text">
-                                    <p>Programista, inżynier, rzemieślnik, projektant oraz ojciec bliźniaków
-                                            Wierzy w ludzi, a nie w papiery - jest wyznawcą DevOps i wszelkiej automatyzacji.
-                                        <br/>Od czerwca 2018 znany jako "główny" dotnetomaniak.
-                                        <br/>Z Kubernetes korzysta na co dzień w pracy i w domu (nie pytaj po co)
-                                        <br/>Microsoft MVP w kategorii Developer Technologies
-                                    </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-            <!--
+          </div>
+          <div class="news-style-one col-md-4 col-sm-6 col-xs-12">
+            <div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+              <figure class="image-box">
+                <img src="images/stapp.jpg" alt=""></figure>
+              <div class="lower-content">
+                <h3>Piotr Stapp</h3>
+                <div class="text">
+                  <p>Programista, inżynier, rzemieślnik, projektant oraz ojciec bliźniaków
+                    Wierzy w ludzi, a nie w papiery - jest wyznawcą DevOps i wszelkiej automatyzacji.
+                    <br />Od czerwca 2018 znany jako "główny" dotnetomaniak.
+                    <br />Z Kubernetes korzysta na co dzień w pracy i w domu (nie pytaj po co)
+                    <br />Microsoft MVP w kategorii Developer Technologies
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--
             <div class="text-center wow tada" data-wow-delay="0ms" data-wow-duration="1500ms"><a href="blog.html" class="theme-btn btn-style-seven">Go To Blog</a></div>
             -->
-                <div class="row clearfix">
-                    <div class="text-center">
-                            <!--a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">KUP KURS DZISIAJ!</a-->
-                    </div>
-                </div>
+        <div class="row clearfix">
+          <div class="text-center">
+            <!--a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">KUP KURS DZISIAJ!</a-->
+          </div>
         </div>
+      </div>
     </section>
     <!--Testimonials Section-->
     <section class="testimonials-section" style="border-bottom: 0px" id="opinions">
-    	<div class="auto-container">
-        	<div class="outer-container">
-              <div class="sec-title">
-                  <div class="icon"><figure class="image"><img src="images/icons/icon-10.png" alt=""></figure></div>
-                  <h2>Opinie</h2>
-                <!--Testimonials-->
-                <p>Opinie pochodzą z warsztatów prowadzonych w formie offline.
-                    <br/>Letniej inicjatywy Dotknij Kubernetes oraz <u>komercyjnych</u> prowadzonych przez autorów
+      <div class="auto-container">
+        <div class="outer-container">
+          <div class="sec-title">
+            <div class="icon">
+              <figure class="image"><img src="images/icons/icon-10.png" alt=""></figure>
+            </div>
+            <h2>Opinie</h2>
+            <!--Testimonials-->
+            <p>Opinie pochodzą z warsztatów prowadzonych w formie offline.
+              <br />Letniej inicjatywy Dotknij Kubernetes oraz <u>komercyjnych</u> prowadzonych przez autorów
 
-                    </p>
+            </p>
+          </div>
+          <div class="testimonials-carousel-one single-item-carousel owl-theme owl-carousel">
+            <!--Slide Item-->
+            <div class="slide-item">
+              <div class="row clearfix">
+                <!--Text Column-->
+                <div class="text-column col-md-7 col-sm-12 col-xs-12">
+                  <div class="inner">
+                    <div class="text">“Warsztaty na najwyższym poziomie. Część teoretyczne bardzo dobrze przeprowadzona z dokładnym
+                      wyjaśnieniem
+                      wszystkich modułów z jakich sie składa Kubernetes. [...] Zdecydowanie jedne z lepszych warsztatów na jakich byłem!!”
+                    </div>
+                  </div>
+                </div>
+                <!--Info Column-->
+                <div class="info-column col-md-5 col-sm-12 col-xs-12">
+                  <div class="inner">
+                    <div class="info">
+                      <figure class="thumb img-circle">
+                        <img src="images/icons/icon-10.png" alt=""></figure>
+                      <h4>Jakub Waliszewski</h4>
+                    </div>
+                  </div>
+                </div>
               </div>
-            	<div class="testimonials-carousel-one single-item-carousel owl-theme owl-carousel">
-                	<!--Slide Item-->
-                    <div class="slide-item">
-                    	<div class="row clearfix">
-                        	<!--Text Column-->
-                            <div class="text-column col-md-7 col-sm-12 col-xs-12">
-                            	<div class="inner">
-                                	<div class="text">“Warsztaty na najwyższym poziomie. Część teoretyczne bardzo dobrze przeprowadzona z dokładnym wyjaśnieniem
-                                    wszystkich modułów z jakich sie składa Kubernetes. [...] Zdecydowanie jedne z lepszych warsztatów na jakich byłem!!”</div>
-                                </div>
-                            </div>
-                            <!--Info Column-->
-                            <div class="info-column col-md-5 col-sm-12 col-xs-12">
-                            	<div class="inner">
-                                	<div class="info">
-                                    	<figure class="thumb img-circle">
-                                                <img src="images/icons/icon-10.png" alt=""></figure>
-                                        <h4>Jakub Waliszewski</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Slide Item-->
-                    <div class="slide-item">
-                    	<div class="row clearfix">
-                        	<!--Text Column-->
-                            <div class="text-column col-md-7 col-sm-12 col-xs-12">
-                            	<div class="inner">
-                                	<div class="text">“Polecam bo warsztaty prowadzili profesjonaliści.”</div>
-                                </div>
-                            </div>
-                            <!--Info Column-->
-                            <div class="info-column col-md-5 col-sm-12 col-xs-12">
-                            	<div class="inner">
-                                	<div class="info">
-                                    	<figure class="thumb img-circle">
-                                                <img src="images/icons/icon-10.png" alt=""></figure>
-                                        <h4>Michał Gapiński</h4>
-                                        <div class="designation"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Slide Item-->
-                    <div class="slide-item">
-                    	<div class="row clearfix">
-                        	<!--Text Column-->
-                            <div class="text-column col-md-7 col-sm-12 col-xs-12">
-                            	<div class="inner">
-                                	<div class="text">“Podobało mi się, z uwagi na wiedzę prowadzących, widać, że świetnie znają temat”</div>
-                                </div>
-                            </div>
-                            <!--Info Column-->
-                            <div class="info-column col-md-5 col-sm-12 col-xs-12">
-                            	<div class="inner">
-                                	<div class="info">
-                                    	<figure class="thumb img-circle">
-                                                <img src="images/icons/icon-10.png" alt=""></figure>
-                                        <h4>Łukasz Szewczak</h4>
-                                        <div class="designation"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide-item">
-                            <div class="row clearfix">
-                                <!--Text Column-->
-                                <div class="text-column col-md-7 col-sm-12 col-xs-12">
-                                    <div class="inner">
-                                        <div class="text">“Polecam, ponieważ warsztaty oprócz przygotowanego laboratorium zawierają całkiem sporo informacji
-                                          z własnego doświadczenia prowadzących.”</div>
-                                    </div>
-                                </div>
-                                <!--Info Column-->
-                                <div class="info-column col-md-5 col-sm-12 col-xs-12">
-                                    <div class="inner">
-                                        <div class="info">
-                                            <figure class="thumb img-circle">
-                                                <img src="images/icons/icon-10.png" alt="">
-                                                </figure>
-                                            <h4>Anonim</h4>
-                                            <div class="designation"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
             </div>
+            <!--Slide Item-->
+            <div class="slide-item">
+              <div class="row clearfix">
+                <!--Text Column-->
+                <div class="text-column col-md-7 col-sm-12 col-xs-12">
+                  <div class="inner">
+                    <div class="text">“Polecam bo warsztaty prowadzili profesjonaliści.”</div>
+                  </div>
+                </div>
+                <!--Info Column-->
+                <div class="info-column col-md-5 col-sm-12 col-xs-12">
+                  <div class="inner">
+                    <div class="info">
+                      <figure class="thumb img-circle">
+                        <img src="images/icons/icon-10.png" alt=""></figure>
+                      <h4>Michał Gapiński</h4>
+                      <div class="designation"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Slide Item-->
+            <div class="slide-item">
+              <div class="row clearfix">
+                <!--Text Column-->
+                <div class="text-column col-md-7 col-sm-12 col-xs-12">
+                  <div class="inner">
+                    <div class="text">“Podobało mi się, z uwagi na wiedzę prowadzących, widać, że świetnie znają temat”</div>
+                  </div>
+                </div>
+                <!--Info Column-->
+                <div class="info-column col-md-5 col-sm-12 col-xs-12">
+                  <div class="inner">
+                    <div class="info">
+                      <figure class="thumb img-circle">
+                        <img src="images/icons/icon-10.png" alt=""></figure>
+                      <h4>Łukasz Szewczak</h4>
+                      <div class="designation"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide-item">
+              <div class="row clearfix">
+                <!--Text Column-->
+                <div class="text-column col-md-7 col-sm-12 col-xs-12">
+                  <div class="inner">
+                    <div class="text">“Polecam, ponieważ warsztaty oprócz przygotowanego laboratorium zawierają całkiem sporo informacji
+                      z własnego doświadczenia prowadzących.”</div>
+                  </div>
+                </div>
+                <!--Info Column-->
+                <div class="info-column col-md-5 col-sm-12 col-xs-12">
+                  <div class="inner">
+                    <div class="info">
+                      <figure class="thumb img-circle">
+                        <img src="images/icons/icon-10.png" alt="">
+                      </figure>
+                      <h4>Anonim</h4>
+                      <div class="designation"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-        <section class="main-banner banner-one" id="banner-footer" style="padding-top:20px; padding-bottom: 80px !important; background-image:url(images/background/banner-bg-1.png);">
-    	<div class="auto-container">
-        	<div class="row clearfix">
-            	<!--Text Column-->
-                <div class="text-column col-md-6 col-sm-12 col-xs-12">
-                	<div class="inner">
-                        <h2 style="font-size: 50px">Poznaj Kubernetes</h2>
-                                <!--p>Cena PROMOCYJNA: <strong style="font-size: 30px">987 PLN brutto!</strong></p-->
-                                <div>&nbsp;</div>
-                        <h2 style="font-size: 50px"><span id="countdown3">Wracamy w listopadzie</span></h2>
-                                <p>&nbsp;</p>
-                        <!--a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">KUP KURS <span class="icon ti-arrow-circle-right"></span></a-->
-                        <a href="javascript:;" class="theme-btn btn-style-one" onclick="ml_account('webforms', '1514972', 'c7i8u7', 'show')">
-                            Dołącz do listy
-                        </a>
-                    </div>
-                </div>
-
-                <!--Image Column-->
-                <div class="image-column col-md-6 col-sm-12 col-xs-12">
-                	<div class="inner">
-                    	<figure class="image"><img src="images/transport/ship.svg" alt=""></figure>
-                    </div>
-                </div>
+    <section class="main-banner banner-one" id="banner-footer"
+      style="padding-top:20px; padding-bottom: 80px !important; background-image:url(images/background/banner-bg-1.png);">
+      <div class="auto-container">
+        <div class="row clearfix">
+          <!--Text Column-->
+          <div class="text-column col-md-6 col-sm-12 col-xs-12">
+            <div class="inner">
+              <h2 style="font-size: 50px">Poznaj Kubernetes</h2>
+              <!--p>Cena PROMOCYJNA: <strong style="font-size: 30px">987 PLN brutto!</strong></p-->
+              <div>&nbsp;</div>
+              <h2 style="font-size: 50px"><span id="countdown3">Wracamy w listopadzie</span></h2>
+              <p>&nbsp;</p>
+              <!--a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">KUP KURS <span class="icon ti-arrow-circle-right"></span></a-->
+              <a href="javascript:;" class="theme-btn btn-style-one" onclick="ml_account('webforms', '1514972', 'c7i8u7', 'show')">
+                Dołącz do listy
+              </a>
             </div>
+          </div>
+
+          <!--Image Column-->
+          <div class="image-column col-md-6 col-sm-12 col-xs-12">
+            <div class="inner">
+              <figure class="image"><img src="images/transport/ship.svg" alt=""></figure>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
     <footer class="footer-sticky">
-            <div class="container">
-              <!--span class="">Przedsprzedaż kończy się <span id="countdown" class="text-nowrap">18 września o 21:00</span> <a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-dolacz">KUP KURS!</a></span-->
-            </div>
+      <div class="container">
+        <span class="">Przedsprzedaż kończy się <span id="countdown" class="text-nowrap">18 września o 21:00</span> <a
+            href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-dolacz">KUP KURS!</a></span>
+      </div>
     </footer>
-</div>
-<!--End pagewrapper-->
+  </div>
+  <!--End pagewrapper-->
 
-<!--Scroll to top-->
-<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-double-up"></span></div>
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/pagenav.js"></script>
-<script src="js/jquery.scrollTo.js"></script>
-<script src="js/jquery.fancybox.pack.js"></script>
-<script src="js/owl.js"></script>
-<script src="js/wow.js"></script>
-<script src="js/validate.js"></script>
-<script src="js/script.js?v=6"></script>
+  <!--Scroll to top-->
+  <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-double-up"></span></div>
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/pagenav.js"></script>
+  <script src="js/jquery.scrollTo.js"></script>
+  <script src="js/jquery.fancybox.pack.js"></script>
+  <script src="js/owl.js"></script>
+  <script src="js/wow.js"></script>
+  <script src="js/validate.js"></script>
+  <script src="js/script.js?v=6"></script>
 
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-<script>
-window.addEventListener("load", function(){
- window.cookieconsent.initialise({
- "palette": {
-  "popup": {
-    "background": "#FFFFFF",
-    "text": "#3b3b3b",
-    "border":"#bfbfbf"
-  },
-  "button": {
-    "background": "#12dbdb",
-    "text": "#ffffff"
-  }
- },
- "theme": "classic",
- "position": "top-left",
- "content": {
- "message": "Na tej stronie używamy ciasteczek",
- "dismiss": "Rozumiem!",
- "link": "(więcej)",
- "href": "policy.html"
- }
- })});
- </script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+  <script>
+    window.addEventListener("load", function () {
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#FFFFFF",
+            "text": "#3b3b3b",
+            "border": "#bfbfbf"
+          },
+          "button": {
+            "background": "#12dbdb",
+            "text": "#ffffff"
+          }
+        },
+        "theme": "classic",
+        "position": "top-left",
+        "content": {
+          "message": "Na tej stronie używamy ciasteczek",
+          "dismiss": "Rozumiem!",
+          "link": "(więcej)",
+          "href": "policy.html"
+        }
+      })
+    });
+  </script>
 
 
 </body>
+
 </html>
