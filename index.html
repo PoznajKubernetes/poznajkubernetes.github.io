@@ -121,7 +121,7 @@
     </header>
     <!--End Main Header -->
     <!--Main Banner / Banner One-->
-    <section class="main-banner banner-one" id="banner" style="background-image:url(images/background/banner-bg-1.png);">
+    <section class="main-banner banner-one" id="banner">
       <div class="auto-container">
         <div class="row clearfix">
           <!--Text Column-->
@@ -146,11 +146,13 @@
           </div>
 
           <!--Image Column-->
+          <!--
           <div class="image-column col-md-6 col-sm-12 col-xs-12">
             <div class="inner">
               <figure class="image"><img src="images/transport/ship.svg" alt=""></figure>
             </div>
           </div>
+          -->
         </div>
       </div>
     </section>
@@ -161,7 +163,7 @@
         <!--Heading-->
         <div class="sec-title">
           <div class="icon">
-            <figure class="image"><img src="images/icons/icon-2.png" alt=""></figure>
+            <figure class="image"><img src="images/shape-left-3.svg" alt=""></figure>
           </div>
           <h2>Korzyści wzięcia udziału w kursie</h2>
           <div class="clearfix desc-text">
@@ -193,7 +195,7 @@
         <!--Heading-->
         <div class="sec-title">
           <div class="icon">
-            <figure class="image"><img src="images/icons/icon-12.png" alt=""></figure>
+            <figure class="image"><img src="images/shape-right-3.svg" alt=""></figure>
           </div>
           <h2>Czy to jest kurs dla mnie?</h2>
           <div class="desc-text">
@@ -240,7 +242,7 @@
         <!--Heading-->
         <div class="sec-title">
           <div class="icon">
-            <figure class="image"><img src="images/icons/icon-28.png" alt=""></figure>
+            <figure class="image"><img src="images/shape-left-3.svg" alt=""></figure>
           </div>
           <h2>Agenda, czyli co jest w środku</h2>
           <div class="clearfix desc-text">
@@ -254,7 +256,8 @@
             </ul>
           </div>
           <div class="clearfix desc-text">
-            <p>Jeżeli nie jesteś pewien czy jest to kurs dla Ciebie sprawdź sekcję <a href="#who">dla kogo?</a></p>
+            <p>Jeżeli nie jesteś pewien czy jest to kurs dla Ciebie sprawdź sekcję <a href="#who">dla kogo?</a>.</p>
+            <p>&nbsp;</p>
           </div>
         </div>
         <!--Services-->
@@ -620,7 +623,7 @@
         <!--Heading-->
         <div class="sec-title">
           <div class="icon">
-            <figure class="image"><img src="images/icons/icon-10.png" alt=""></figure>
+            <figure class="image"><img src="images/shape-right-3.svg" alt=""></figure>
           </div>
           <h2>FAQ</h2>
           <div class="desc-text">
@@ -785,13 +788,12 @@
         <div class="outer-container">
           <div class="sec-title">
             <div class="icon">
-              <figure class="image"><img src="images/icons/icon-10.png" alt=""></figure>
+              <figure class="image"><img src="images/shape-left-3.svg" alt=""></figure>
             </div>
             <h2>Opinie</h2>
             <!--Testimonials-->
-            <p>Opinie pochodzą z warsztatów prowadzonych w formie offline.
+            <p class="testimonials-teaser">Opinie pochodzą z warsztatów prowadzonych w formie offline.
               <br />Letniej inicjatywy Dotknij Kubernetes oraz <u>komercyjnych</u> prowadzonych przez autorów
-
             </p>
           </div>
           <div class="testimonials-carousel-one single-item-carousel owl-theme owl-carousel">
@@ -799,22 +801,15 @@
             <div class="slide-item">
               <div class="row clearfix">
                 <!--Text Column-->
-                <div class="text-column col-md-7 col-sm-12 col-xs-12">
+                <div class="text-column col-md-12 col-sm-12 col-xs-12">
                   <div class="inner">
                     <div class="text">“Warsztaty na najwyższym poziomie. Część teoretyczne bardzo dobrze przeprowadzona z dokładnym
-                      wyjaśnieniem
-                      wszystkich modułów z jakich sie składa Kubernetes. [...] Zdecydowanie jedne z lepszych warsztatów na jakich byłem!!”
+                      wyjaśnieniem wszystkich modułów z jakich sie składa Kubernetes. [...] Zdecydowanie jedne z lepszych warsztatów na
+                      jakich byłem!!”
                     </div>
-                  </div>
-                </div>
-                <!--Info Column-->
-                <div class="info-column col-md-5 col-sm-12 col-xs-12">
-                  <div class="inner">
-                    <div class="info">
-                      <figure class="thumb img-circle">
-                        <img src="images/icons/icon-10.png" alt=""></figure>
-                      <h4>Jakub Waliszewski</h4>
-                    </div>
+                    <h4 class="author">
+                      <span>Jakub Waliszewski</span>
+                    </h4>
                   </div>
                 </div>
               </div>
@@ -823,20 +818,10 @@
             <div class="slide-item">
               <div class="row clearfix">
                 <!--Text Column-->
-                <div class="text-column col-md-7 col-sm-12 col-xs-12">
+                <div class="text-column col-md-12 col-sm-12 col-xs-12">
                   <div class="inner">
                     <div class="text">“Polecam bo warsztaty prowadzili profesjonaliści.”</div>
-                  </div>
-                </div>
-                <!--Info Column-->
-                <div class="info-column col-md-5 col-sm-12 col-xs-12">
-                  <div class="inner">
-                    <div class="info">
-                      <figure class="thumb img-circle">
-                        <img src="images/icons/icon-10.png" alt=""></figure>
-                      <h4>Michał Gapiński</h4>
-                      <div class="designation"></div>
-                    </div>
+                    <h4 class="author"><span>Michał Gapiński</span></h4>
                   </div>
                 </div>
               </div>
@@ -845,20 +830,10 @@
             <div class="slide-item">
               <div class="row clearfix">
                 <!--Text Column-->
-                <div class="text-column col-md-7 col-sm-12 col-xs-12">
+                <div class="text-column col-md-12 col-sm-12 col-xs-12">
                   <div class="inner">
-                    <div class="text">“Podobało mi się, z uwagi na wiedzę prowadzących, widać, że świetnie znają temat”</div>
-                  </div>
-                </div>
-                <!--Info Column-->
-                <div class="info-column col-md-5 col-sm-12 col-xs-12">
-                  <div class="inner">
-                    <div class="info">
-                      <figure class="thumb img-circle">
-                        <img src="images/icons/icon-10.png" alt=""></figure>
-                      <h4>Łukasz Szewczak</h4>
-                      <div class="designation"></div>
-                    </div>
+                    <div class="text">“Podobało mi się, z uwagi na wiedzę prowadzących, widać, że świetnie znają&nbsp;temat”</div>
+                    <h4 class="author"><span>Łukasz Szewczak</span></h4>
                   </div>
                 </div>
               </div>
@@ -866,22 +841,11 @@
             <div class="slide-item">
               <div class="row clearfix">
                 <!--Text Column-->
-                <div class="text-column col-md-7 col-sm-12 col-xs-12">
+                <div class="text-column col-md-12 col-sm-12 col-xs-12">
                   <div class="inner">
                     <div class="text">“Polecam, ponieważ warsztaty oprócz przygotowanego laboratorium zawierają całkiem sporo informacji
                       z własnego doświadczenia prowadzących.”</div>
-                  </div>
-                </div>
-                <!--Info Column-->
-                <div class="info-column col-md-5 col-sm-12 col-xs-12">
-                  <div class="inner">
-                    <div class="info">
-                      <figure class="thumb img-circle">
-                        <img src="images/icons/icon-10.png" alt="">
-                      </figure>
-                      <h4>Anonim</h4>
-                      <div class="designation"></div>
-                    </div>
+                    <h4 class="author"><span>Anonim</span></h4>
                   </div>
                 </div>
               </div>
@@ -890,8 +854,7 @@
         </div>
       </div>
     </section>
-    <section class="main-banner banner-one" id="banner-footer"
-      style="padding-top:20px; padding-bottom: 80px !important; background-image:url(images/background/banner-bg-1.png);">
+    <section class="main-banner banner-one" id="banner-footer">
       <div class="auto-container">
         <div class="row clearfix">
           <!--Text Column-->
@@ -910,11 +873,13 @@
           </div>
 
           <!--Image Column-->
-          <div class="image-column col-md-6 col-sm-12 col-xs-12">
+          <!--
+            <div class="image-column col-md-6 col-sm-12 col-xs-12">
             <div class="inner">
               <figure class="image"><img src="images/transport/ship.svg" alt=""></figure>
             </div>
           </div>
+          -->
         </div>
       </div>
     </section>

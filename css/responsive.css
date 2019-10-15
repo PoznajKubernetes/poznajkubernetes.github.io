@@ -76,10 +76,6 @@
 		padding-left:0px;
 	}
 
-	.banner-one{
-		padding:180px 0px 70px;
-	}
-
 	.banner-two .text-column .inner{
 		padding-top:0px;
 	}
@@ -164,12 +160,6 @@
 	.main-menu .navigation > li > a{
 		text-transform:capitalize;
 		font-size:16px;
-	}
-
-	.banner-one,
-	.banner-two,
-	.banner-four{
-		padding:180px 0px 70px;
 	}
 
 	.fact-counter .column{
@@ -691,4 +681,18 @@
 		margin-bottom:15px;
 	}
 
+}
+
+@media only screen and (max-width: 991px) {
+  .banner-one{
+    padding: 80px 0 0;
+    background-image: none;
+  }
+
+}
+
+@media only screen and (min-width: 1024px) {
+  .sec-title .icon img{
+    width: 120px;
+  }
 }
