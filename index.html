@@ -166,7 +166,7 @@
           <h2>Korzyści wzięcia udziału w kursie</h2>
           <div class="clearfix desc-text">
             <ul class="list-group benefits-list-header">
-              <li><strong>80% czasu </strong>spędzisz na ćwiczeniach</li>
+              <li class="col-md-6"><strong>80% czasu </strong>spędzisz na ćwiczeniach</li>
               <li class="col-md-6">Zrozumiesz fundamenty Kubernetes</li>
               <li class="col-md-6">Postawisz Kubernetes w chmurze i lokalnie</li>
               <li class="col-md-6">Wykorzystasz <strong>Dockera</strong></li>
@@ -630,26 +630,25 @@
         <div class="clearfix">
           <div class="clearfix">
             <script id="faq-template" type="text/x-custom-template">
-                            <div class="card">
-                                <div class="card-header" id="headingFAQ_XXX">
-                                  <h3 class="mb-0">
-                                    <span class="question">QUESTION</span>
-                                    <button class="btn" type="button" data-toggle="collapse" aria-expanded="true"
-                                        data-target="#collapseFAQ_XXX" aria-controls="collapseFAQ_XXX">
-                                        Rozwiń
-                                    </button>
-                                  </h3>
-                                </div>
-                                <div id="collapseFAQ_XXX" aria-labelledby="headingFAQ_XXX" class="collapse" data-parent="#accordionFAQ">
-                                  <div class="card-body">
-                                    <div class="text answer">
-                                        ANSWER
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-                        </script>
-            <div class="accordion" id="accordionFAQ">
+              <div class="panel panel-default">
+                <div class="panel-heading" id="headingFAQ_XXX" role="tab">
+                  <h4 class="panel-title">
+                    <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordionFAQ"
+                      href="#collapseFAQ_XXX" aria-expanded="false" aria-controls="collapseFAQ_XXX">
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                      QUESTION
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseFAQ_XXX" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFAQ_XXX">
+                  <div class="panel-body">
+                      ANSWER
+                  </div>
+                </div>
+              </div>
+            </script>
+            <div class="panel-group" id="accordionFAQ" role="tablist" aria-multiselectable="true">
               <!--div class="card">
                             <div class="card-header" id="headingFAQ1">
                               <h3 class="mb-0">

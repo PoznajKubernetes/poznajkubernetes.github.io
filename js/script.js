@@ -487,7 +487,7 @@
       $("#accordionFAQ").append(content);
     });
 
-    $('#accordion-modules [data-toggle="collapse"]').on('click',function(){
+    $('#accordion-modules [data-toggle="collapse"], #accordionFAQ [data-toggle="collapse"]').on('click',function(){
       var objectID=$(this).attr('href');
       if($(objectID).hasClass('in')) {
         $(objectID).collapse('hide');

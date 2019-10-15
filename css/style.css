@@ -5192,6 +5192,10 @@ img{
   display: inline-block;
 }
 
+.panel-body p:last-child {
+  margin-bottom: 0;
+}
+
 .module-list {
   margin: 0;
   padding: 0;
