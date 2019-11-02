@@ -385,12 +385,15 @@
       }
 
       //console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s");
-      document.getElementById("countdown").innerHTML =
+      try {
+      	document.getElementById("countdown").innerHTML =
           "";
-      document.getElementById("countdown2").innerHTML =
+      	document.getElementById("countdown2").innerHTML =
           "";
-      document.getElementById("countdown3").innerHTML =
+      	document.getElementById("countdown3").innerHTML =
           "";
+      } catch {
+      }
     }
     var timing = setInterval(
       timer,1000
@@ -485,6 +488,16 @@
         .replaceAll("QUESTION", item.question)
         .replaceAll("ANSWER", item.answer);
       $("#accordionFAQ").append(content);
+    });
+
+    $('#accordion-modules [data-toggle="collapse"], #accordionFAQ [data-toggle="collapse"]').on('click',function(){
+      var objectID=$(this).attr('href');
+      if($(objectID).hasClass('in')) {
+        $(objectID).collapse('hide');
+      }
+      else {
+        $(objectID).collapse('show');
+      }
     });
   });
 })(window.jQuery);
