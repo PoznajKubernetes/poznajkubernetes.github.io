@@ -385,12 +385,15 @@
       }
 
       //console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s");
-      document.getElementById("countdown").innerHTML =
+      try {
+      	document.getElementById("countdown").innerHTML =
           "";
-      document.getElementById("countdown2").innerHTML =
+      	document.getElementById("countdown2").innerHTML =
           "";
-      document.getElementById("countdown3").innerHTML =
+      	document.getElementById("countdown3").innerHTML =
           "";
+      } catch {
+      }
     }
     var timing = setInterval(
       timer,1000
