@@ -6,13 +6,16 @@
 	}
 }
 
-@media only screen and (max-width: 1340px){
+@media only screen and (max-width: 1395px){
 	.page-wrapper{
 		overflow:hidden;
 	}
 
 	.main-header .main-box{
 		padding:0px;
+	}
+	.less-important{
+		display:none;
 	}
 }
 
@@ -37,7 +40,7 @@
 		opacity:1;
 	}
 
-	.main-header .nav-outer .other-links{
+	.less-important{
 		display:none;
 	}
 
@@ -131,7 +134,7 @@
 	}
 }
 
-@media only screen and (max-width: 1023px){
+@media only screen and (max-width: 1040px){
 
 	.main-header .main-box{
 		top:0px;
