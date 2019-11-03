@@ -12,7 +12,7 @@ SUMMARY:Wieczór z Kubernetes
 DESCRIPTION:Link do YouTube: https://k8s.buzz/live-youtube\nLink do Facebook: https://k8s.buzz/live-facebook\n\n---\nPowered by AddEvent.com
 X-ALT-DESC;FMTTYPE=text/html:Link do YouTube: https://k8s.buzz/live-youtube<br>Link do Facebook: https://k8s.buzz/live-facebook<br><br><br>---<br>Powered by AddEvent.com
 BEGIN:VALARM
-TRIGGER:-PT60M
+TRIGGER:-PT10M
 ACTION:DISPLAY
 END:VALARM
 TRANSP:OPAQUE
