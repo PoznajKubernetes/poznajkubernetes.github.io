@@ -5247,3 +5247,15 @@ img{
 #banner-footer {
   border-top: solid 1px #bfbfbf;
 }
+
+.header-container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.other-links {
+	order: 1;
+	margin-bottom: 10px;
+}
