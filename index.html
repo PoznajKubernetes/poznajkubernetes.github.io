@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Kurs Poznaj Kubernetes - Przedsprzedaż</title>
-  <meta property="og:title" content="Kurs Poznaj Kubernetes" />
+  <title>Program Poznaj Kubernetes</title>
+  <meta property="og:title" content="Program Poznaj Kubernetes" />
   <meta property="og:type" content="website" />
   <meta name="description"
     content="Najlepszy sposób, byś zyskał solidne podstawy w wytwarzaniu i dostarczaniu aplikacji w oparciu o kontenery i Kubernetes. Ta wiedza pozwoli Ci zaskoczyć niejednego „eksperta”. Już po 6 modułach będziesz potrafił użyć Kuberentes dla swojej aplikacji." />
@@ -14,14 +14,14 @@
 
   <!-- Stylesheets -->
   <link href="css/bootstrap.css" rel="stylesheet">
-  <link href="css/style.css?v=17" rel="stylesheet">
+  <link href="css/style.css?v=18" rel="stylesheet">
 
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
   <link rel="icon" href="images/favicon.png" type="image/x-icon">
   <!-- Responsive -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <link href="css/responsive.css?v=1" rel="stylesheet">
+  <link href="css/responsive.css?v=2" rel="stylesheet">
   <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 
@@ -77,11 +77,17 @@
       <!-- Main Box -->
       <div class="main-box">
         <div class="auto-container">
-          <div class="outer-container clearfix header-container">
+          <div class="outer-container header-container">
             <!--Logo Box-->
             <div class="logo-box">
               <div class="logo"><img src="images/logo-light.svg" alt="Poznaj Kubernetes"></div>
             </div>
+
+            <!--Other Links-->
+            <div class="other-links">
+              <a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">Kup Kurs</a>
+            </div>
+
             <!--Nav Outer-->
             <div class="nav-outer clearfix">
               <!-- Main Menu -->
@@ -101,18 +107,14 @@
                     <li><a href="#who">Dla kogo?</a></li>
                     <li><a id="agenda-menu" href="#agenda">Agenda</a></li>
                     <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#authors">Autorzy</a></li>
-                    <li><a href="#opinions">Opinie</a></li>
+                    <li class="less-important"><a href="#authors">Autorzy</a></li>
+                    <li class="less-important"><a href="#opinions">Opinie</a></li>
                     <li><a href="mailto:kontakt@poznajkubernetes.pl">Kontakt</a></li>
                     <li><a href="https://ebook.poznajkubernetes.pl">Ebook</a></li>
                   </ul>
                 </div>
               </nav>
               <!-- Main Menu End-->
-              <!--Other Links-->
-              <div class="other-links">
-                <!--a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">Kup Kurs</a-->
-              </div>
             </div>
             <!--Nav Outer End-->
           </div>
@@ -134,13 +136,13 @@
                 Ta wiedza pozwoli Ci <strong>zaskoczyć niejednego „eksperta”</strong>.
                 <strong>Już po 6 modułach</strong> będziesz potrafił użyć Kubernetes dla swojej aplikacji.</p>
 
-              <!--p>Cena PROMOCYJNA: <strong style="font-size: 30px">987 PLN brutto!</strong></p-->
-              <!--div>Do końca PROMOCJI i przedsprzedaży pozostało</div-->
-              <h2 class="h2-big"><span id="countdown2">Wracamy w&nbsp;listopadzie</span></h2>
-              <!--a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">KUP KURS <span class="icon ti-arrow-circle-right"></span></a-->
-              <a href="javascript:;" class="theme-btn btn-style-one" onclick="ml_account('webforms', '1514972', 'c7i8u7', 'show')">
+              <p>Cena PROMOCYJNA: <strong style="font-size: 30px">999 PLN</strong> + VAT</p>
+              <div>Do końca sprzedaży pozostało</div>
+              <h2 class="h2-big"><span id="countdown2">15 listopada 21:00</span></h2>
+              <a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">KUP KURS <span class="icon ti-arrow-circle-right"></span></a>
+              <!--a href="javascript:;" class="theme-btn btn-style-one" onclick="ml_account('webforms', '1514972', 'c7i8u7', 'show')">
                 Dołącz do listy <span class="icon ti-arrow-circle-right"></span>
-              </a>
+              </a-->
               <a href="#agenda" class="agenda-second-button" style="padding-left: 20px; text-decoration: underline">Agenda</a>
             </div>
           </div>
@@ -259,6 +261,48 @@
             <p>Jeżeli nie jesteś pewien czy jest to kurs dla Ciebie sprawdź sekcję <a href="#who">dla kogo?</a>.</p>
             <p>&nbsp;</p>
           </div>
+        </div>
+        <h2 class="agenda-modules-title">Lekcje demo</h2>
+        <div class="clearfix desc-text">
+            <div class="container">
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="active">
+                    <a href="#tab1" role="tab" data-toggle="tab">
+                      Podstawy architektury systemów rozproszonych
+                    </a>
+                </li>
+                <li>
+                  <a href="#profile" role="tab" data-toggle="tab">
+                      Docker -repozytoria i najlepsze praktyki
+                  </a>
+                </li>
+                <li>
+                    <a href="#messages" role="tab" data-toggle="tab">
+                      Czym jest Kubernetes?
+                    </a>
+                </li>
+              </ul>
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div class="tab-pane fade active in" id="tab1">
+                  <div style="padding:56.25% 0 0 0;position:relative;" >
+                     <iframe src="https://vimeo.com/showcase/6546986/embed" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="profile">
+                    <div style="padding:56.25% 0 0 0;position:relative;">
+                      <iframe src="https://vimeo.com/showcase/6545776/embed" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="messages">
+                      <div style="padding:56.25% 0 0 0;position:relative;">
+                        <iframe src="https://vimeo.com/showcase/6547618/embed" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div>&nbsp;</div>
         </div>
         <!--Services-->
         <h2 class="agenda-modules-title">Moduły</h2>
@@ -612,7 +656,7 @@
         </div>
         <div class="row clearfix" style="padding-top: 20px;">
           <div class="text-center">
-            <!--a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">KUP KURS JUŻ TERAZ!</a-->
+            <a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">KUP KURS JUŻ TERAZ!</a>
           </div>
         </div>
       </div>
@@ -777,7 +821,7 @@
             -->
         <div class="row clearfix">
           <div class="text-center">
-            <!--a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">KUP KURS DZISIAJ!</a-->
+            <a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">KUP KURS DZISIAJ!</a>
           </div>
         </div>
       </div>
@@ -854,6 +898,35 @@
         </div>
       </div>
     </section>
+    <section class="main-banner" id="share-footer">
+        <div class="auto-container">
+          <div class="sec-title">
+            <div class="icon">
+                <figure class="image"><img src="images/shape-left-3.svg" alt=""></figure>
+            </div>
+            <div class="row clearfix">
+              <!--Text Column-->
+              <div class="sec-title-two centered">
+                <h2 class="sec-title-two centered">Podziel się</h2>
+                <div>&nbsp;</div>
+                <p>
+                  Wydaje się ciekawe? Jeżeli tak, to może ... przyda się to również Twoim znajomym?
+                  <br/>Podziel się z nimi tą stroną, wystarczy że klikniesz poniżej Twoje ulubione social media :)
+                  <br/>Z góry dziękujemy!
+                </p>
+                <div>&nbsp;</div>
+                <div class="text-center">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpoznajkubernetes.pl" class=""><img width="40px" src="images/social/facebook.png" /></a>
+                    &nbsp;
+                    <a href="http://www.twitter.com/intent/tweet?url=https://poznajkubernetes.pl" class=""><img width="40px" src="images/social/twitter.png" /></a>
+                    &nbsp;
+                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=https://poznajkubernetes.pl/" class=""><img width="40px" src="images/social/linkedin.png" /></a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
     <section class="main-banner banner-one" id="banner-footer">
       <div class="auto-container">
         <div class="row clearfix">
@@ -865,10 +938,10 @@
               <div>&nbsp;</div>
               <h2 style="font-size: 50px"><span id="countdown3">Wracamy w listopadzie</span></h2>
               <p>&nbsp;</p>
-              <!--a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">KUP KURS <span class="icon ti-arrow-circle-right"></span></a-->
-              <a href="javascript:;" class="theme-btn btn-style-one" onclick="ml_account('webforms', '1514972', 'c7i8u7', 'show')">
+              <a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">KUP KURS <span class="icon ti-arrow-circle-right"></span></a>
+              <!--a href="javascript:;" class="theme-btn btn-style-one" onclick="ml_account('webforms', '1514972', 'c7i8u7', 'show')">
                 Dołącz do listy
-              </a>
+              </a-->
             </div>
           </div>
 
@@ -884,10 +957,10 @@
       </div>
     </section>
     <footer class="footer-sticky">
-      <!--div class="container">
+      <div class="container">
         <span class="">Przedsprzedaż kończy się <span id="countdown" class="text-nowrap">18 września o 21:00</span> <a
             href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-dolacz">KUP KURS!</a></span>
-      </div-->
+      </div>
     </footer>
   </div>
   <!--End pagewrapper-->
@@ -902,7 +975,7 @@
   <script src="js/owl.js"></script>
   <script src="js/wow.js"></script>
   <script src="js/validate.js"></script>
-  <script src="js/script.js?v=7"></script>
+  <script src="js/script.js?v=9"></script>
 
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>

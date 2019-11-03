@@ -359,7 +359,7 @@
       $("#agenda-menu").click();
       return false;
     });
-    var yourDateToGo = new Date("2019-09-18T20:00:00+02:00"); //new Date(); //here you're making new Date object
+    var yourDateToGo = new Date("2019-11-15T21:00:00+01:00"); //new Date(); //here you're making new Date object
     //yourDateToGo.setDate(yourDateToGo.getDate() + 1); //your're setting date in this object 1 day more from now
     //you can change number of days to go by putting any number in place of 1
     var timer = function() {
@@ -376,22 +376,21 @@
       var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000); //conversion miliseconds on seconds
       if (seconds < 10) seconds = "0" + seconds;
       //which id is countdown
+      var end = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
       if (timeLeft <= 0) {
         clearInterval(timing);
         days = "00";
         hours = "00";
         minutes = "00";
         seconds = "00";
+        end = "";
       }
 
       //console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s");
       try {
-      	document.getElementById("countdown").innerHTML =
-          "";
-      	document.getElementById("countdown2").innerHTML =
-          "";
-      	document.getElementById("countdown3").innerHTML =
-          "";
+      	document.getElementById("countdown").innerHTML = end;
+      	document.getElementById("countdown2").innerHTML = end;
+      	document.getElementById("countdown3").innerHTML = end;
       } catch {
       }
     }
@@ -431,6 +430,10 @@
         answer:
           "<p>Tak, chwilę po zaksięgowaniu. VAT obowiązujący w tym wypadku to 23%." +
           "Uwaga: Słowo “chwila” jest nieprecyzyjne, przepraszamy. Ciężko jest jednak określić czas integracji 4 czy 5 systemów po drodze.</p>"
+      },
+      {
+        question: "Czy dostanę certyfikat ukończenia?",
+        answer: "Oczywiście, że tak. Będzie on miał formę elektroniczną, a jeżeli potrzebujesz papierowej napisz do nas!"
       },
       {
         question: "Jak długo będę miał dostęp do kursu?",
