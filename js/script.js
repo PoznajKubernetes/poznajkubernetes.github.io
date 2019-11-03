@@ -359,7 +359,7 @@
       $("#agenda-menu").click();
       return false;
     });
-    var yourDateToGo = new Date("2019-09-18T20:00:00+02:00"); //new Date(); //here you're making new Date object
+    var yourDateToGo = new Date("2019-11-15T21:00:00+01:00"); //new Date(); //here you're making new Date object
     //yourDateToGo.setDate(yourDateToGo.getDate() + 1); //your're setting date in this object 1 day more from now
     //you can change number of days to go by putting any number in place of 1
     var timer = function() {
@@ -376,21 +376,23 @@
       var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000); //conversion miliseconds on seconds
       if (seconds < 10) seconds = "0" + seconds;
       //which id is countdown
+      var end = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
       if (timeLeft <= 0) {
         clearInterval(timing);
         days = "00";
         hours = "00";
         minutes = "00";
         seconds = "00";
+        end = "";
       }
 
       //console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s");
-      document.getElementById("countdown").innerHTML =
-          "";
-      document.getElementById("countdown2").innerHTML =
-          "";
-      document.getElementById("countdown3").innerHTML =
-          "";
+      try {
+      	document.getElementById("countdown").innerHTML = end;
+      	document.getElementById("countdown2").innerHTML = end;
+      	document.getElementById("countdown3").innerHTML = end;
+      } catch {
+      }
     }
     var timing = setInterval(
       timer,1000
@@ -485,6 +487,16 @@
         .replaceAll("QUESTION", item.question)
         .replaceAll("ANSWER", item.answer);
       $("#accordionFAQ").append(content);
+    });
+
+    $('#accordion-modules [data-toggle="collapse"], #accordionFAQ [data-toggle="collapse"]').on('click',function(){
+      var objectID=$(this).attr('href');
+      if($(objectID).hasClass('in')) {
+        $(objectID).collapse('hide');
+      }
+      else {
+        $(objectID).collapse('show');
+      }
     });
   });
 })(window.jQuery);
