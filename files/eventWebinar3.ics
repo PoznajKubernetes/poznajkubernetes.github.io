@@ -9,7 +9,7 @@ SEQUENCE:0
 DTSTART:20191104T190000Z
 DTEND:20191104T210000Z
 SUMMARY:Wieczór z Kubernetes
-DESCRIPTION:Link do YouTube: https://k8s.buzz/live-youtube\nLink do Facebook: https://k8s.buzz/live-facebook\n\n---\nPowered by AddEvent.com
+DESCRIPTION:Link do YouTube: https://k8s.buzz/live-youtube\nLink do Facebook: https://k8s.buzz/live-facebook\n\n
 X-ALT-DESC;FMTTYPE=text/html:Link do YouTube: https://k8s.buzz/live-youtube<br>Link do Facebook: https://k8s.buzz/live-facebook<br><br><br>---<br>Powered by AddEvent.com
 BEGIN:VALARM
 TRIGGER:-PT10M
