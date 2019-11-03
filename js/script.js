@@ -432,6 +432,10 @@
           "Uwaga: Słowo “chwila” jest nieprecyzyjne, przepraszamy. Ciężko jest jednak określić czas integracji 4 czy 5 systemów po drodze.</p>"
       },
       {
+        question: "Czy dostanę certyfikat ukończenia?",
+        answer: "Oczywiście, że tak. Będzie on miał formę elektroniczną, a jeżeli potrzebujesz papierowej napisz do nas!"
+      },
+      {
         question: "Jak długo będę miał dostęp do kursu?",
         answer:
           "<p>Otrzymasz dożywotni dostęp do tej edycji kursu wraz z aktualizacjami.</p>"
