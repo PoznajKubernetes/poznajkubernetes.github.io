@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+
+  <title>Jak zacząć pracę z Kubernetes</title>
+  <meta property="og:title" content="Jak zacząć pracę z Kubernetes" />
+  <meta name="description" content="Chcesz zacząć i nie wiesz jak? Idealnie trafiłeś :)" />
+  <meta property="og:type" content="website" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="https://poznajkubernetes.github.io/images/og-image.png?v2" />
+  <link rel="canonical" href="https://ebook.poznajkubernetes.pl" />
+
+  <!-- Stylesheets -->
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <link href="css/style.css?v=18" rel="stylesheet" />
+
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+  <!-- Responsive -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <link href="css/responsive.css?v=2" rel="stylesheet" />
+  <!--[if lt IE 9
+      ]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script
+    ><![endif]-->
+  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        "gtm.start": new Date().getTime(),
+        event: "gtm.js"
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-W87FBQZ");
+  </script>
+  <!-- End Google Tag Manager -->
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1200620883313556');
+    fbq('init', '313040722397945');
+    fbq('init', '214496003024029');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1200620883313556&ev=PageView&noscript=1" />
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=313040722397945&ev=PageView&noscript=1" />
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=214496003024029&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- End Facebook Pixel Code -->
+  <!-- MailerLite Universal -->
+  <script>
+    (function (m, a, i, l, e, r) {
+      m['MailerLiteObject'] = e; function f() {
+        var c = { a: arguments, q: [] }; var r = this.push(c); return "number" != typeof r ? r : f.bind(c.q);
+      }
+      f.q = f.q || []; m[e] = m[e] || f.bind(f.q); m[e].q = m[e].q || f.q; r = a.createElement(i);
+      var _ = a.getElementsByTagName(i)[0]; r.async = 1; r.src = l + '?v' + (~~(new Date().getTime() / 1000000));
+      _.parentNode.insertBefore(r, _);
+    })(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+
+    var ml_account = ml('accounts', '1685044', 'p7i8i7p7f9', 'load');
+  </script>
+  <!-- End MailerLite Universal -->
+
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <!-- Main Header-->
+    <header class="main-header">
+      <!-- Main Box -->
+      <div class="main-box">
+        <div class="auto-container">
+          <div class="outer-container header-container">
+            <!--Logo Box-->
+            <div class="logo-box">
+              <div class="logo">
+                <img src="images/logo-light.svg" alt="Poznaj Kubernetes" />
+              </div>
+            </div>
+
+            <!--Other Links-->
+            <!--div class="other-links">
+              <a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">Kup Kurs</a>
+            </div-->
+
+            <!--Nav Outer-->
+            <div class="nav-outer clearfix">
+              <!-- Main Menu -->
+              <nav class="main-menu">
+              </nav>
+              <!-- Main Menu End-->
+            </div>
+            <!--Nav Outer End-->
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--End Main Header -->
+    <!--Products Section-->
+    <section class="products-section" id="banner">
+      <div class="auto-container">
+        <!--Heading-->
+        <div class="sec-title">
+          <div class="icon">
+            <figure class="image">
+              <img src="images/shape-left-3.svg" alt="" />
+            </figure>
+          </div>
+          <h2 style="text-align: center;">Dzięki za potwierdzenie!</h2>
+          <h3 style="text-align: center;">
+            Na Twoją skrzynkę leci mail z dostępem do mini szkolenia!
+          </h3>
+          <!--div class="container text-center">
+                <a
+                  href="https://poznajkubernetes.pl/dolacz"
+                  class="theme-btn btn-style-one"
+                  >Chcę za FREE!</a
+                >
+              </div-->
+        </div>
+      </div>
+    </section>
+    <footer class="footer-sticky" style="border-top:1px solid rgba(0,0,0,0.10);background-color: white;">
+      <!--div class="container">
+        <span class="">Sprzedaż kończy się <span id="countdown" class="text-nowrap">15 listopada o 21:00</span> <a
+            href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-dolacz">KUP KURS!</a></span>
+      </div-->
+
+    </footer>
+  </div>
+  <!--End pagewrapper-->
+
+  <!--Scroll to top-->
+  <div class="scroll-to-top scroll-to-target" data-target="html">
+    <span class="fa fa-angle-double-up"></span>
+  </div>
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/pagenav.js"></script>
+  <script src="js/jquery.scrollTo.js"></script>
+  <script src="js/jquery.fancybox.pack.js"></script>
+  <script src="js/owl.js"></script>
+  <script src="js/wow.js"></script>
+  <script src="js/validate.js"></script>
+  <script src="js/script.js?v=9"></script>
+
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+  <script>
+    window.addEventListener("load", function () {
+      window.cookieconsent.initialise({
+        palette: {
+          popup: {
+            background: "#FFFFFF",
+            text: "#3b3b3b",
+            border: "#bfbfbf"
+          },
+          button: {
+            background: "#12dbdb",
+            text: "#ffffff"
+          }
+        },
+        theme: "classic",
+        position: "top-left",
+        content: {
+          message: "Na tej stronie używamy ciasteczek",
+          dismiss: "Rozumiem!",
+          link: "(więcej)",
+          href: "policy.html"
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
