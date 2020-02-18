@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+
+  <title>Jak zacząć pracę z Kubernetes</title>
+  <meta property="og:title" content="Jak zacząć pracę z Kubernetes" />
+  <meta name="description" content="Chcesz zacząć i nie wiesz jak? Idealnie trafiłeś :)" />
+  <meta property="og:type" content="website" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="https://poznajkubernetes.github.io/images/og-image.png?v2" />
+  <link rel="canonical" href="https://ebook.poznajkubernetes.pl" />
+
+  <!-- Stylesheets -->
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <link href="css/style.css?v=18" rel="stylesheet" />
+
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+  <!-- Responsive -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <link href="css/responsive.css?v=2" rel="stylesheet" />
+  <!--[if lt IE 9
+      ]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script
+    ><![endif]-->
+  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        "gtm.start": new Date().getTime(),
+        event: "gtm.js"
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-W87FBQZ");
+  </script>
+  <!-- End Google Tag Manager -->
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1200620883313556');
+    fbq('init', '313040722397945');
+    fbq('init', '214496003024029');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1200620883313556&ev=PageView&noscript=1" />
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=313040722397945&ev=PageView&noscript=1" />
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=214496003024029&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- End Facebook Pixel Code -->
+  <!-- MailerLite Universal -->
+  <script>
+    (function (m, a, i, l, e, r) {
+      m["MailerLiteObject"] = e;
+      function f() {
+        var c = { a: arguments, q: [] };
+        var r = this.push(c);
+        return "number" != typeof r ? r : f.bind(c.q);
+      }
+      f.q = f.q || [];
+      m[e] = m[e] || f.bind(f.q);
+      m[e].q = m[e].q || f.q;
+      r = a.createElement(i);
+      var _ = a.getElementsByTagName(i)[0];
+      r.async = 1;
+      r.src = l + "?v" + ~~(new Date().getTime() / 1000000);
+      _.parentNode.insertBefore(r, _);
+    })(
+      window,
+      document,
+      "script",
+      "https://static.mailerlite.com/js/universal.js",
+      "ml"
+    );
+    var ml_account = ml("accounts", "1685044", "p7i8i7p7f9", "load");
+  </script>
+  <!-- End MailerLite Universal -->
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <!-- Main Header-->
+    <header class="main-header">
+      <!-- Main Box -->
+      <div class="main-box">
+        <div class="auto-container">
+          <div class="outer-container header-container">
+            <!--Logo Box-->
+            <div class="logo-box">
+              <div class="logo">
+                <img src="images/logo-light.svg" alt="Poznaj Kubernetes" />
+              </div>
+            </div>
+
+            <!--Other Links-->
+            <!--div class="other-links">
+              <a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">Kup Kurs</a>
+            </div-->
+
+            <!--Nav Outer-->
+            <div class="nav-outer clearfix">
+              <!-- Main Menu -->
+              <nav class="main-menu">
+                <div class="navbar-header">
+                  <!-- Toggle Button -->
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div class="navbar-collapse collapse scroll-nav clearfix">
+                  <ul class="navigation clearfix">
+                    <li class="current"><a href="#banner">Start</a></li>
+                    <li>
+                      <a id="agenda-menu" href="#about">O czym jest mini szkolenie?</a>
+                    </li>
+                    <li>
+                      <a id="agenda-menu" href="#agenda">Agenda</a>
+                    </li>
+                    <li class="less-important">
+                      <a href="#authors">Autorzy</a>
+                    </li>
+                    <li>
+                      <a href="mailto:kontakt@poznajkubernetes.pl">Kontakt</a>
+                    </li>
+                    <li><a target="_blank" href="https://poznajkubernetes.pl">Więcej</a></li>
+                  </ul>
+                </div>
+                <!--Other Links-->
+
+              </nav>
+              <!-- Main Menu End-->
+            </div>
+            <!--Nav Outer End-->
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--End Main Header -->
+    <!--Products Section-->
+    <section class="products-section" id="banner">
+      <div class="auto-container">
+        <!--Heading-->
+        <div class="sec-title">
+          <div class="icon">
+            <figure class="image">
+              <img src="images/shape-left-3.svg" alt="" />
+            </figure>
+          </div>
+          <h2>Jak zacząć pracę z Kubernetes</h2>
+          <p>
+            Kubernetes (w skrócie K8S) jest bardzo popularną technologią.
+            Niestety nie da się wdrożyć w nią w 5 minut. Żeby uzyskać dobre
+            rezultaty potrzebne jest dobre wprowadzenie i solidne podstawy. Do
+            tego sam Kubernetes jest tylko narzędziem, które służy do
+            wdrażania rozwiązań rozproszonych, a my chcemy żebyś dowiedział
+            się więcej.
+          </p>
+          <!--div class="container text-center">
+                <a
+                  href="https://poznajkubernetes.pl/dolacz"
+                  class="theme-btn btn-style-one"
+                  >Chcę za FREE!</a
+                >
+              </div-->
+        </div>
+      </div>
+    </section>
+    <section class="products-section" id="about">
+      <div class="auto-container">
+        <!--Heading-->
+        <div class="sec-title">
+          <div class="icon">
+            <figure class="image">
+              <img src="images/shape-right-3.svg" alt="" />
+            </figure>
+          </div>
+          <h2>Czego dowiesz się z mini szkolenia</br><b>Jak zacząć pracę z Kubernetes?</b></h2>
+          <div class="desc-text">
+            <p>
+              Nim zaczniemy używać jakiejś technologii, zadajemy sobie różne
+              pytania:
+            </p>
+            <ul class="list-group benefits-list-header">
+              <li>Co to jest i dlaczego mamy jej użyć?</li>
+              <li>Co ona nam daje?</li>
+              <li>Jak zacząć i nie zbłądzić?</li>
+            </ul>
+            <p>
+              W przypadku Kubernetes odpowiedzi nie są wcale takie proste.
+              Odpowiedzmy sobie najpierw na dwa pierwsze pytania. Kubernetes,
+              często określany jako K8s, jest technologią typu open-source
+              stworzoną w Google w 2014. Od tego czasu sprawuje się całkiem
+              nieźle, patrząc na poziom adopcji czy liczby wystąpień na
+              konferencjach.
+            </p>
+            <p>
+              Kubernetes pozwala w sposób niezależny od dostawcy (tzw.
+              vendor-agnostic) zarządzać kontenerami, dzięki czemu możemy
+              nasze rozwiązanie w ten sam sposób instalować na komputerze
+              stacjonarnym, w chmurze czy też w sekretnej serwerowni. W
+              skrócie – technologia ta ułatwia zarządzanie, wdrażanie oraz
+              skalowanie naszej aplikacji.
+            </p>
+            <p>
+              <br />Pozostaje punkt trzeci. I właśnie dlatego powstał ten
+              mini szkolenia, abyś Ty, Drogi Czytelniku, zaczął pracę z Kubernetes i
+              nie zbłądził na starcie. Doświadczenie mówi nam, że łatwo się
+              zgubić.
+            </p>
+          </div>
+          <!--div class="container text-center">
+              <a
+                href="https://poznajkubernetes.pl/dolacz"
+                class="theme-btn btn-style-one"
+                >Chcę!</a
+              >
+            </div-->
+        </div>
+        <!--Services-->
+        <!--div class="services-outer clearfix">
+            </div-->
+      </div>
+    </section>
+    <section class="products-section" id="agenda">
+      <div class="auto-container">
+        <!--Heading-->
+        <div class="sec-title">
+          <div class="icon">
+            <figure class="image">
+              <img src="images/shape-right-3.svg" alt="" />
+            </figure>
+          </div>
+          <h2>Agenda</h2>
+          <div class="desc-text">
+            <p>
+             Z XX lekcji dowiesz się <b>Jak zacząć pracę z Kubernetes?</b>. W sumie <b>XX minut video!</b> oraz praktyczne ćwiczenia.
+            </p>
+            <p>
+              W szkoleniu znajdziesz nastepujące lekcje:
+            </p>
+            <ul class="list-group benefits-list-header">
+              <li>Przygotowanie komputera do pracy</li>
+              <li>Podstawy architektury systemów rozproszonych</li>
+              <li>Czym jest Kubernetes?</li>
+              <li>Architektura Kubernetes</li>
+              <li>Przygotowanie komputera do pracy</li>
+              <li>Docker – repozytoria i najlepsze praktyki</li>
+              <li>Praca deklaratywna i imperatywna</li>
+              <li>Health check – Czy aplikacja żyje i działa?</li>
+              <li>DNS i Service Discovery w Kubernetes</li>
+              <li>Wpływ Readiness na Service</li>
+              <li>Podstawowe strategie wdrożeń: recreate i rolling update</li>
+              <li>Bazy danych w Kubernetes</li>
+            </ul>
+          </div>
+          <!--div class="container text-center">
+              <a
+                href="https://poznajkubernetes.pl/dolacz"
+                class="theme-btn btn-style-one"
+                >Chcę!</a
+              >
+            </div-->
+        </div>
+        <!--Services-->
+        <!--div class="services-outer clearfix">
+            </div-->
+      </div>
+    </section>
+    <!--Blog Section-->
+    <section class="products-section" id="authors">
+      <div class="auto-container">
+        <!--Heading-->
+        <div class="sec-title-two centered">
+          <h2>Kim są autorzy?</h2>
+        </div>
+        <div class="row clearfix">
+          <!--News Block-->
+          <div class="news-style-one col-md-4 col-sm-6 col-xs-12">
+            <div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+              <figure class="image-box">
+                <img src="images/gutek.jpg" alt="" />
+              </figure>
+
+              <div class="lower-content">
+                <h3>Jakub Gutkowski</h3>
+                <div class="text">
+                  <p>
+                    Tata, mąż, blogger, programista, podcaster i pasjonat.
+                    Założyciel i jeden z organizatorów devWarsztatów. <br />Z
+                    Kubernetes związany zawodowo i prywatnie. Uwielbia bawić
+                    się nowościami, poznawać nowe języki i biblioteki, chodzić
+                    na konferencje, poznawać nowych ludzi, pomagać innym.
+                    <br />Microsoft MVP w kategorii Developer Technologies.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="news-style-one col-md-4 col-sm-6 col-xs-12">
+            <div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+              <figure class="image-box">
+                <img src="images/lukasz.jpg" alt="" />
+              </figure>
+
+              <div class="lower-content">
+                <h3>Łukasz Kałużny</h3>
+                <div class="text">
+                  <p>
+                    Inżynier, architekt, technology leader, konsultant, geek i
+                    ojciec dwójki maluchów. <br />Pasjonat chmury publicznej
+                    oraz szeroko pojętej nowoczesnej architektury w IT oraz
+                    hipsterskich technologii, które dopiero się pojawiają.
+                    <br />Z Kubernetes i kontenerami związany od dawna
+                    (pierwszy raz publicznie nakłaniał do nauki tego już w
+                    2014 roku!). <br />Microsoft MVP w kategorii Microsoft
+                    Azure.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="news-style-one col-md-4 col-sm-6 col-xs-12">
+            <div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+              <figure class="image-box">
+                <img src="images/stapp.jpg" alt="" />
+              </figure>
+
+              <div class="lower-content">
+                <h3>Piotr Stapp</h3>
+                <div class="text">
+                  <p>
+                    Programista, inżynier, rzemieślnik, projektant oraz ojciec
+                    bliźniaków.<br />
+                    Wierzy w ludzi, a nie w papiery - jest wyznawcą DevOps i
+                    wszelkiej automatyzacji.
+                    <br />Od czerwca 2018 znany jako "główny" dotnetomaniak.
+                    <br />Z Kubernetes korzysta na co dzień w pracy i w domu
+                    (nie pytaj po co). <br />Microsoft MVP w kategorii
+                    Developer Technologies.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--
+            <div class="text-center wow tada" data-wow-delay="0ms" data-wow-duration="1500ms"><a href="blog.html" class="theme-btn btn-style-seven">Go To Blog</a></div>
+            -->
+        <!--div class="row clearfix">
+          <div class="text-center">
+            <a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">KUP KURS DZISIAJ!</a>
+          </div>
+        </div-->
+      </div>
+    </section>
+    <footer class="footer-sticky" style="border-top:1px solid rgba(0,0,0,0.10);background-color: white;">
+      <!--div class="container">
+        <span class="">Sprzedaż kończy się <span id="countdown" class="text-nowrap">15 listopada o 21:00</span> <a
+            href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-dolacz">KUP KURS!</a></span>
+      </div-->
+      <a href="javascript:;" style="color: black;background-color: #f0f00a;" class="theme-btn btn-style-one"
+        onclick="ml_account('webforms', '1514972', 'c7i8u7', 'show')">
+        Chcę dostęp do MINI SZKOLENIA!</a>
+    </footer>
+  </div>
+  <!--End pagewrapper-->
+
+  <!--Scroll to top-->
+  <div class="scroll-to-top scroll-to-target" data-target="html">
+    <span class="fa fa-angle-double-up"></span>
+  </div>
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/pagenav.js"></script>
+  <script src="js/jquery.scrollTo.js"></script>
+  <script src="js/jquery.fancybox.pack.js"></script>
+  <script src="js/owl.js"></script>
+  <script src="js/wow.js"></script>
+  <script src="js/validate.js"></script>
+  <script src="js/script.js?v=9"></script>
+
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+  <script>
+    window.addEventListener("load", function () {
+      window.cookieconsent.initialise({
+        palette: {
+          popup: {
+            background: "#FFFFFF",
+            text: "#3b3b3b",
+            border: "#bfbfbf"
+          },
+          button: {
+            background: "#12dbdb",
+            text: "#ffffff"
+          }
+        },
+        theme: "classic",
+        position: "top-left",
+        content: {
+          message: "Na tej stronie używamy ciasteczek",
+          dismiss: "Rozumiem!",
+          link: "(więcej)",
+          href: "policy.html"
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
