@@ -73,30 +73,18 @@
   <!-- MailerLite Universal -->
   <script>
     (function (m, a, i, l, e, r) {
-      m["MailerLiteObject"] = e;
-      function f() {
-        var c = { a: arguments, q: [] };
-        var r = this.push(c);
-        return "number" != typeof r ? r : f.bind(c.q);
+      m['MailerLiteObject'] = e; function f() {
+        var c = { a: arguments, q: [] }; var r = this.push(c); return "number" != typeof r ? r : f.bind(c.q);
       }
-      f.q = f.q || [];
-      m[e] = m[e] || f.bind(f.q);
-      m[e].q = m[e].q || f.q;
-      r = a.createElement(i);
-      var _ = a.getElementsByTagName(i)[0];
-      r.async = 1;
-      r.src = l + "?v" + ~~(new Date().getTime() / 1000000);
+      f.q = f.q || []; m[e] = m[e] || f.bind(f.q); m[e].q = m[e].q || f.q; r = a.createElement(i);
+      var _ = a.getElementsByTagName(i)[0]; r.async = 1; r.src = l + '?v' + (~~(new Date().getTime() / 1000000));
       _.parentNode.insertBefore(r, _);
-    })(
-      window,
-      document,
-      "script",
-      "https://static.mailerlite.com/js/universal.js",
-      "ml"
-    );
-    var ml_account = ml("accounts", "1685044", "p7i8i7p7f9", "load");
+    })(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+
+    var ml_account = ml('accounts', '1685044', 'p7i8i7p7f9', 'load');
   </script>
   <!-- End MailerLite Universal -->
+
 </head>
 
 <body>
@@ -257,7 +245,8 @@
           <h2>Agenda</h2>
           <div class="desc-text">
             <p>
-             Z XX lekcji dowiesz się <b>Jak zacząć pracę z Kubernetes?</b>. W sumie <b>XX minut video!</b> oraz praktyczne ćwiczenia.
+              Z XX lekcji dowiesz się <b>Jak zacząć pracę z Kubernetes?</b>. W sumie <b>XX minut video!</b> oraz
+              praktyczne ćwiczenia.
             </p>
             <p>
               W szkoleniu znajdziesz nastepujące lekcje:
@@ -383,7 +372,7 @@
             href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-dolacz">KUP KURS!</a></span>
       </div-->
       <a href="javascript:;" style="color: black;background-color: #f0f00a;" class="theme-btn btn-style-one"
-        onclick="ml_account('webforms', '1514972', 'c7i8u7', 'show')">
+        onclick="ml_account('webforms', '1786656', 'r2a8l6', 'show')">
         Chcę dostęp do MINI SZKOLENIA!</a>
     </footer>
   </div>
