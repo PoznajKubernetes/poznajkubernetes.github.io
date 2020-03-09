@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Jak diagnozować deployment w Kubernetes?</title>
+    <meta property="og:title" content="Jak diagnozować deployment w Kubernetes?" />
+    <meta
+      name="description"
+      content="Nie wiesz jak diagnozować deployment w Kubernetes? Idealnie trafiłeś :)"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="og:image"
+      content="https://poznajkubernetes.github.io/images/og-image-diagram.png?v2"
+    />
+
+    <!-- Stylesheets -->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/style.css?v=18" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link href="css/responsive.css?v=2" rel="stylesheet" />
+    <!--[if lt IE 9
+      ]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script
+    ><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js"
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-W87FBQZ");
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Facebook Pixel Code -->
+    <script>
+      !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return; n = f.fbq = function () {
+            n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+        n.queue = []; t = b.createElement(e); t.async = !0;
+        t.src = v; s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+      }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1200620883313556');
+      fbq('init', '313040722397945');
+      fbq('init', '214496003024029');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1200620883313556&ev=PageView&noscript=1" />
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=313040722397945&ev=PageView&noscript=1" />
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=214496003024029&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+    <!-- MailerLite Universal -->
+    <script>
+      (function(m, a, i, l, e, r) {
+        m["MailerLiteObject"] = e;
+        function f() {
+          var c = { a: arguments, q: [] };
+          var r = this.push(c);
+          return "number" != typeof r ? r : f.bind(c.q);
+        }
+        f.q = f.q || [];
+        m[e] = m[e] || f.bind(f.q);
+        m[e].q = m[e].q || f.q;
+        r = a.createElement(i);
+        var _ = a.getElementsByTagName(i)[0];
+        r.async = 1;
+        r.src = l + "?v" + ~~(new Date().getTime() / 1000000);
+        _.parentNode.insertBefore(r, _);
+      })(
+        window,
+        document,
+        "script",
+        "https://static.mailerlite.com/js/universal.js",
+        "ml"
+      );
+      var ml_account = ml("accounts", "1685044", "p7i8i7p7f9", "load");
+    </script>
+    <!-- End MailerLite Universal -->
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <!-- Main Header-->
+      <header class="main-header">
+        <!-- Main Box -->
+        <div class="main-box">
+          <div class="auto-container">
+            <div class="outer-container header-container">
+              <!--Logo Box-->
+              <div class="logo-box">
+                <div class="logo">
+                  <img src="images/logo-light.svg" alt="Poznaj Kubernetes" />
+                </div>
+              </div>
+
+              <!--Other Links-->
+              <!--div class="other-links">
+              <a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">Kup Kurs</a>
+            </div-->
+
+              <!--Nav Outer-->
+              <div class="nav-outer clearfix">
+                <!-- Main Menu -->
+                <nav class="main-menu">
+                  <div class="navbar-header">
+                    <!-- Toggle Button -->
+                    <button
+                      type="button"
+                      class="navbar-toggle"
+                      data-toggle="collapse"
+                      data-target=".navbar-collapse"
+                    >
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                  </div>
+                  <div class="navbar-collapse collapse scroll-nav clearfix">
+                    <ul class="navigation clearfix">
+                      <li class="current"><a href="#banner">Start</a></li>
+                      <li class="less-important">
+                        <a href="#authors">Autorzy</a>
+                      </li>
+                      <li>
+                        <a href="mailto:kontakt@poznajkubernetes.pl">Kontakt</a>
+                      </li>
+                      <li><a target="_blank" href="https://poznajkubernetes.pl">Więcej</a></li>
+                    </ul>
+                  </div>
+                  <!--Other Links-->
+
+                </nav>
+                <!-- Main Menu End-->
+              </div>
+              <!--Nav Outer End-->
+            </div>
+          </div>
+        </div>
+      </header>
+      <!--End Main Header -->
+      <!--Products Section-->
+      <section class="products-section" id="banner">
+        <div class="auto-container">
+          <!--Heading-->
+          <div class="sec-title">
+            <div class="icon">
+              <figure class="image">
+                <img src="images/shape-left-3.svg" alt="" />
+              </figure>
+            </div>
+            <h2>Jak diagnozować deployment w Kubernetes?</h2>
+            <p>
+              Rozwiązywanie problemów w Kubernetes może być zniechęcającym zadaniem, jeśli nie wiesz od czego zacząć.
+              <br/>Dlatego właśnie prezentujemy diagram, a dokładniej schemat blokowy, który pomoże Ci w pracy.
+            </p>
+            <div class="clearfix desc-text">
+              <div
+                class="inner-box wow fadeInLeft animated col-md-6 text-center"
+                data-wow-delay="600ms"
+                data-wow-duration="1500ms"
+                style="visibility: visible; animation-duration: 1500ms; animation-delay: 600ms;
+                      animation-name: fadeInLeft; width: 100%;"
+              >
+                <figure class="image-box" style="display:block; margin:auto;">
+                  <img
+                    src="images/diagram-small.jpg"
+                    style="width: 70%; margin-bottom: 20px;"
+                    alt=""
+                  />
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Blog Section-->
+      <section class="products-section" id="authors">
+        <div class="auto-container">
+          <!--Heading-->
+          <div class="sec-title-two centered">
+            <h2>Kim są autorzy?</h2>
+          </div>
+          <div class="row clearfix">
+            <!--News Block-->
+            <div class="news-style-one col-md-4 col-sm-6 col-xs-12">
+              <div
+                class="inner-box wow fadeInLeft"
+                data-wow-delay="600ms"
+                data-wow-duration="1500ms"
+              >
+                <figure class="image-box">
+                  <img src="images/gutek.jpg" alt="" />
+                </figure>
+
+                <div class="lower-content">
+                  <h3>Jakub Gutkowski</h3>
+                  <div class="text">
+                    <p>
+                      Tata, mąż, blogger, programista, podcaster i pasjonat.
+                      Założyciel i jeden z organizatorów devWarsztatów. <br />Z
+                      Kubernetes związany zawodowo i prywatnie. Uwielbia bawić
+                      się nowościami, poznawać nowe języki i biblioteki, chodzić
+                      na konferencje, poznawać nowych ludzi, pomagać innym.
+                      <br />Microsoft MVP w kategorii Developer Technologies.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news-style-one col-md-4 col-sm-6 col-xs-12">
+              <div
+                class="inner-box wow fadeInLeft"
+                data-wow-delay="600ms"
+                data-wow-duration="1500ms"
+              >
+                <figure class="image-box">
+                  <img src="images/lukasz.jpg" alt="" />
+                </figure>
+
+                <div class="lower-content">
+                  <h3>Łukasz Kałużny</h3>
+                  <div class="text">
+                    <p>
+                      Inżynier, architekt, technology leader, konsultant, geek i
+                      ojciec dwójki maluchów. <br />Pasjonat chmury publicznej
+                      oraz szeroko pojętej nowoczesnej architektury w IT oraz
+                      hipsterskich technologii, które dopiero się pojawiają.
+                      <br />Z Kubernetes i kontenerami związany od dawna
+                      (pierwszy raz publicznie nakłaniał do nauki tego już w
+                      2014 roku!). <br />Microsoft MVP w kategorii Microsoft
+                      Azure.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news-style-one col-md-4 col-sm-6 col-xs-12">
+              <div
+                class="inner-box wow fadeInLeft"
+                data-wow-delay="600ms"
+                data-wow-duration="1500ms"
+              >
+                <figure class="image-box">
+                  <img src="images/stapp.jpg" alt="" />
+                </figure>
+
+                <div class="lower-content">
+                  <h3>Piotr Stapp</h3>
+                  <div class="text">
+                    <p>
+                      Programista, inżynier, rzemieślnik, projektant oraz ojciec
+                      bliźniaków.<br />
+                      Wierzy w ludzi, a nie w papiery - jest wyznawcą DevOps i
+                      wszelkiej automatyzacji.
+                      <br />Od czerwca 2018 znany jako "główny" dotnetomaniak.
+                      <br />Z Kubernetes korzysta na co dzień w pracy i w domu
+                      (nie pytaj po co). <br />Microsoft MVP w kategorii
+                      Developer Technologies.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--
+            <div class="text-center wow tada" data-wow-delay="0ms" data-wow-duration="1500ms"><a href="blog.html" class="theme-btn btn-style-seven">Go To Blog</a></div>
+            -->
+          <!--div class="row clearfix">
+          <div class="text-center">
+            <a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">KUP KURS DZISIAJ!</a>
+          </div>
+        </div-->
+        </div>
+      </section>
+      <footer
+        class="footer-sticky"
+        style="border-top:1px solid rgba(0,0,0,0.10);background-color: white;"
+      >
+        <!--div class="container">
+        <span class="">Sprzedaż kończy się <span id="countdown" class="text-nowrap">15 listopada o 21:00</span> <a
+            href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-dolacz">KUP KURS!</a></span>
+      </div-->
+        <a
+          href="javascript:;"
+          style="color: black;background-color: #f0f00a; text-transform:none"
+          class="theme-btn btn-style-one"
+          onclick="ml_account('webforms', '1514972', 'c7i8u7', 'show')"
+        >
+          Pobierz w dużej rozdzielczości</a
+        >
+      </footer>
+    </div>
+    <!--End pagewrapper-->
+
+    <!--Scroll to top-->
+    <div class="scroll-to-top scroll-to-target" data-target="html">
+      <span class="fa fa-angle-double-up"></span>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/pagenav.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/owl.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/validate.js"></script>
+    <script src="js/script.js?v=9"></script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+      window.addEventListener("load", function() {
+        window.cookieconsent.initialise({
+          palette: {
+            popup: {
+              background: "#FFFFFF",
+              text: "#3b3b3b",
+              border: "#bfbfbf"
+            },
+            button: {
+              background: "#12dbdb",
+              text: "#ffffff"
+            }
+          },
+          theme: "classic",
+          position: "top-left",
+          content: {
+            message: "Na tej stronie używamy ciasteczek",
+            dismiss: "Rozumiem!",
+            link: "(więcej)",
+            href: "policy.html"
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
