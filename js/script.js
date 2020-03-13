@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
   "use strict";
 
   //Hide Loading Box (Preloader)
@@ -35,7 +35,7 @@
     );
 
     //Dropdown Button
-    $(".main-header li.dropdown .dropdown-btn").on("click", function() {
+    $(".main-header li.dropdown .dropdown-btn").on("click", function () {
       $(this)
         .prev("ul")
         .slideToggle(500);
@@ -50,7 +50,7 @@
   //Fact Counter + Text Count
   if ($(".count-box").length) {
     $(".count-box").appear(
-      function() {
+      function () {
         var $t = $(this),
           n = $t.find(".count-text").attr("data-stop"),
           r = parseInt($t.find(".count-text").attr("data-speed"), 10);
@@ -66,10 +66,10 @@
             {
               duration: r,
               easing: "linear",
-              step: function() {
+              step: function () {
                 $t.find(".count-text").text(Math.floor(this.countNum));
               },
-              complete: function() {
+              complete: function () {
                 $t.find(".count-text").text(this.countNum);
               }
             }
@@ -96,7 +96,7 @@
   //	}
 
   //Hide Bootstrap Menu On Click over Mobile View
-  $(".scroll-nav ul.navigation > li > a").on("click", function() {
+  $(".scroll-nav ul.navigation > li > a").on("click", function () {
     var windowWidth = $(window).width();
     if (windowWidth <= 767) {
       $(".nav-outer .navbar-toggle").trigger("click");
@@ -121,7 +121,7 @@
 
   //Inventory Tabs
   if ($(".inventory-tabs").length) {
-    $(".inventory-tabs .tab-buttons .tab-btn").on("click", function(e) {
+    $(".inventory-tabs .tab-buttons .tab-btn").on("click", function (e) {
       e.preventDefault();
       var target = $($(this).attr("data-tab"));
 
@@ -146,7 +146,7 @@
 
   //Default Tabs Box
   if ($(".tabs-box").length) {
-    $(".tabs-box .tab-buttons .tab-btn").on("click", function(e) {
+    $(".tabs-box .tab-buttons .tab-btn").on("click", function (e) {
       e.preventDefault();
       var target = $($(this).attr("data-tab"));
 
@@ -297,7 +297,7 @@
 
   // Scroll to a Specific Div
   if ($(".scroll-to-target").length) {
-    $(".scroll-to-target").on("click", function() {
+    $(".scroll-to-target").on("click", function () {
       var target = $(this).attr("data-target");
       // animate
       $("html, body").animate(
@@ -343,7 +343,7 @@
    When document is Scrollig, do
    ========================================================================== */
 
-  $(window).on("scroll", function() {
+  $(window).on("scroll", function () {
     headerStyle();
   });
 
@@ -351,18 +351,18 @@
    When document is loading, do
    ========================================================================== */
 
-  $(window).on("load", function() {
+  $(window).on("load", function () {
     handlePreloader();
   });
-  $(document).ready(function() {
-    $(".agenda-second-button").on("click", function() {
+  $(document).ready(function () {
+    $(".agenda-second-button").on("click", function () {
       $("#agenda-menu").click();
       return false;
     });
     var yourDateToGo = new Date("2020-03-20T20:00:00+01:00"); //new Date(); //here you're making new Date object
     //yourDateToGo.setDate(yourDateToGo.getDate() + 1); //your're setting date in this object 1 day more from now
     //you can change number of days to go by putting any number in place of 1
-    var timer = function() {
+    var timer = function () {
       var currentDate = new Date().getTime(); //same thing as above
       var timeLeft = yourDateToGo - currentDate; //difference between time you set and now in miliseconds
       var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24)); //conversion miliseconds on days
@@ -388,18 +388,18 @@
 
       //console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s");
       try {
-      	document.getElementById("countdown").innerHTML = end;
-      	document.getElementById("countdown2").innerHTML = end;
-      	document.getElementById("countdown3").innerHTML = end;
+        document.getElementById("countdown").innerHTML = end;
+        document.getElementById("countdown2").innerHTML = end;
+        document.getElementById("countdown3").innerHTML = end;
       } catch {
       }
     }
     var timing = setInterval(
-      timer,1000
+      timer, 1000
     );
     timer();
   });
-  $(document).ready(function() {
+  $(document).ready(function () {
     var template = $("#faq-template").html();
     var faq = [
       {
@@ -410,22 +410,17 @@
       },
       {
         question:
-          "Co muszę wiedzieć przed rozpoczęciem kursu? Czy muszę znać docker?",
+          "Co muszę wiedzieć przed rozpoczęciem szkolenia? Czy muszę znać docker?",
         answer:
           "<p>Nie potrzebujesz znać żadnego konkretnego języka programowania, ani skryptowego. Wystarczy podstawowa znajomość konsoli i edytorów tekstowych. " +
           "Resztę pokażemy.<br/>Co do docker, to też nie musisz go znać. Pokażemy kilka dobrych praktyk i będziesz miał opanowanego docker na poziomie wystarczającym w 90% przypadków.</p>"
       },
       {
-        question: "Od kiedy będzie dostępny kurs?",
+        question: "Czy dostanę całe szkolenie od razu?",
         answer:
-          "<p>Pierwszy moduł najpóźniej zostanie opublikowany w poniedziałek 4 listopada.</p>"
+          "<p>Tak</p>"
       },
       {
-        question: "Czy dostanę cały kurs od razu?",
-        answer:
-          "<p>Nie. Dodajemy nowe materiały każdego tygodnia, aby Cię nie przytłoczyć i aby cała grupa przechodziła materiał w tym samym momencie.</p>"
-	  },
-	  {
         question: "Czy dostanę fakturę VAT?",
         answer:
           "<p>Tak, chwilę po zaksięgowaniu. VAT obowiązujący w tym wypadku to 23%." +
@@ -436,17 +431,17 @@
         answer: "Oczywiście, że tak. Będzie on miał formę elektroniczną, a jeżeli potrzebujesz papierowej napisz do nas!"
       },
       {
-        question: "Jak długo będę miał dostęp do kursu?",
+        question: "Jak długo będę miał dostęp do szkolenia?",
         answer:
           "<p>Otrzymasz dożywotni dostęp do tej edycji kursu wraz z aktualizacjami.</p>"
       },
       {
-        question: "W jakiej formie jest ten kurs?",
+        question: "W jakiej formie jest to szkolenie?",
         answer:
-          "<p>Kurs jest głównie w formie wideo. Nagrania zamieszczone są na platformie. Po podaniu loginu i hasła masz dostęp do swojego konta.</p>"
+          "<p>Szkolenie jest głównie w formie wideo. Nagrania zamieszczone są na platformie. Po podaniu loginu i hasła masz dostęp do swojego konta.</p>"
       },
       {
-        question: "Jaki sprzęt będzie wymagany do kursu?",
+        question: "Jaki sprzęt będzie wymagany do szkolenia?",
         answer:
           "<p>Jakikolwiek który ma min 8GB ram, Windows 10 z możliwością Hyper-V lub macOS lub Linux + dostęp do internetu.</p>" +
           "<p>8GB uważamy to za totalne minimum jeżeli chcemy pracować kursem u siebie lokalnie. Jeżeli korzystamy z chmury ram ten nie będzie aż tak kluczowy.</p>"
@@ -454,18 +449,13 @@
       {
         question: "Czy jak mi się nie spodoba to dostanę zwrot pieniędzy?",
         answer:
-          "<p>Jeżeli zrobisz to w ciągu 31 dni po opublikowaniu pierwszego modułu to wystarczy napisać do nas i bez pytań oddajemy Ci pieniądze plus wystawiamy korektę faktury.</p>"
+          "<p>Jeżeli zrobisz to w ciągu 14 dni po opublikowaniu pierwszego modułu to wystarczy napisać do nas i bez pytań oddajemy Ci pieniądze plus wystawiamy korektę faktury.</p>"
       },
       {
         question: "Co potrzebuje do wykonywania ćwiczeń?",
         answer:
           "<p>Każdy moduł będzie miał zadania do wykonania samemu - lokalnie u siebie na komputerze (Docker CE lub minikube) lub jeśli chcesz u wybranego dostawcy chmury publicznej(*)</p>" +
           "<p>(*chmura nie jest dostarczona wraz z kursem)</p>"
-      },
-      {
-        question:
-          "Czy jeżeli kurs nie zostanie opublikowany dostanę zwrot pieniędzy?",
-        answer: "<p>Tak, a także fakturę z korektą.</p>"
       },
       {
         question: "Czy mogę kupić na fakturę pro-forma?",
@@ -484,7 +474,7 @@
         answer: ""
       }
     ];
-    faq.forEach(function(item, index) {
+    faq.forEach(function (item, index) {
       if (item.question == "") return;
       var content = template
         .replaceAll("XXX", index)
@@ -493,9 +483,9 @@
       $("#accordionFAQ").append(content);
     });
 
-    $('#accordion-modules [data-toggle="collapse"], #accordionFAQ [data-toggle="collapse"]').on('click',function(){
-      var objectID=$(this).attr('href');
-      if($(objectID).hasClass('in')) {
+    $('#accordion-modules [data-toggle="collapse"], #accordionFAQ [data-toggle="collapse"]').on('click', function () {
+      var objectID = $(this).attr('href');
+      if ($(objectID).hasClass('in')) {
         $(objectID).collapse('hide');
       }
       else {
@@ -505,7 +495,7 @@
   });
 })(window.jQuery);
 
-String.prototype.replaceAll = function(search, replacement) {
+String.prototype.replaceAll = function (search, replacement) {
   var target = this;
   return target.split(search).join(replacement);
 };
