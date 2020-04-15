@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Szkolenia stacjonarne Poznaj Kubernetes</title>
+  <meta property="og:title" content="Program Poznaj Kubernetes" />
+  <meta property="og:type" content="website" />
+  <meta name="description"
+    content="Szkolenie z Kubernetes dla Dev, Ops i DevOps. Warsztaty prowadzone przez 3 specjalistów w formie 80% praktyki na 20% teorii." />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="https://poznajkubernetes.github.io/images/og-image.png?v9" />
+
+  <!-- Stylesheets -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css?v=18" rel="stylesheet">
+
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
+  <!-- Responsive -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link href="css/responsive.css?v=2" rel="stylesheet">
+  <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-W87FBQZ');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1200620883313556');
+    fbq('init', '313040722397945');
+    fbq('init', '214496003024029');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1200620883313556&ev=PageView&noscript=1" />
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=313040722397945&ev=PageView&noscript=1" />
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=214496003024029&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- End Facebook Pixel Code -->
+  <!-- MailerLite Universal -->
+  <script>
+    (function (m, a, i, l, e, r) {
+      m['MailerLiteObject'] = e; function f() {
+        var c = { a: arguments, q: [] }; var r = this.push(c); return "number" != typeof r ? r : f.bind(c.q);
+      }
+      f.q = f.q || []; m[e] = m[e] || f.bind(f.q); m[e].q = m[e].q || f.q; r = a.createElement(i);
+      var _ = a.getElementsByTagName(i)[0]; r.async = 1; r.src = l + '?v' + (~~(new Date().getTime() / 1000000));
+      _.parentNode.insertBefore(r, _);
+    })(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+    var ml_account = ml('accounts', '1685044', 'p7i8i7p7f9', 'load');
+  </script>
+  <!-- End MailerLite Universal -->
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <!-- Main Header-->
+    <header class="main-header">
+      <!-- Main Box -->
+      <div class="main-box">
+        <div class="auto-container">
+          <div class="outer-container header-container">
+            <!--Logo Box-->
+            <div class="logo-box">
+              <div class="logo"><img src="images/logo-light.svg" alt="Poznaj Kubernetes"></div>
+            </div>
+
+            <!--Other Links-->
+            <div class="other-links">
+              <a href="mailto:kontakt@poznajkubernetes.pl" class="theme-btn btn-style-four">Kontakt</a>
+            </div>
+
+            <!--Nav Outer-->
+            <div class="nav-outer clearfix">
+              <!-- Main Menu -->
+              <nav class="main-menu">
+                <div class="navbar-header">
+                  <!-- Toggle Button -->
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div class="navbar-collapse collapse scroll-nav clearfix">
+                  <ul class="navigation clearfix">
+                    <li class="current"><a href="#banner">Start</a></li>
+                    <li><a href="#who">Dla kogo?</a></li>
+                    <li><a href="#authors">Instruktorzy</a></li>
+                    <li><a href="#opinions">Opinie</a></li>
+                  </ul>
+                </div>
+              </nav>
+              <!-- Main Menu End-->
+            </div>
+            <!--Nav Outer End-->
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--End Main Header -->
+    <!--Main Banner / Banner One-->
+    <section class="main-banner" id="banner">
+      <div class="auto-container">
+        <!--Heading-->
+        <div class="sec-title-two centered">
+          <h2>Oferta szkoleniowa</h2>
+        </div>
+        <div class="row">
+          <!--News Block-->
+          <div class="col-md-3 col-sm-6">
+            <div class="inner-2box">
+              <div class="lower-content">
+                <h3>Dotknij Kubernetes</h3>
+                <div class="text">
+                  <p>
+                    Kubernetes nie jest technologią, którą można poznać w 5 minut.
+                    Jeżeli potrzebujesz sprawdzić czy to jest technologia dla Ciebie
+                    i jakie są podstawowe komponenty, to trafiłeś idealnie.
+                    <br/>
+                    W ciągu jednego dnia omówimy wszystkie podstawowe elementy.
+                  </p>
+                  <p>
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    Grupa: 5+</p>
+                  <p>
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    Czas trwania: 1 dzień</p>
+                  <p>
+                    Kontakt</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="inner-box">
+              <div class="lower-content">
+                <h3>Kubernetes dla Dev</h3>
+                <div class="text">
+                  <p>
+                    Chcesz by Twój zespół deweloperski wdrażał oprogramowanie szybko i sprawnie?
+                    Zastanawiałeś się nad Kubernetes? Nie wiesz jednak jak przejść proces "end to end".
+                    To właśnie idealna oferta dla Ciebie. 2 dni pełne wiedzy i dużej ilości ćwiczeń praktycznych.
+                  </p>
+                  <p>
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    Grupa: 5+</p>
+                  <p>
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    Czas trwania: 2 dni</p>
+                  <p>
+                    Kontakt</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix visible-sm"></div>
+          <div class="col-md-3 col-sm-6">
+            <div class="inner-box">
+              <div class="lower-content">
+                <h3>Kubernetes dla Ops</h3>
+                <div class="text">
+                  <p>
+                    Planujesz wdrożenie klastra Kubernetes w swoją infrastrukturę?
+                    Skorzystaj z naszego doświadczenia w on-premises oraz w public cloud
+                    i uniknij całej serii problemów związanych z wdrożeniem metodą "hard way".
+                    Dzięki temu Twój zespół zaoszczędzi sporo czasu i nerwów.
+                  </p>
+                  <p>
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    Grupa: 5+</p>
+                  <p>
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    Czas trwania: 1+ dni</p>
+                  <p>
+                    Kontakt</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="inner-box">
+              <div class="lower-content">
+                <h3>Poznaj Kubernetes</h3>
+                <div class="text">
+                  <p>Program online zawierający wszystkie, byś zyskał solidne podstawy
+                    w wytwarzaniu i dostarczaniu aplikacji w oparciu o kontenery i Kubernetes.
+                    Ta wiedza pozwoli Ci zaskoczyć niejednego „eksperta”.
+                    Już po 6 modułach będziesz potrafił użyć Kubernetes dla swojej aplikacji.
+                  </p>
+                  <p>
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    Grupa: 1+</p>
+                  <p>
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    Czas: 30h video + ćwiczenia</p>
+                  <p>
+                    Więcej</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--
+            <div class="text-center wow tada" data-wow-delay="0ms" data-wow-duration="1500ms"><a href="blog.html" class="theme-btn btn-style-seven">Go To Blog</a></div>
+            -->
+        <!--div class="row clearfix">
+          <div class="text-center">
+            <a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-one">KUP KURS DZISIAJ!</a>
+          </div>
+        </div-->
+      </div>
+    </section>
+    <!--End Main Banner-->
+    <!--Products Section-->
+    <section class="products-section" id="who">
+      <div class="auto-container">
+        <!--Heading-->
+        <div class="sec-title">
+          <div class="icon">
+            <figure class="image"><img src="images/shape-right-3.svg" alt=""></figure>
+          </div>
+          <h2>Czy to są szkolenia dla mnie?</h2>
+          <div class="desc-text">
+            <p>Jeżeli pragniesz pracować z nowoczesną architekturą i masz ochotę poznać dobrze Kubernetes to jesteś we
+              właściwym miejscu.
+            </p>
+          </div>
+          <h2>Ale dlaczego właśnie Kubernetes?</h2>
+          <div class="desc-text">
+            <p>Pewnie tak jak my cały czas słyszysz ludzi mówiących magiczne słowo: Kubernetes. Jak by to był Święty
+              Graal informatyki.</p>
+          </div>
+          <div class="desc-text">
+            <p>Ale zrozumienie go nie jest takie łatwe i niestety nie da się wdrożyć w nią w 5 minut. Żeby uzyskać dobre
+              rezultaty potrzebne
+              jest dobre wprowadzenie i solidne podstawy.
+              Do tego sam Kubernetes jest tylko narzędziem, które służy do wdrażania rozwiązań rozproszonych, a to samo
+              w sobie jest
+              skomplikowane.</p>
+          </div>
+          <div class="desc-text">
+            <p>Przejście tego początkowego etapu jest trudne. Sami wiemy to bardzo dobrze i dlatego chcemy Ci pomóc.</p>
+          </div>
+          <h2>Czego dokładnie się nauczę?</h2>
+          <div class="desc-text">
+            <p>W zależności od tego jak bardzo chcesz zgłębić Kubernetes
+              i jaka forma Ci odpowiada proponujemy różne programy i szkolenia.
+              Sprawdź agendy poszczególnych szkoleń, a jeżeli będzie to niewystarczające to skontaktuj się z nami.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Blog Section-->
+    <section class="products-section" id="authors">
+      <div class="auto-container">
+        <!--Heading-->
+        <div class="sec-title-two centered">
+          <h2>Kim są instruktorzy?</h2>
+        </div>
+        <div class="row clearfix">
+          <!--News Block-->
+          <div class="news-style-one col-md-4 col-sm-6 col-xs-12">
+            <div class="inner-box wow fadeInLeft" data-wow-delay="100ms" data-wow-duration="1500ms">
+              <figure class="image-box">
+                <img loading="lazy" class="lazyload" data-src="images/gutek.jpg" alt="Jakub Gutkowski"></figure>
+              <div class="lower-content">
+                <h3>Jakub Gutkowski</h3>
+                <div class="text">
+                  <p>Tata, mąż, blogger, programista, podcaster i pasjonat. Założyciel i jeden z organizatorów
+                    devWarsztatów.
+                    <br />Z Kubernetes związany zawodowo i prywatnie. Uwielbia bawić się nowościami, poznawać nowe
+                    języki i biblioteki,
+                    chodzić na konferencje, poznawać nowych ludzi, pomagać innym.
+                    <br />Microsoft MVP w kategorii Developer Technologies.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="news-style-one col-md-4 col-sm-6 col-xs-12">
+            <div class="inner-box wow fadeInLeft" data-wow-delay="500ms" data-wow-duration="1500ms">
+              <figure class="image-box">
+                <img loading="lazy" class="lazyload" data-src="images/lukasz.jpg" alt="Łukasz Kałużny"></figure>
+              <div class="lower-content">
+                <h3>Łukasz Kałużny</h3>
+                <div class="text">
+                  <p>Inżynier, architekt, technology leader, konsultant, geek i ojciec dwójki maluchów.
+                    <br />Pasjonat chmury publicznej oraz szeroko pojętej nowoczesnej architektury w IT oraz
+                    hipsterskich technologii, które
+                    dopiero się pojawiają.
+                    <br />Z Kubernetes i kontenerami związany od dawna (pierwszy raz publicznie nakłaniał do nauki tego
+                    już w 2014 roku!).
+                    <br />Microsoft MVP w kategorii Microsoft Azure.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="news-style-one col-md-4 col-sm-6 col-xs-12">
+            <div class="inner-box wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
+              <figure class="image-box">
+                <img loading="lazy" class="lazyload" data-src="images/stapp.jpg" alt="Piotr Stapp"></figure>
+              <div class="lower-content">
+                <h3>Piotr Stapp</h3>
+                <div class="text">
+                  <p>Programista, inżynier, rzemieślnik, projektant oraz ojciec bliźniaków.<br />
+                    Wierzy w ludzi, a nie w papiery - jest wyznawcą DevOps i wszelkiej automatyzacji.
+                    <br />Od czerwca 2018 znany jako "główny" dotnetomaniak.
+                    <br />Z Kubernetes korzysta na co dzień w pracy i w domu (nie pytaj po co).
+                    <br />Microsoft MVP w kategorii Developer Technologies.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Testimonials Section-->
+    <section class="testimonials-section" style="border-bottom: 0px" id="opinions">
+      <div class="auto-container">
+        <div class="outer-container">
+          <div class="sec-title">
+            <div class="icon">
+              <figure class="image"><img src="images/shape-left-3.svg" alt=""></figure>
+            </div>
+            <h2>Opinie</h2>
+            <!--Testimonials-->
+            <p class="testimonials-teaser">Opinie pochodzą z warsztatów prowadzonych w formie offline.
+              <br />Letniej inicjatywy Dotknij Kubernetes oraz <u>komercyjnych</u> prowadzonych przez autorów
+            </p>
+          </div>
+          <div class="testimonials-carousel-one single-item-carousel owl-theme owl-carousel">
+            <!--Slide Item-->
+            <div class="slide-item">
+              <div class="row clearfix">
+                <!--Text Column-->
+                <div class="text-column col-md-12 col-sm-12 col-xs-12">
+                  <div class="inner">
+                    <div class="text">“Warsztaty na najwyższym poziomie. Część teoretyczne bardzo dobrze przeprowadzona
+                      z dokładnym
+                      wyjaśnieniem wszystkich modułów z jakich sie składa Kubernetes. [...] Zdecydowanie jedne z
+                      lepszych warsztatów na
+                      jakich byłem!!”
+                    </div>
+                    <h4 class="author">
+                      <span>Jakub Waliszewski</span>
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Slide Item-->
+            <div class="slide-item">
+              <div class="row clearfix">
+                <!--Text Column-->
+                <div class="text-column col-md-12 col-sm-12 col-xs-12">
+                  <div class="inner">
+                    <div class="text">“Polecam bo warsztaty prowadzili profesjonaliści.”</div>
+                    <h4 class="author"><span>Michał Gapiński</span></h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Slide Item-->
+            <div class="slide-item">
+              <div class="row clearfix">
+                <!--Text Column-->
+                <div class="text-column col-md-12 col-sm-12 col-xs-12">
+                  <div class="inner">
+                    <div class="text">“Podobało mi się, z uwagi na wiedzę prowadzących, widać, że świetnie
+                      znają&nbsp;temat”</div>
+                    <h4 class="author"><span>Łukasz Szewczak</span></h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide-item">
+              <div class="row clearfix">
+                <!--Text Column-->
+                <div class="text-column col-md-12 col-sm-12 col-xs-12">
+                  <div class="inner">
+                    <div class="text">“Polecam, ponieważ warsztaty oprócz przygotowanego laboratorium zawierają całkiem
+                      sporo informacji
+                      z własnego doświadczenia prowadzących.”</div>
+                    <h4 class="author"><span>Anonim</span></h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="main-banner" id="share-footer">
+      <div class="auto-container">
+        <div class="sec-title">
+          <div class="icon">
+            <figure class="image"><img src="images/shape-left-3.svg" alt=""></figure>
+          </div>
+          <div class="row clearfix">
+            <!--Text Column-->
+            <div class="sec-title-two centered">
+              <h2 class="sec-title-two centered">Podziel się</h2>
+              <div>&nbsp;</div>
+              <p>
+                Wydaje się ciekawe? Jeżeli tak, to może ... przyda się to również Twoim znajomym?
+                <br />Podziel się z nimi tą stroną, wystarczy że klikniesz poniżej Twoje ulubione social media :)
+                <br />Z góry dziękujemy!
+              </p>
+              <div>&nbsp;</div>
+              <div class="text-center">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpoznajkubernetes.pl" class="">
+                  <img width="40px" loading="lazy" class="lazyload" data-src="images/social/facebook.png" alt="facebook icon" /></a>
+                &nbsp;
+                <a href="http://www.twitter.com/intent/tweet?url=https://poznajkubernetes.pl" class="">
+                  <img width="40px" loading="lazy" class="lazyload" data-src="images/social/twitter.png" alt="twitter icon" /></a>
+                &nbsp;
+                <a href="http://www.linkedin.com/shareArticle?mini=true&url=https://poznajkubernetes.pl/" class="">
+                  <img width="40px" loading="lazy" class="lazyload" data-src="images/social/linkedin.png" alt="linkedin icon" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer-sticky">
+      <!--div class="container">
+        <span class="">Promocja kończy się <span id="countdown" class="text-nowrap">20 marca 20:00</span>
+          <a href="https://poznajkubernetes.pl/dolacz" class="theme-btn btn-style-dolacz">DOŁĄCZ!</a></span>
+      </div-->
+      <!--
+      <div class="container">
+        <span class="">Chcesz dołączyć już dziś? Kup w pakiecie razem z biletem na
+          <a href="https://azureday.pro/" target="_blank" class="theme-btn btn-style-dolacz">Azure Day</a></span>
+        </di>
+        -->
+    </footer>
+  </div>
+  <!--End pagewrapper-->
+
+  <!--Scroll to top-->
+  <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-double-up"></span></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-one-page-nav/3.0.0/jquery.nav.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.3/jquery.scrollTo.min.js"></script>
+  <script src="js/jquery.fancybox.pack.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.0.1/wow.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.0/jquery.validate.min.js"></script>
+  <script src="js/script.js?v=14"></script>
+
+
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+  <script>
+    window.addEventListener("load", function () {
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#FFFFFF",
+            "text": "#3b3b3b",
+            "border": "#bfbfbf"
+          },
+          "button": {
+            "background": "#12dbdb",
+            "text": "#ffffff"
+          }
+        },
+        "theme": "classic",
+        "position": "top-left",
+        "content": {
+          "message": "Na tej stronie używamy ciasteczek",
+          "dismiss": "Rozumiem!",
+          "link": "(więcej)",
+          "href": "policy.html"
+        }
+      })
+    });
+  </script>
+
+
+</body>
+
+</html>
