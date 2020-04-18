@@ -5259,3 +5259,21 @@ img{
 	order: 1;
 	margin-bottom: 10px;
 }
+/***
+### CUSTOM
+***/
+s.price {
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+  }
+s.price:after {
+	content: '';
+    display: block;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    border-bottom: 3px solid;
+}
