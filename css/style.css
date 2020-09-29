@@ -314,7 +314,7 @@ ul,li{
 	font-weight:400;
 	border:1px solid #12dbdb;
 	color:#3b3b3b;
-	text-transform:uppercase;
+	text-transform:none;
 	text-align:center;
 	font-family: 'Roboto Slab', sans-serif;
 	border-radius:4px;
@@ -1013,8 +1013,8 @@ img{
 	position:relative;
   padding:140px 0px 0px;
 
-  background: transparent url('../images/bg-top-banner.svg') no-repeat 85% 125%;
-  background-size: auto 600px;
+  /*background: transparent url('../images/bg-top-banner.svg') no-repeat 85% 125%;
+  background-size: auto 600px;*/
 }
 
 .banner-one .text-column,
@@ -5168,8 +5168,13 @@ img{
 .banner-two .text-column h2,
 .banner-three .text-column h2,
 .banner-four .text-column h2{
-  font-size: 50px;
-  line-height: 1.1;
+  font-size: 40px;
+  line-height: 55px;
+}
+
+.banner-one .text-column h2.h2-small{
+  font-size: 30px;
+  line-height: 55px;
 }
 
 .list-group {
