@@ -404,6 +404,7 @@ document.body.appendChild(script);
         document.getElementById("countdown").innerHTML = end;
         document.getElementById("countdown2").innerHTML = end;
         document.getElementById("countdown3").innerHTML = end;
+        document.getElementById("countdown4").innerHTML = end;
       } catch {
       }
     }
