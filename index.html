@@ -762,12 +762,27 @@
               </div>
 
               <div class="panel panel-default">
-                <div class="panel-heading collapsed" id="accordion-modules-hd-15">
+                <div class="panel-heading" role="tab">
                   <h4 class="panel-title">
-                    <span class="static-hd">
-                      Bonus 3 - Temat wybrany przez uczestników przedsprzedaży
-                    </span>
+                    <a class="collapsed" id="accordion-modules-hd-15" role="button" data-toggle="collapse"
+                      data-parent="#accordion-modules" href="#accordion-modules-ct-15" aria-expanded="false"
+                      aria-controls="accordion-modules-ct-15">
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                      Bonus 3 -Podstawy Security
+                    </a>
                   </h4>
+                </div>
+                <div id="accordion-modules-ct-15" class="panel-collapse collapse" role="tabpanel"
+                  aria-labelledby="accordion-modules-hd-15">
+                  <div class="panel-body">
+                    <ul class="list-group row module-list">
+                      <li class="col-md-6 col-xs-12">Namespace</li>
+                      <li class="col-md-6 col-xs-12">RBAC</li>
+                      <li class="col-md-6 col-xs-12">Security Context</li>
+                      <li class="col-md-6 col-xs-12">Dostęp do zasobów Node</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
