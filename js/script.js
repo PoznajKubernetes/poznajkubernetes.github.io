@@ -473,7 +473,7 @@ document.body.appendChild(script);
       },
       {
         question: "Czy mogę kupić na fakturę pro-forma?",
-        answer: "<p>Napisz do nas na <a href=\"kontakt@poznajkubernets.pl\">kontakt@poznajkubernets.pl</a> - spróbujemy coś wymyślić.</p>"
+        answer: "<p>Napisz do nas na <a href=\"kontakt@poznajkubernetes.pl\">kontakt@poznajkubernetes.pl</a> - spróbujemy coś wymyślić.</p>"
       },
       {
         question: "Chyba zwariowaliście z pracą za 20k+ z Kubernetes?!!??!!",
