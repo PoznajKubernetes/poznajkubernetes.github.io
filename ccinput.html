@@ -248,15 +248,15 @@
                 (this.model = o || {}),
                 console.log(a),
                 console.log(this),
-                setTimeout(
-                  function () {
-                    console.log("executing sendHandshake");
-                    return this.sendHandshake(a);
-                  }.bind(this),
-                  90000,
-                )
-                //                ,
-                // this.sendHandshake(a)
+                // setTimeout(
+                //   function () {
+                //     console.log("executing sendHandshake");
+                //     return this.sendHandshake(a);
+                //   }.bind(this),
+                //   90000,
+                // )
+                // //                ,
+                this.sendHandshake(a)
               );
             }
             var i = r.prototype;
@@ -421,7 +421,6 @@
     <script>
       const cc = CCIframe({
         integratorId: "lkafel",
-        // merchantId: "1d7fb02b-6967-4200-98d3-01636740cc6a", // optional
       });
 
       const form = document.getElementById("card-data-form");
