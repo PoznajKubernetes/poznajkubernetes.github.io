@@ -1,0 +1,487 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Card data form</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh; /* Make body full height */
+        /* background-color: #f9f9f9; Optional: light background for contrast */
+      }
+      #card-data-form {
+        width: 100%; /* Make form full width */
+        padding: 16px; /* Add padding for spacing */
+        /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); Optional: add shadow for depth */
+        border-radius: 8px; /* Optional: rounded corners */
+        /* background-color: white; Form background */
+      }
+      input,
+      div {
+        font-size: 16px; /* Increase font size for better visibility */
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <form id="card-data-form" method="post">
+      <div class="flex flex-col gap-[24px]">
+        <div class="flex flex-col gap-[12px]">
+          <div>
+            <label class="">Card holder name</label>
+            <div
+              id="card-holder"
+              class="rounded-[8px] border border-gray-300 bg-white p-[12px]"
+            ></div>
+          </div>
+          <div>
+            <label class="">Card number</label>
+            <div
+              id="card-number"
+              class="rounded-[8px] border border-gray-300 bg-white p-[12px]"
+            ></div>
+          </div>
+
+          <div class="flex flex-row gap-4">
+            <div>
+              <label class="">Expiry date</label>
+              <div
+                id="expiry-date"
+                class="rounded-[8px] border border-gray-300 bg-white p-[12px]"
+              ></div>
+            </div>
+            <div>
+              <label class="">Security code</label>
+              <div
+                id="verification-code"
+                class="rounded-[8px] border border-gray-300 bg-white p-[12px]"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="flex items-end gap-2">
+          <div class="flex flex-grow flex-row gap-4">
+            <button
+              class="inline-flex h-10 flex-1 items-center justify-center whitespace-nowrap rounded-md border border-simplyBlue bg-white px-4 py-2 font-inter text-sm font-bold text-simplyBlue ring-offset-white transition-colors hover:bg-neutral-100 hover:text-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-simplyBlue focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-800 dark:bg-neutral-950 dark:ring-offset-neutral-950 dark:hover:bg-neutral-800 dark:focus-visible:ring-neutral-300"
+              onclick="closeModal()"
+            >
+              Cancel
+            </button>
+            <button
+              class="inline-flex h-10 flex-1 items-center justify-center whitespace-nowrap rounded-md bg-simplyBlue px-4 py-2 font-inter text-sm font-bold text-white ring-offset-white transition-colors hover:bg-simplyBlue/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-simplyBlue focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:bg-neutral-50 dark:text-neutral-900 dark:ring-offset-neutral-950 dark:hover:bg-neutral-50/90 dark:focus-visible:ring-neutral-300"
+              type="submit"
+            >
+              Add
+            </button>
+          </div>
+        </div> -->
+        <div id="form-error" class="field-error" role="alert"></div>
+      </div>
+    </form>
+    <!-- script src="https://proud-mud-09a30af03.5.azurestaticapps.net/lib.js"></script-->
+    <script>
+      "use strict";
+      (() => {
+        var c = "application/x-postmate-v1+json",
+          _ = 5,
+          C = 0,
+          w = function () {
+            return ++C;
+          };
+        var I = function (i) {
+            var t = document.createElement("a");
+            t.href = i;
+            var n =
+                t.protocol.length > 4 ? t.protocol : window.location.protocol,
+              e = t.host.length
+                ? t.port === "80" || t.port === "443"
+                  ? t.hostname
+                  : t.host
+                : window.location.host;
+            return t.origin || n + "//" + e;
+          },
+          k = {
+            handshake: 1,
+            "handshake-reply": 1,
+            call: 1,
+            emit: 1,
+            reply: 1,
+            request: 1,
+          },
+          v = function (i, t) {
+            return !(
+              (typeof t == "string" && i.origin !== t) ||
+              !i.data ||
+              (typeof i.data == "object" && !("postmate" in i.data)) ||
+              i.data.type !== c ||
+              !k[i.data.postmate]
+            );
+          },
+          L = function (i, t) {
+            var n = typeof i[t] == "function" ? i[t]() : i[t];
+            return p.Promise.resolve(n);
+          },
+          R = (function () {
+            function r(t) {
+              var n = this;
+              (this.parent = t.parent),
+                (this.frame = t.frame),
+                (this.child = t.child),
+                (this.childOrigin = t.childOrigin),
+                (this.events = {}),
+                (this.listener = function (e) {
+                  if (!v(e, n.childOrigin)) return !1;
+                  var o = ((e || {}).data || {}).value || {},
+                    a = o.data,
+                    d = o.name;
+                  e.data.postmate === "emit" &&
+                    d in n.events &&
+                    n.events[d].call(n, a);
+                }),
+                this.parent.addEventListener("message", this.listener, !1);
+            }
+            var i = r.prototype;
+            return (
+              (i.get = function (n) {
+                var e = this;
+                return new p.Promise(function (o) {
+                  var a = w(),
+                    d = function s(l) {
+                      l.data.uid === a &&
+                        l.data.postmate === "reply" &&
+                        (e.parent.removeEventListener("message", s, !1),
+                        o(l.data.value));
+                    };
+                  e.parent.addEventListener("message", d, !1),
+                    e.child.postMessage(
+                      { postmate: "request", type: c, property: n, uid: a },
+                      e.childOrigin,
+                    );
+                });
+              }),
+              (i.call = function (n, e) {
+                this.child.postMessage(
+                  { postmate: "call", type: c, property: n, data: e },
+                  this.childOrigin,
+                );
+              }),
+              (i.on = function (n, e) {
+                this.events[n] = e;
+              }),
+              (i.destroy = function () {
+                window.removeEventListener("message", this.listener, !1),
+                  this.frame.parentNode.removeChild(this.frame);
+              }),
+              r
+            );
+          })(),
+          A = (function () {
+            function r(t) {
+              var n = this;
+              (this.model = t.model),
+                (this.parent = t.parent),
+                (this.parentOrigin = t.parentOrigin),
+                (this.child = t.child),
+                this.child.addEventListener("message", function (e) {
+                  if (v(e, n.parentOrigin)) {
+                    var o = e.data,
+                      a = o.property,
+                      d = o.uid,
+                      s = o.data;
+                    if (e.data.postmate === "call") {
+                      a in n.model &&
+                        typeof n.model[a] == "function" &&
+                        n.model[a](s);
+                      return;
+                    }
+                    L(n.model, a).then(function (l) {
+                      return e.source.postMessage(
+                        {
+                          property: a,
+                          postmate: "reply",
+                          type: c,
+                          uid: d,
+                          value: l,
+                        },
+                        e.origin,
+                      );
+                    });
+                  }
+                });
+            }
+            var i = r.prototype;
+            return (
+              (i.emit = function (n, e) {
+                this.parent.postMessage(
+                  { postmate: "emit", type: c, value: { name: n, data: e } },
+                  this.parentOrigin,
+                );
+              }),
+              r
+            );
+          })(),
+          p = (function () {
+            function r(t) {
+              console.log("logging t: ", t);
+              var n = t.container,
+                e = n === void 0 ? (typeof e < "u" ? e : document.body) : n,
+                o = t.model,
+                a = t.url,
+                d = t.name,
+                s = t.classListArray,
+                l = s === void 0 ? [] : s;
+              return (
+                (this.parent = window),
+                (this.frame = document.createElement("iframe")),
+                (this.frame.name = d || ""),
+                this.frame.classList.add.apply(this.frame.classList, l),
+                e.appendChild(this.frame),
+                (this.child =
+                  this.frame.contentWindow ||
+                  this.frame.contentDocument.parentWindow),
+                (this.model = o || {}),
+                console.log(a),
+                console.log(this),
+                setTimeout(
+                  function () {
+                    console.log("executing sendHandshake");
+                    return this.sendHandshake(a);
+                  }.bind(this),
+                  90000,
+                )
+                //                ,
+                // this.sendHandshake(a)
+              );
+            }
+            var i = r.prototype;
+            return (
+              (i.sendHandshake = function (n) {
+                var e = this,
+                  o = I(n),
+                  a = 0,
+                  d;
+                return new r.Promise(function (s, l) {
+                  var h = function u(f) {
+                    return v(f, o)
+                      ? f.data.postmate === "handshake-reply"
+                        ? (clearInterval(d),
+                          e.parent.removeEventListener("message", u, !1),
+                          (e.childOrigin = f.origin),
+                          s(new R(e)))
+                        : l("Failed handshake")
+                      : !1;
+                  };
+                  e.parent.addEventListener("message", h, !1);
+                  var E = function () {
+                      a++,
+                        e.child.postMessage(
+                          { postmate: "handshake", type: c, model: e.model },
+                          o,
+                        ),
+                        a === _ && clearInterval(d);
+                    },
+                    y = function () {
+                      E(), (d = setInterval(E, 500));
+                    };
+                  e.frame.attachEvent
+                    ? e.frame.attachEvent("onload", y)
+                    : (e.frame.onload = y),
+                    (e.frame.src = n);
+                });
+              }),
+              r
+            );
+          })();
+        p.debug = !1;
+        p.Promise = (function () {
+          try {
+            return window ? window.Promise : Promise;
+          } catch {
+            return null;
+          }
+        })();
+        p.Model = (function () {
+          function r(t) {
+            return (
+              (this.child = window),
+              (this.model = t),
+              (this.parent = this.child.parent),
+              this.sendHandshakeReply()
+            );
+          }
+          var i = r.prototype;
+          return (
+            (i.sendHandshakeReply = function () {
+              var n = this;
+              return new p.Promise(function (e, o) {
+                var a = function d(s) {
+                  if (s.data.postmate) {
+                    if (s.data.postmate === "handshake") {
+                      n.child.removeEventListener("message", d, !1),
+                        s.source.postMessage(
+                          { postmate: "handshake-reply", type: c },
+                          s.origin,
+                        ),
+                        (n.parentOrigin = s.origin);
+                      var l = s.data.model;
+                      return (
+                        l &&
+                          Object.keys(l).forEach(function (h) {
+                            n.model[h] = l[h];
+                          }),
+                        e(new A(n))
+                      );
+                    }
+                    return o("Handshake Reply Failed");
+                  }
+                };
+                n.child.addEventListener("message", a, !1);
+              });
+            }),
+            r
+          );
+        })();
+        var P = p;
+        function g() {
+          return document.createElement("div");
+        }
+        function N() {
+          let r = document.createElement("iframe");
+          return (
+            (r.frameBorder = "0"),
+            (r.scrolling = "no"),
+            (r.style.width = "100%"),
+            (r.style.border = "0"),
+            (r.style.verticalAlign = "middle"),
+            (r.height = "18px"),
+            r
+          );
+        }
+        var m;
+        function O(r) {
+          m ? m.call("registerComponent", r) : setTimeout(() => O(r), 100);
+        }
+        function D(r) {
+          let i = g();
+          (i.id = "ccIframe-controller"),
+            (i.style.display = "none"),
+            document.body.appendChild(i),
+            new P({
+              container: i,
+              url: `https://proud-mud-09a30af03.5.azurestaticapps.net/controller.html?settings=${encodeURIComponent(
+                JSON.stringify(r),
+              )}`,
+              name: "ccIframe-iframe-controller",
+            }).then((n) => {
+              (m = n),
+                n.on("change", (e) => {
+                  let o = document.querySelector(
+                    `.ccIframe-component--${e.type}`,
+                  );
+                  e.state.focus
+                    ? o?.classList.add("has-focus")
+                    : o?.classList.remove("has-focus"),
+                    e.state.valid
+                      ? o?.classList.remove("is-invalid")
+                      : e.state.touched && o?.classList.add("is-invalid"),
+                    e.state.touched
+                      ? o?.classList.add("is-touched")
+                      : o?.classList.remove("is-touched");
+                });
+            });
+        }
+        function V(r, i, t) {
+          let n = g();
+          n.className = `ccIframe-component ccIframe-component--${r}`;
+          let e = N();
+          (e.name = `ccIframe-iframe-${r}`),
+            (e.src = `https://proud-mud-09a30af03.5.azurestaticapps.net/component.html?type=${r}&options=${encodeURIComponent(
+              JSON.stringify(t),
+            )}`),
+            n.appendChild(e);
+          let o = typeof i == "string" ? document.querySelector(i) : i;
+          if (!o) throw new Error("element not found");
+          o.appendChild(n), O(r);
+        }
+        function $() {
+          return m.get("fetchToken");
+        }
+        function S(r) {
+          return D(r), { createComponent: V, createToken: $ };
+        }
+        window.CCIframe = S;
+      })();
+    </script>
+    <script>
+      const cc = CCIframe({
+        integratorId: "lkafel",
+        // merchantId: "1d7fb02b-6967-4200-98d3-01636740cc6a", // optional
+      });
+
+      const form = document.getElementById("card-data-form");
+
+      const options = {
+        fonts: [
+          {
+            family: "Inter",
+            src: "url(https://fonts.gstatic.com/s/inter/v18/UcCo3FwrK3iLTcviYwYZ8UA3.woff2) format('woff2')",
+            style: "normal",
+            weight: "100 900",
+          },
+          {
+            family: "Inter",
+            src: "url(https://fonts.gstatic.com/s/inter/v18/UcCo3FwrK3iLTcvsYwYZ8UA3J58.woff2) format('woff2')",
+            style: "normal",
+            weight: "100 900",
+          },
+        ],
+        styles: {
+          base: {
+            color: "rgba(0, 0, 0, 0.8)",
+            fontFamily: "Inter",
+          },
+        },
+      };
+
+      cc.createComponent("cardHolder", "#card-holder", options);
+      cc.createComponent("cardNumber", "#card-number", options);
+      cc.createComponent("cardExp", "#expiry-date", options);
+      cc.createComponent("cardCvv", "#verification-code", options);
+
+      console.warn("dir CC IFrame");
+      console.dir(cc);
+      console.warn("logging CC IFrame");
+      console.log(cc);
+      console.warn("checking react native webview");
+      console.log(window.ReactNativeWebView);
+      console.dir(window.ReactNativeWebView);
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        cc.createToken()
+          .then(function (result) {
+            console.log(result);
+            // Send the result back to the webview
+            if (window.ReactNativeWebView) {
+              window.ReactNativeWebView.postMessage(JSON.stringify(result)); // Send token to React Native
+            }
+          })
+          .catch(function (error) {
+            console.error(error);
+            // Display error message
+            //document.getElementById("form-error").textContent = error.message;
+          })
+          .finally(function () {
+            console.log("done");
+          });
+      });
+    </script>
+  </body>
+</html>
